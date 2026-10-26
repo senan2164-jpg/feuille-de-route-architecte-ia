@@ -739,7 +739,8 @@ document.querySelectorAll(".tabs button, #seg button").forEach(b=>b.addEventList
 const EXK="archi-ia-extra-v1";let ex={};
 try{ex=JSON.parse(localStorage.getItem(EXK)||"{}")||{}}catch(e){ex={}}
 if(!ex.c)ex.c={};if(!ex.days)ex.days=[];if(!ex.vocab)ex.vocab={};
-function exSave(){try{localStorage.setItem(EXK,JSON.stringify(ex))}catch(e){}touch()}
+function pruneOld(){const lim=new Date();lim.setDate(lim.getDate()-30);const L0=lim.getFullYear()+"-"+String(lim.getMonth()+1).padStart(2,"0")+"-"+String(lim.getDate()).padStart(2,"0");if(ex.dd)Object.keys(ex.dd).forEach(k=>{if(k.slice(0,10)<L0)delete ex.dd[k]});if(ex.c)Object.keys(ex.c).forEach(k=>{if(k.startsWith("sun-")&&k.slice(4,14)<L0)delete ex.c[k]})}
+function exSave(){pruneOld();try{localStorage.setItem(EXK,JSON.stringify(ex))}catch(e){}touch()}
 let toastT;function toast(m){const t=document.getElementById("toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{t.hidden=true},2200)}
 function fallbackCopy(txt){const ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}ta.remove();toast(ok?"Copié":"Sélectionne le texte pour le copier")}
 function copyText(txt){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>toast("Copié")).catch(()=>fallbackCopy(txt))}else fallbackCopy(txt)}
