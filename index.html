@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Parcours complet pour devenir Architecte IA : compétences, cours, certifications, projets, recherche d'emploi par pays et plan d'anglais intensif.">
+<meta name="description" content="Feuille de route pour devenir Architecte IA : programme du jour, parcours, anglais intensif, recherche d'emploi par pays, budget, revenus et suivi des candidatures.">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Feuille de route Architecte IA</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -249,6 +249,84 @@ ol.cks .ck label>span::before{counter-increment:st;content:counter(st) ". ";font
 .fc-b i{color:var(--muted)}
 .fcnav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center}
 @media (max-width:720px){.facts,.meters,.timer{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.weeks{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* navigation */
+.tabs{align-self:stretch;justify-content:flex-start}
+.tabs button{display:inline-flex;align-items:center;gap:7px}
+.ti{font-size:.95rem;line-height:1;opacity:.85}
+.seg{display:inline-flex;gap:4px;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:4px;align-self:flex-start}
+.seg button{font:600 .88rem var(--f-body);border:0;background:transparent;color:var(--muted);padding:6px 14px;border-radius:7px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--blue-soft);color:var(--blue)}
+#view-today,#view-plus{display:flex;flex-direction:column;gap:22px}
+/* aujourd'hui */
+.dayhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px}
+.dayhead h2{font-size:clamp(1.6rem,4.5vw,2.3rem)}
+.ctrls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ctrls select{font:600 .85rem var(--f-body);border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:99px;padding:4px 10px}
+.blocks{display:flex;flex-direction:column;gap:10px}
+.blk{display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:14px;align-items:start;background:var(--sheet);border:1px solid var(--line);border-left:5px solid var(--line);border-radius:12px;padding:14px}
+.blk.am{border-left-color:var(--blue)}.blk.mid{border-left-color:var(--green)}.blk.pm{border-left-color:var(--violet)}.blk.ev{border-left-color:var(--amber)}
+.blk.ok{opacity:.6}
+.blk .hr{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;flex-direction:column;gap:2px}
+.blk .hr b{font-family:var(--f-display);font-size:1rem;color:var(--ink)}
+.blk .bd{display:flex;flex-direction:column;gap:4px;min-width:0}
+.blk .lab{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.blk .sk-name{font-family:var(--f-display);font-weight:700;font-size:1.1rem;text-wrap:balance}
+.blk a{font-size:.9rem}
+.done-btn{font:600 .82rem var(--f-body);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.done-btn[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--sheet)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.mini-card{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mini-card h3{font-size:1rem}
+.mini-card p{color:var(--muted);font-size:.92rem}
+.prog{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.prog li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.9rem}
+.prog li.cur{border-color:var(--blue);background:var(--blue-soft)}
+.prog li.past{opacity:.55}
+.prog .wn{font-family:var(--f-mono);font-weight:700;color:var(--blue)}
+.prog .rev{font:600 .68rem var(--f-body);background:var(--green-soft);color:var(--green);border-radius:4px;padding:1px 6px;margin-left:6px}
+details.acc{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+details.acc summary{cursor:pointer;font-family:var(--f-display);font-weight:700;font-size:1.1rem}
+details.acc[open] summary{margin-bottom:12px}
+/* formulaires */
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.form label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.form input,.form select,.form textarea,.inp{font:400 .95rem var(--f-body);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:8px 10px;width:100%}
+.form .full{grid-column:1/-1}
+.apps{display:flex;flex-direction:column;gap:8px}
+.app{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.app b{font-size:1rem}
+.app small{color:var(--muted)}
+.app .acts{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.app select{font:600 .82rem var(--f-body);border:1px solid var(--line);border-radius:99px;padding:3px 8px;background:var(--paper);color:var(--ink)}
+.app.due{border-color:var(--amber);background:var(--amber-soft)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+/* budget */
+.brow{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:10px;align-items:center;padding:6px 0;border-top:1px dashed var(--line)}
+.brow:first-child{border-top:0}
+.brow small{display:block;color:var(--muted);font-size:.8rem}
+.brow input{text-align:right;font-variant-numeric:tabular-nums}
+.btotal{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:baseline;background:var(--ink);color:var(--sheet);border-radius:12px;padding:14px 16px}
+.btotal b{font-family:var(--f-display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.money{font-variant-numeric:tabular-nums}
+.tierlist{display:flex;flex-direction:column;gap:10px}
+.tier{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.tier .when{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+.tier h4{margin:0;font-family:var(--f-display);font-size:1.05rem}
+table.mt{min-width:0}
+.code-box{font-family:var(--f-mono);font-size:.75rem;word-break:break-all;max-height:120px;overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px}
+.tpl{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;white-space:pre-wrap;font-size:.92rem}
+@media (max-width:720px){
+ .tabs{position:fixed;left:0;right:0;bottom:0;z-index:15;border-radius:0;border-width:1px 0 0;justify-content:space-around;flex-wrap:nowrap;gap:0;padding:6px max(6px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px))}
+ .tabs button{flex-direction:column;gap:2px;padding:6px 4px;font-size:.72rem;flex:1;border-radius:8px}
+ .ti{font-size:1.05rem}
+ .wrap{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+ .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+ .blk{grid-template-columns:minmax(0,1fr)}
+ header .path,header .hlede{display:none}
+ h1{font-size:1.8rem}
+ .grid2,.form,.kpis{grid-template-columns:minmax(0,1fr)}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (prefers-reduced-motion:reduce){.bar i{transition:none}.fc-in{transition:none}}
 </style>
 </head>
@@ -259,11 +337,24 @@ ol.cks .ck label>span::before{counter-increment:st;content:counter(st) ". ";font
   <header>
     <div class="eyebrow">Plan de carrière · 2026 → 2034</div>
     <h1>Devenir Architecte IA</h1>
-    <p class="lede">Tout ce qu'il faut apprendre, les cours (gratuits et payants), les certifications à passer dans l'ordre et les projets à construire. Coche chaque élément quand il est terminé : ta progression est enregistrée dans ce navigateur.</p>
+    <p class="lede hlede">Ton plan complet : le programme du jour, le parcours, l'anglais, la recherche d'emploi et tes outils. Ta progression est enregistrée dans ce navigateur : pense à la sauvegarder chaque dimanche.</p>
     <div class="path" aria-label="Parcours">
       <span>Licence Internet &amp; Multimédia</span><b>→</b><span>Ingénieur IA / MLOps</span><b>→</b><span>Ingénieur senior / lead</span><b>→</b><span class="goal">Architecte IA</span>
     </div>
   </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button type="button" role="tab" data-v="today" aria-selected="true"><span class="ti">◷</span>Aujourd'hui</button>
+    <button type="button" role="tab" data-v="tree" aria-selected="false"><span class="ti">↗</span>Parcours</button>
+    <button type="button" role="tab" data-v="en" aria-selected="false"><span class="ti">Aa</span>Anglais</button>
+    <button type="button" role="tab" data-v="job" aria-selected="false"><span class="ti">✈</span>Emploi</button>
+    <button type="button" role="tab" data-v="plus" aria-selected="false"><span class="ti">＋</span>Plus</button>
+  </nav>
+
+  <div class="seg" id="seg" role="group" aria-label="Affichage du parcours">
+    <button type="button" data-v="tree" aria-pressed="true">Vue chemin</button>
+    <button type="button" data-v="list" aria-pressed="false">Liste détaillée</button>
+  </div>
 
   <div class="progress-card" aria-live="polite">
     <div class="prow"><div><span class="pnum" id="pct">0 %</span> <span style="color:var(--muted)" id="pcount">0 / 0 terminés</span></div>
@@ -278,13 +369,8 @@ ol.cks .ck label>span::before{counter-increment:st;content:counter(st) ". ";font
     <div class="bar"><i id="pbar"></i></div>
   </div>
 
-  <div class="tabs" role="tablist" aria-label="Affichage">
-    <button type="button" role="tab" data-v="tree" aria-selected="true">Parcours</button>
-    <button type="button" role="tab" data-v="list" aria-selected="false">Liste détaillée</button>
-    <button type="button" role="tab" data-v="job" aria-selected="false">Trouver un emploi</button>
-    <button type="button" role="tab" data-v="en" aria-selected="false">Anglais en 3 mois</button>
-  </div>
-
+  <div id="view-today"></div>
+  <div id="view-plus" hidden></div>
   <div id="view-job" hidden></div>
   <div id="view-en" hidden></div>
   <div class="toast" id="toast" role="status" hidden></div>
@@ -642,13 +728,13 @@ function renderNext(){NEXT=null;for(const k of ORDER){const f=all.find(a=>a.ph==
  const box=document.getElementById("next");
  if(!NEXT){box.innerHTML='<div class="nlabel">Félicitations</div><div class="ntitle">Tout est coché. Tu es prêt pour les postes d\'architecte IA.</div>';return}
  box.innerHTML='<div class="nlabel">Ta prochaine étape</div><div class="ntitle">'+esc(NEXT.t)+'</div><div class="nphase">Phase '+NUM[NEXT.ph]+' · '+esc(PHB[NEXT.ph].title)+'</div><div class="nact"><button type="button" class="btn primary" id="ndone">C\'est fait ✓</button><button type="button" class="btn" id="nsee">Voir le détail</button></div>'}
-function setView(v){["tree","list","job","en"].forEach(x=>{document.getElementById("view-"+x).hidden=x!==v});document.querySelector(".filters").hidden=v!=="list";document.querySelector(".progress-card").hidden=(v==="job"||v==="en");document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v?"true":"false"))}
+function setView(v){["today","tree","list","job","en","plus"].forEach(x=>{document.getElementById("view-"+x).hidden=x!==v});const par=(v==="tree"||v==="list");document.querySelector(".filters").hidden=v!=="list";document.querySelector(".progress-card").hidden=!par;document.getElementById("seg").hidden=!par;document.querySelectorAll("#seg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===v?"true":"false"));const nv=par?"tree":v;document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===nv?"true":"false"));if(v==="today"&&typeof renderToday==="function")renderToday()}
 function resetFilter(){filt="all";document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.f==="all"?"true":"false"));applyFilter()}
 function goPhase(k){setView("list");resetFilter();const s=document.querySelector('.phase[data-phase="'+k+'"]');if(s)s.scrollIntoView({behavior:"smooth",block:"start"})}
 function goItem(id){setView("list");resetFilter();const li=document.querySelector('li[data-id="'+id+'"]');if(li){li.scrollIntoView({behavior:"smooth",block:"center"});li.classList.add("flash");setTimeout(()=>li.classList.remove("flash"),1800)}}
 document.getElementById("next").addEventListener("click",e=>{if(!NEXT)return;if(e.target.id==="ndone"){done[NEXT.id]=1;save();refresh()}else if(e.target.id==="nsee"){goItem(NEXT.id)}});
 document.getElementById("tree").addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;const k=b.dataset.go;goPhase(isNaN(k)?k:Number(k))});
-document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{setView(b.dataset.v);window.scrollTo({top:0})}));
+document.querySelectorAll(".tabs button, #seg button").forEach(b=>b.addEventListener("click",()=>{setView(b.dataset.v);window.scrollTo({top:0})}));
 /* ================= EMPLOI ET ANGLAIS ================= */
 const EXK="archi-ia-extra-v1";let ex={};
 try{ex=JSON.parse(localStorage.getItem(EXK)||"{}")||{}}catch(e){ex={}}
@@ -757,8 +843,9 @@ const C=[
 
 function jobPct(c){const ids=c.steps.map((s,i)=>"j-"+c.id+"-s"+i).concat(c.docs.map((s,i)=>"j-"+c.id+"-d"+i));const d=ids.filter(i=>ex.c[i]).length;return Math.round(d*100/ids.length)}
 function renderJob(){const sel=ex.country||"common";const box=document.getElementById("view-job");
- let h='<section class="sec"><h2>Trouver un emploi et obtenir le visa</h2><p>À utiliser quand tes compétences sont prêtes. Commence par la partie commune, puis ouvre le pays visé et suis les étapes dans l\'ordre. Chaque mot-clé ouvre directement la recherche sur LinkedIn ou Indeed.</p><div class="cnav" role="group" aria-label="Choisir un pays"><button type="button" class="cbtn" data-c="common" aria-pressed="'+(sel==="common")+'">Commun à tous les pays</button>'+C.map(c=>'<button type="button" class="cbtn" data-c="'+c.id+'" aria-pressed="'+(sel===c.id)+'"><span class="code">'+c.id+'</span>'+esc(c.name)+'<small>'+jobPct(c)+' %</small></button>').join("")+'</div></section>';
- if(sel==="common"){
+ let h='<section class="sec"><h2>Trouver un emploi et obtenir le visa</h2><p>À utiliser quand tes compétences sont prêtes. Commence par la partie commune, puis ouvre le pays visé et suis les étapes dans l\'ordre. Chaque mot-clé ouvre directement la recherche sur LinkedIn ou Indeed.</p><div class="cnav" role="group" aria-label="Choisir un pays"><button type="button" class="cbtn" data-c="suivi" aria-pressed="'+(sel==="suivi")+'">Suivi des candidatures<small>'+((ex.apps||[]).length)+'</small></button><button type="button" class="cbtn" data-c="common" aria-pressed="'+(sel==="common")+'">Commun à tous les pays</button>'+C.map(c=>'<button type="button" class="cbtn" data-c="'+c.id+'" aria-pressed="'+(sel===c.id)+'"><span class="code">'+c.id+'</span>'+esc(c.name)+'<small>'+jobPct(c)+' %</small></button>').join("")+'</div></section>';
+ if(sel==="suivi"){h+=trackerHtml()}
+ else if(sel==="common"){
   h+='<section class="sec"><h3>Les plateformes valables partout</h3>'+linkCards(COMMON_LINKS)+'</section>';
   h+='<section class="sec"><h3>La méthode LinkedIn</h3><ol class="cks">'+LI_STEPS.map((s,i)=>ckItem("j-li-"+i,s)).join("")+'</ol></section>';
   h+='<section class="sec"><h3>Les mots-clés selon ton profil</h3><p>Copie un mot-clé ou ouvre directement la recherche. Ajoute ensuite un des mots de la 3ᵉ liste pour trouver les offres qui aident au visa.</p><div class="subh">À utiliser maintenant</div>'+kwChips(KW_NOW)+'<div class="subh">Plus tard (après 1 à 2 ans d\'expérience)</div>'+kwChips(KW_LATER)+'<div class="subh">À ajouter à ta recherche</div>'+kwChips(KW_ADD)+'</section>';
@@ -844,9 +931,130 @@ function onExChange(e){const id=e.target.dataset&&e.target.dataset.ex;if(!id)ret
 document.getElementById("view-job").addEventListener("change",onExChange);
 document.getElementById("view-en").addEventListener("change",onExChange);
 
-refresh();renderJob();renderEn();
-const HV={"#liste":"list","#emploi":"job","#anglais":"en"};
-setView(HV[location.hash]||"tree");
+/* ================= AUJOURD'HUI ================= */
+if(!ex.dd)ex.dd={};if(!ex.apps)ex.apps=[];if(!ex.budget)ex.budget={};
+const TW=[
+{m:"Python : variables, types, conditions, boucles",mr:L("CS50P, semaines 0 et 1 (sous-titres)","https://cs50.harvard.edu/python/"),a:"Exercices Python + terminal Linux (commandes de base)",ar:L("France-IOI","https://www.france-ioi.org/")},
+{m:"Python : fonctions, modules, gestion des erreurs",mr:L("CS50P, semaines 2 et 3","https://cs50.harvard.edu/python/"),a:"Git et GitHub : dépôt, commits, branches, README",ar:L("The Missing Semester (Git)","https://missing.csail.mit.edu/")},
+{m:"Python : fichiers, bibliothèques, tests",mr:L("CS50P, semaines 4 et 5","https://cs50.harvard.edu/python/"),a:"n8n : installation et premiers workflows",ar:L("Cours officiels n8n","https://docs.n8n.io/courses/"),r:1},
+{m:"Python : programmation orientée objet (classes)",mr:L("CS50P, semaine 8","https://cs50.harvard.edu/python/"),a:"n8n : webhooks, API, JSON. Démo 1 : relance automatique des factures impayées",ar:L("Cours officiels n8n","https://docs.n8n.io/courses/"),r:1},
+{m:"SQL : SELECT, JOIN, GROUP BY",mr:L("Kaggle Learn : SQL","https://www.kaggle.com/learn"),a:"n8n + IA. Démo 2 : extraction de factures PDF vers un tableur",ar:L("Cours officiels n8n","https://docs.n8n.io/courses/"),r:1},
+{m:"API web avec FastAPI",mr:L("Documentation FastAPI","https://fastapi.tiangolo.com/"),a:"Projet 0 : API FastAPI + base PostgreSQL sur GitHub",ar:L("Documentation FastAPI","https://fastapi.tiangolo.com/")},
+{m:"API des LLM : messages, consignes, sorties JSON",mr:L("Claude Academy : Building with the Claude API","https://academy.claude.com/"),a:"Démo 3 : assistant de questions-réponses sur des documents (n8n + LLM)",ar:L("Cours officiels n8n","https://docs.n8n.io/courses/"),r:1},
+{m:"Appel d'outils (tool use) et prompt engineering structuré",mr:L("DeepLearning.AI Short Courses","https://www.deeplearning.ai/short-courses/"),a:"Profils Malt, Upwork, Fiverr + proposer tes démos à 2 entreprises",ar:L("Malt","https://www.malt.fr/"),r:1},
+{m:"Maths utiles : vecteurs, matrices, statistiques",mr:L("3Blue1Brown : algèbre linéaire","https://www.3blue1brown.com/topics/linear-algebra"),a:"Premier client : livrer une automatisation",ar:L("Upwork","https://www.upwork.com/"),r:1},
+{m:"Machine learning : régression et classification",mr:L("Machine Learning Specialization (Andrew Ng)","https://www.coursera.org/specializations/machine-learning-introduction"),a:"Kaggle Learn : Intro to Machine Learning",ar:L("Kaggle Learn","https://www.kaggle.com/learn")},
+{m:"Machine learning : évaluation, surapprentissage, validation croisée",mr:L("Machine Learning Specialization (Andrew Ng)","https://www.coursera.org/specializations/machine-learning-introduction"),a:"Projet 1 : modèle de prédiction (départ de clients)",ar:L("Kaggle Learn","https://www.kaggle.com/learn")},
+{m:"Pandas et préparation des données",mr:L("Kaggle Learn : Pandas","https://www.kaggle.com/learn"),a:"Projet 1 : rapport d'évaluation + clients en cours",ar:L("Kaggle","https://www.kaggle.com/"),r:1},
+{m:"Deep learning : réseaux de neurones, PyTorch",mr:L("fast.ai : Practical Deep Learning","https://course.fast.ai/"),a:"Automatisations clients et maintenance",ar:L("Cours officiels n8n","https://docs.n8n.io/courses/"),r:1},
+{m:"Embeddings et bases vectorielles",mr:L("Hugging Face Learn","https://huggingface.co/learn"),a:"Projet 2 : assistant RAG (partie 1)",ar:L("LLM Zoomcamp","https://github.com/DataTalksClub/llm-zoomcamp")},
+{m:"RAG complet : découpage, recherche hybride, reranking, citations",mr:L("LLM Zoomcamp","https://github.com/DataTalksClub/llm-zoomcamp"),a:"Projet 2 : assistant RAG déployé en ligne",ar:L("LLM Zoomcamp","https://github.com/DataTalksClub/llm-zoomcamp")},
+{m:"Évaluation des LLM : jeux de test, LLM juge, hallucinations",mr:L("LLM Zoomcamp","https://github.com/DataTalksClub/llm-zoomcamp"),a:"Projet 3 : banc d'évaluation + tableau coûts et qualité",ar:L("LLM Zoomcamp","https://github.com/DataTalksClub/llm-zoomcamp")},
+{m:"Agents IA et protocole MCP",mr:L("Hugging Face : Agents Course","https://huggingface.co/learn"),a:"Projet 4 : agent multi-outils avec validation humaine",ar:L("Claude Academy","https://academy.claude.com/")},
+{m:"Scrum : rôles, événements, artefacts",mr:L("Scrum Guide (français)","https://scrumguides.org/"),a:"Tests Scrum Open puis examen PSM I",ar:L("Scrum.org Open Assessments","https://www.scrum.org/open-assessments")},
+{m:"Docker : images, Dockerfile, docker compose",mr:L("Documentation Docker","https://docs.docker.com/get-started/"),a:"Mettre le Projet 2 dans Docker",ar:L("Documentation Docker","https://docs.docker.com/get-started/")},
+{m:"AWS : bases du cloud (Cloud Practitioner)",mr:L("AWS Skill Builder","https://skillbuilder.aws/"),a:"Déployer un projet sur AWS (offre gratuite, alertes de budget activées)",ar:L("AWS Skill Builder","https://skillbuilder.aws/")},
+{m:"AWS : révision et examen Cloud Practitioner",mr:L("AWS Certification","https://aws.amazon.com/certification/"),a:"Clients et maintenance",ar:L("Upwork","https://www.upwork.com/"),r:1},
+{m:"CI/CD avec GitHub Actions",mr:L("Documentation GitHub Actions","https://docs.github.com/actions"),a:"Tests et déploiement automatiques du Projet 2",ar:L("Documentation GitHub Actions","https://docs.github.com/actions")},
+{m:"MLOps : MLflow, suivi d'expériences",mr:L("MLOps Zoomcamp","https://github.com/DataTalksClub/mlops-zoomcamp"),a:"Projet 5 : pipeline MLOps (début)",ar:L("MLOps Zoomcamp","https://github.com/DataTalksClub/mlops-zoomcamp")},
+{m:"Kubernetes : pods, déploiements, services",mr:L("LFS158 : Introduction to Kubernetes","https://training.linuxfoundation.org/training/introduction-to-kubernetes/"),a:"Projet 5 : pipeline MLOps (suite)",ar:L("MLOps Zoomcamp","https://github.com/DataTalksClub/mlops-zoomcamp")}];
+const hm=x=>{const h=Math.floor(x),m=Math.round((x-h)*60);return pad(h)+":"+pad(m)};
+function curTW(){return Math.min(Math.max(ex.tw||1,1),TW.length+1)}
+function nextRelances(){const t=todayIso();return ex.apps.filter(a=>a.st==="envoyee"&&!a.rel&&addDays(a.d,7)<=t)}
+function renderToday(){const box=document.getElementById("view-today");const t=todayIso();const wd=new Date().getDay();const intense=(ex.formula||"int")==="int";const h0=ex.h0||8,ev=ex.ev||19;const w=curTW();const tw=TW[w-1];
+ const dt0=new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});const dateTxt=dt0.charAt(0).toUpperCase()+dt0.slice(1);
+ const dbtn=(k,lbl)=>{const on=!!ex.dd[t+":"+k];return `<button type="button" class="done-btn" data-dd="${k}" aria-pressed="${on}">${on?"Fait ✓":lbl}</button>`};
+ let h=`<section class="sec"><div class="dayhead"><div><div class="eyebrow">Programme technique · semaine ${Math.min(w,TW.length)} / ${TW.length}</div><h2>${esc(dateTxt)}</h2></div><div class="ctrls"><div class="modes"><button type="button" class="mini" data-formula="int" aria-pressed="${intense}">Intensive · 7 h</button><button type="button" class="mini" data-formula="light" aria-pressed="${!intense}">Jour chargé · 3 h 30</button></div><label class="mn">Début <select id="h0">${[5,6,7,8,9,10].map(x=>`<option value="${x}"${x===h0?" selected":""}>${x} h</option>`).join("")}</select></label><label class="mn">Soir <select id="ev">${[17,18,19,20,21].map(x=>`<option value="${x}"${x===ev?" selected":""}>${x} h</option>`).join("")}</select></label></div></div></section>`;
+ if(w>TW.length){h+=`<section class="sec"><h3>Les 24 semaines sont terminées</h3><p>Bravo. Continue avec les phases 7 à 11 du Parcours (MLOps, sécurité, architecture, différenciateurs, candidatures).</p><div class="tbtns"><button type="button" class="btn" data-go-view="tree">Ouvrir le Parcours</button><button type="button" class="mini" data-tw="-1">Revenir à la semaine 24</button></div></section>`}
+ else if(wd===0){h+=`<section class="sec"><h3>Dimanche : repos</h3><p>Le repos fait partie du plan. Prends 15 minutes pour ton bilan, puis profite de ta famille.</p><ul class="cks">${["Qu'est-ce que j'ai appris cette semaine ?","Qu'est-ce qui m'a bloqué, et comment le régler ?","Quelle est ma priorité n°1 pour la semaine prochaine ?"].map((q,i)=>ckItem("sun-"+t+"-"+i,q)).join("")}</ul><div class="tbtns"><button type="button" class="btn primary" data-tw="1">Semaine terminée : passer à la semaine ${w+1}</button><button type="button" class="btn" data-plus-go="sauvegarde">Sauvegarder ma progression</button></div></section>`}
+ else{const T=intense?{am:[h0,h0+3],mid:[h0+3,h0+3+1/3],pm:[h0+4,h0+7],ev:[ev,ev+1]}:{am:[h0,h0+1.5],mid:[h0+1.5,h0+1.5+1/6],pm:[h0+5,h0+6.5],ev:[ev,ev+.5]};
+  const enW=Math.min(w,12),enWeek=WEEKS[enW-1];const enTask=enWeek.k.find((k,ki)=>!ex.c["e-"+(enW-1)+"-"+ki]);
+  h+=`<div class="blocks">
+  <div class="blk am${ex.dd[t+":am"]?" ok":""}"><div class="hr"><b>Matin</b>${hm(T.am[0])} – ${hm(T.am[1])}</div><div class="bd"><span class="lab">Apprendre</span><span class="sk-name">${esc(tw.m)}</span><a href="${tw.mr.u}" target="_blank" rel="noopener">${esc(tw.mr.t)} ↗</a></div>${dbtn("am","Marquer fait")}</div>
+  <div class="blk mid${ex.dd[t+":mid"]?" ok":""}"><div class="hr"><b>Midi</b>${hm(T.mid[0])} – ${hm(T.mid[1])}</div><div class="bd"><span class="lab">Vocabulaire</span><span class="sk-name">Anki : révisions du jour</span><a href="https://ankiweb.net/" target="_blank" rel="noopener">AnkiWeb ↗</a></div>${dbtn("mid","Marquer fait")}</div>
+  <div class="blk pm${ex.dd[t+":pm"]?" ok":""}"><div class="hr"><b>Après-midi</b>${hm(T.pm[0])} – ${hm(T.pm[1])}</div><div class="bd"><span class="lab">Pratiquer${tw.r?' <span class="rev" style="font:600 .68rem var(--f-body);background:var(--green-soft);color:var(--green);border-radius:4px;padding:1px 6px">Revenu</span>':""}</span><span class="sk-name">${esc(tw.a)}</span><a href="${tw.ar.u}" target="_blank" rel="noopener">${esc(tw.ar.t)} ↗</a></div>${dbtn("pm","Marquer fait")}</div>
+  <div class="blk ev${ex.dd[t+":ev"]?" ok":""}"><div class="hr"><b>Soir</b>${hm(T.ev[0])} – ${hm(T.ev[1])}</div><div class="bd"><span class="lab">Anglais · semaine ${enW} : ${esc(enWeek.t)}</span><span class="sk-name">${esc(enTask?enTask[1]:"Conversation avec l'IA et shadowing")}</span><button type="button" class="mini" data-go-view="en" style="align-self:flex-start">Ouvrir la séance d'anglais</button></div>${dbtn("ev","Marquer fait")}</div></div>`;
+  if(wd===6)h+=`<div class="tbtns"><button type="button" class="btn primary" data-tw="1">Semaine terminée : passer à la semaine ${w+1}</button></div>`}
+ const rel=nextRelances();const last=ex.lastBackup;const days=last?Math.floor((new Date(todayIso())-new Date(last))/864e5):null;
+ h+=`<div class="grid2"><div class="mini-card"><h3>Prochaine étape du parcours</h3><p>${NEXT?esc(NEXT.t):"Tout est coché."}</p><button type="button" class="mini" data-go-view="tree" style="align-self:flex-start">Voir le parcours</button></div>
+ <div class="mini-card"><h3>Relances de candidatures</h3><p>${rel.length?rel.length+" candidature(s) envoyée(s) il y a plus de 7 jours sans relance.":"Aucune relance à faire aujourd'hui."}</p><button type="button" class="mini" data-go-job="suivi" style="align-self:flex-start">Ouvrir le suivi</button></div>
+ <div class="mini-card"><h3>Sauvegarde</h3><p>${last?(days===0?"Sauvegardé aujourd'hui.":"Dernière sauvegarde il y a "+days+" jour(s)."):"Tu n'as jamais sauvegardé ta progression."}</p><button type="button" class="mini" data-plus-go="sauvegarde" style="align-self:flex-start">Sauvegarder</button></div>
+ <div class="mini-card"><h3>Semaine du programme</h3><p>Tu peux avancer ou reculer si ton rythme est différent.</p><div class="tbtns"><button type="button" class="mini" data-tw="-1">← Semaine précédente</button><button type="button" class="mini" data-tw="1">Semaine suivante →</button></div></div></div>`;
+ h+=`<details class="acc"><summary>Le programme technique complet (24 semaines)</summary><ul class="prog">${TW.map((x,i)=>`<li class="${i+1===w?"cur":(i+1<w?"past":"")}"><span class="wn">S${i+1}</span><span><b>Matin :</b> ${esc(x.m)}<br><b>Après-midi :</b> ${esc(x.a)}${x.r?'<span class="rev">Revenu</span>':""}</span></li>`).join("")}</ul><p class="tree-help" style="margin-top:10px">Après la semaine 24 : MLOps, sécurité, architecture et candidatures, dans l'onglet Parcours.</p></details>`;
+ box.innerHTML=h}
+document.getElementById("view-today").addEventListener("click",e=>{const t=e.target;
+ const dd=t.closest("[data-dd]");if(dd){const k=todayIso()+":"+dd.dataset.dd;if(ex.dd[k])delete ex.dd[k];else ex.dd[k]=1;exSave();renderToday();return}
+ const fm=t.closest("[data-formula]");if(fm){ex.formula=fm.dataset.formula;exSave();renderToday();return}
+ const tw=t.closest("[data-tw]");if(tw){ex.tw=Math.min(Math.max(curTW()+Number(tw.dataset.tw),1),TW.length+1);exSave();renderToday();window.scrollTo({top:0});toast("Semaine "+Math.min(ex.tw,TW.length));return}
+ const gv=t.closest("[data-go-view]");if(gv){setView(gv.dataset.goView);window.scrollTo({top:0});return}
+ const gj=t.closest("[data-go-job]");if(gj){ex.country=gj.dataset.goJob;exSave();renderJob();setView("job");window.scrollTo({top:0});return}
+ const pg=t.closest("[data-plus-go]");if(pg){ex.plus=pg.dataset.plusGo;exSave();renderPlus();setView("plus");window.scrollTo({top:0})}});
+document.getElementById("view-today").addEventListener("change",e=>{if(e.target.id==="h0"){ex.h0=Number(e.target.value);exSave();renderToday()}else if(e.target.id==="ev"){ex.ev=Number(e.target.value);exSave();renderToday()}else onExChange(e)});
+
+/* ================= SUIVI DES CANDIDATURES ================= */
+const STATUS={aenvoyer:"À envoyer",envoyee:"Envoyée",entretien:"Entretien",offre:"Offre",refus:"Refus"};
+function trackerHtml(){const A=ex.apps;const sent=A.filter(a=>a.st!=="aenvoyer").length;const resp=A.filter(a=>["entretien","offre","refus"].includes(a.st)).length;const iv=A.filter(a=>a.st==="entretien"||a.st==="offre").length;const rel=nextRelances().map(a=>a.id);
+ let h=`<section class="sec"><h3>Suivi des candidatures</h3><p>Note chaque candidature. Celles envoyées depuis plus de 7 jours sans réponse passent en orange : c'est le moment de relancer.</p><div class="kpis"><div class="stat"><b>${A.length}</b><span>candidatures</span></div><div class="stat"><b>${sent}</b><span>envoyées</span></div><div class="stat"><b>${iv}</b><span>entretiens ou offres</span></div><div class="stat"><b>${sent?Math.round(resp*100/sent):0} %</b><span>taux de réponse</span></div></div></section>`;
+ h+=`<section class="sec"><h3>Ajouter une candidature</h3><form class="form" id="app-form" autocomplete="off"><label>Entreprise<input id="app-co" required placeholder="Ex. Mistral AI"></label><label>Poste<input id="app-role" required placeholder="Ex. AI Engineer junior"></label><label>Pays<select id="app-country">${C.map(c=>`<option>${esc(c.name)}</option>`).join("")}<option>Autre / à distance</option></select></label><label>Date d'envoi<input type="date" id="app-date" value="${todayIso()}"></label><label>Statut<select id="app-st">${Object.entries(STATUS).map(([k,v])=>`<option value="${k}"${k==="envoyee"?" selected":""}>${v}</option>`).join("")}</select></label><label>Lien de l'offre (facultatif)<input id="app-link" type="url" placeholder="https://…"></label><div class="full"><button type="submit" class="btn primary">Ajouter</button></div></form></section>`;
+ h+=`<section class="sec"><h3>Mes candidatures</h3>${A.length?`<div class="apps">${A.slice().sort((x,y)=>y.d.localeCompare(x.d)).map(a=>`<div class="app${rel.includes(a.id)?" due":""}"><div><b>${esc(a.co)}</b> · ${esc(a.role)}<br><small>${esc(a.country)} · envoyée le ${a.d.split("-").reverse().join("/")}${a.rel?" · relancée le "+a.rel.split("-").reverse().join("/"):""}${rel.includes(a.id)?" · <strong>à relancer</strong>":""}</small>${a.link?`<br><a href="${esc(a.link)}" target="_blank" rel="noopener">Voir l'offre ↗</a>`:""}</div><div class="acts"><select data-app-st="${a.id}" aria-label="Statut">${Object.entries(STATUS).map(([k,v])=>`<option value="${k}"${k===a.st?" selected":""}>${v}</option>`).join("")}</select>${a.st==="envoyee"&&!a.rel?`<button type="button" class="mini" data-app-rel="${a.id}">Relance faite</button>`:""}<button type="button" class="mini" data-app-del="${a.id}">Supprimer</button></div></div>`).join("")}</div>`:`<p>Aucune candidature pour l'instant. Ajoute ta première avec le formulaire ci-dessus.</p>`}</section>`;
+ return h}
+const vj=document.getElementById("view-job");
+vj.addEventListener("submit",e=>{if(e.target.id!=="app-form")return;e.preventDefault();const g=id=>document.getElementById(id).value.trim();const link=g("app-link");ex.apps.push({id:Date.now().toString(36),co:g("app-co"),role:g("app-role"),country:g("app-country"),d:g("app-date")||todayIso(),st:g("app-st"),link:/^https?:\/\//.test(link)?link:""});exSave();renderJob();toast("Candidature ajoutée")});
+vj.addEventListener("change",e=>{const s=e.target.dataset&&e.target.dataset.appSt;if(!s)return;const a=ex.apps.find(x=>x.id===s);if(a){a.st=e.target.value;exSave();renderJob()}});
+vj.addEventListener("click",e=>{const r=e.target.closest("[data-app-rel]");if(r){const a=ex.apps.find(x=>x.id===r.dataset.appRel);if(a){a.rel=todayIso();exSave();renderJob();toast("Relance notée")}return}const d=e.target.closest("[data-app-del]");if(d){if(d.dataset.confirm){ex.apps=ex.apps.filter(x=>x.id!==d.dataset.appDel);exSave();renderJob();toast("Supprimée")}else{d.dataset.confirm="1";d.textContent="Confirmer la suppression"}}});
+
+/* ================= PLUS ================= */
+const PLUS=[["revenus","Revenus"],["budget","Budget"],["installation","Installation en France"],["femme","Plan de ton épouse"],["cv","CV et LinkedIn"],["entretiens","Entretiens"],["sauvegarde","Sauvegarde"]];
+const BUD=[["cert","Certifications (AWS, PSM I, Terraform…)","Prix officiels en dollars, convertis",600],["api","IA et cloud pendant la formation","≈ 15 € par mois pendant 12 mois",180],["pc","Ordinateur, si besoin","16 Go de mémoire conseillés",800],["docs","Légalisations, traductions, casier judiciaire","",150],["visa","Visas long séjour (3 personnes)","Frais de visa et de centre de dépôt : vérifie sur France-Visas",350],["timbre","Timbres fiscaux des titres de séjour","350 € par adulte en France",700],["avion","Billets d'avion Cotonou → Paris (3 personnes)","Aller simple, selon la saison",1800],["assur","Assurance santé des premières semaines","",150],["loge","Logement : caution, premier loyer, frais","Environ 2 mois de loyer",2400],["vie","Vivre 2 mois avant le premier salaire (famille de 3)","",3000],["imprevu","Imprévus","",1000]];
+const FCFA=655.957;const eur=n=>Math.round(n).toLocaleString("fr-FR")+" €";const xof=n=>Math.round(n*FCFA).toLocaleString("fr-FR")+" FCFA";
+const INST=[["Avant le départ",[["Réserver un logement temporaire pour le premier mois","Résidence, location meublée"],["Préparer ton dossier de location","Contrat de travail, pièces d'identité, futurs bulletins de salaire"],["Vérifier ton éligibilité à la garantie Visale (garant gratuit)","visale.fr"],["Prendre une assurance santé pour les premières semaines",""],["Emporter les originaux et des copies de tous les documents","Actes, diplômes, carnet de santé de l'enfant"]]],["La première semaine",[["Valider ton visa ou demander ta carte de séjour sur l'ANEF",""],["Ouvrir un compte bancaire","Indispensable pour recevoir ton salaire"],["Obtenir ton numéro de sécurité sociale","Ton employeur et ameli.fr t'accompagnent"],["Prendre un forfait téléphonique français",""],["Inscrire ton enfant à l'école : d'abord à la mairie, puis à l'école","L'instruction est obligatoire de 3 à 16 ans"]]],["Le premier mois",[["Recevoir ta carte Vitale et choisir un médecin traitant",""],["Adhérer à la mutuelle de ton entreprise",""],["Vérifier tes droits à la CAF (aides familiales et logement)","caf.fr"],["Échanger ton permis de conduire béninois si c'est possible","Vérifie la liste des pays concernés et le délai sur le site de l'ANTS"],["Chercher un logement à long terme",""]]]];
+const INST_L=[L("ANEF","https://administration-etrangers-en-france.interieur.gouv.fr/","Titre de séjour"),L("Visale","https://www.visale.fr/","Garantie de loyer gratuite"),L("Ameli","https://www.ameli.fr/","Sécurité sociale"),L("CAF","https://www.caf.fr/","Aides familiales et logement"),L("ANTS","https://ants.gouv.fr/","Permis de conduire"),L("Service-public","https://www.service-public.gouv.fr/","Toutes les démarches"),L("Welcome to France","https://www.welcometofrance.com/","Guide d'installation")];
+const FEM=[["Préparer son passeport valide au moins 2 ans",""],["Déposer sa demande de visa « famille accompagnante » en même temps que la tienne","Sur France-Visas, même rendez-vous Capago"],["Rassembler l'acte de mariage légalisé",""],["Rassembler ses diplômes et demander une attestation de comparabilité","ENIC-NARIC France"],["Rédiger son CV au format français",""],["À l'arrivée : demander sa carte « talent-famille » (elle autorise à travailler)",""],["S'inscrire à France Travail pour l'accompagnement et les formations",""],["Chercher un emploi ou une formation dans son domaine",""]];
+const FEM_L=[L("Carte talent-famille","https://www.service-public.gouv.fr/particuliers/vosdroits/F35792","Conditions et droit au travail"),L("France-Visas","https://france-visas.gouv.fr/benin","Dépôt depuis le Bénin"),L("France Éducation international (ENIC-NARIC)","https://www.france-education-international.fr/","Reconnaissance du diplôme"),L("France Travail","https://www.francetravail.fr/","Emploi et formations")];
+const CVT=[["Titre du CV","Développeur IA junior · Python · IA générative (LLM, RAG, automatisation)"],["Résumé (3 lignes)","Développeur IA formé à l'IFRI (licence Internet et Multimédia), je conçois des assistants et des automatisations basés sur les LLM : RAG, agents et workflows n8n. [Ajoute une réalisation chiffrée, ex. : « automatisation qui fait gagner 6 h par semaine à une PME »]. Éligible au visa Talent : aucune autorisation de travail à demander pour l'employeur."],["Titre LinkedIn","Développeur IA | Python · LLM · RAG · Automatisation (n8n) | Ouvert à la France, la Belgique et le Luxembourg"],["Section « À propos » LinkedIn","Je construis des outils d'IA utiles : assistants qui répondent à partir des documents d'une entreprise, agents qui automatisent des tâches répétitives, workflows qui font gagner des heures chaque semaine.\n\nCe que j'ai réalisé :\n• [Projet 1 + chiffre]\n• [Projet 2 + chiffre]\n• [Client + résultat]\n\nCompétences : Python, FastAPI, LLM (Claude, GPT, Mistral), RAG, n8n, SQL, Git, Docker.\n\nJe cherche un poste de développeur IA en France, en Belgique ou au Luxembourg. Éligible au visa Talent."],["Structure du CV (1 à 2 pages)","1. Titre + coordonnées + liens GitHub et LinkedIn\n2. Résumé de 3 lignes\n3. Compétences techniques (regroupées)\n4. Projets (3 à 4, avec chiffres et liens)\n5. Expériences (missions freelance comprises)\n6. Formation (IFRI, certifications)\n7. Langues (français, anglais avec niveau)"]];
+const QB=[["Personnel","Présente-toi en 2 minutes.","Qui tu es (développeur IA), ton parcours (IFRI, projets), une réalisation chiffrée, ce que tu cherches et pourquoi cette entreprise."],["Personnel","Pourquoi veux-tu travailler chez nous ?","Relie tes compétences aux produits de l'entreprise, montre que tu as étudié son activité, parle de ce que tu apportes."],["Personnel","Parle d'un projet dont tu es fier.","Méthode STAR : situation, tâche, actions, résultat chiffré."],["Personnel","Comment gères-tu un désaccord dans l'équipe ?","Écouter, argumenter avec des faits ou des mesures, accepter la décision de l'équipe, en tirer une leçon."],["Personnel","Quelles sont tes prétentions salariales ?","Une fourchette réaliste, au-dessus du seuil du visa visé (59 373 € pour la carte bleue en France), fondée sur le marché."],["Python","Différence entre une liste et un tuple ?","La liste est modifiable, le tuple non. Un tuple peut servir de clé de dictionnaire."],["Python","Qu'est-ce qu'un dictionnaire ?","Une structure clé → valeur, avec un accès rapide par clé."],["Python","À quoi sert un environnement virtuel ?","À isoler les dépendances d'un projet pour éviter les conflits de versions."],["Python","Comment gérer une erreur ?","Avec try / except en attrapant l'exception précise, et finally pour le nettoyage."],["Python","Qu'est-ce qu'une compréhension de liste ?","Une syntaxe compacte : [x * 2 for x in nombres if x > 0]."],["Python","Qu'est-ce qu'un décorateur ?","Une fonction qui en enveloppe une autre pour ajouter un comportement (journalisation, cache, contrôle d'accès)."],["IA et ML","Apprentissage supervisé ou non supervisé ?","Supervisé : données avec la bonne réponse. Non supervisé : sans étiquettes, on cherche des structures (regroupements)."],["IA et ML","Qu'est-ce que le surapprentissage ?","Le modèle mémorise l'entraînement et généralise mal. Remèdes : plus de données, régularisation, validation croisée."],["IA et ML","Précision ou rappel ?","Précision : parmi les prédictions positives, combien sont justes. Rappel : parmi les vrais positifs, combien sont trouvés."],["IA et ML","Pourquoi séparer entraînement et test ?","Pour mesurer la performance sur des données jamais vues."],["LLM et RAG","Qu'est-ce qu'un RAG ?","On recherche les passages pertinents dans des documents, puis on les donne au LLM pour qu'il réponde à partir de vraies sources."],["LLM et RAG","Qu'est-ce qu'un embedding ?","Une représentation numérique d'un texte : deux textes proches ont des vecteurs proches."],["LLM et RAG","Comment réduire les hallucinations ?","RAG avec citations, consignes strictes, évaluation sur un jeu de test, refus de répondre sans source."],["LLM et RAG","Comment évaluer un assistant LLM ?","Un jeu de questions avec réponses attendues, des mesures d'exactitude et de fidélité aux sources, un LLM juge, des retours utilisateurs."],["LLM et RAG","Comment réduire le coût d'un système LLM ?","Cache de prompt, petit modèle pour les tâches simples, réponses plus courtes, traitement par lots."],["LLM et RAG","Qu'est-ce qu'un agent IA ?","Un LLM qui appelle des outils (API, base de données) et enchaîne des étapes pour atteindre un objectif."],["System design","Comment servir une API d'IA à 10 000 utilisateurs ?","API dans Docker, plusieurs instances derrière un répartiteur de charge, cache, file d'attente pour les tâches longues, surveillance."],["System design","À quoi sert une file de messages ?","À découpler les services et traiter les tâches longues en arrière-plan sans bloquer l'utilisateur."],["System design","Pourquoi Docker ?","Le même environnement partout : développement, test, production."],["System design","Qu'est-ce que le CI/CD ?","Des tests et un déploiement automatiques à chaque modification du code."]];
+let qb={cat:"Tous",i:0,flip:false};
+const REV_STEPS=["Installer n8n et suivre ses cours officiels gratuits","Construire 3 démos : relance de factures, extraction de factures, assistant de questions-réponses","Filmer une vidéo de 2 minutes pour chaque démo","Créer tes profils Malt, Upwork et Fiverr, avec les démos","Vérifier comment recevoir les paiements au Bénin (PayPal, Payoneer, virement) avant la première mission","Envoyer 20 messages de prospection par semaine (PME, agences en France, entreprises de Cotonou)","Réaliser 2 missions à petit prix contre un témoignage chiffré","Proposer un forfait de maintenance mensuel à chaque client"];
+function renderPlus(){const box=document.getElementById("view-plus");const sel=ex.plus||"revenus";
+ let h=`<section class="sec"><h2>Plus</h2><div class="cnav" role="group" aria-label="Choisir un outil">${PLUS.map(p=>`<button type="button" class="cbtn" data-p="${p[0]}" aria-pressed="${sel===p[0]}">${esc(p[1])}</button>`).join("")}</div></section>`;
+ if(sel==="revenus"){
+  h+=`<section class="sec"><h3>Gagner 1 500 € par mois en télétravail, pendant ta formation</h3><p class="why">Objectif réaliste : premiers revenus en 2 à 4 mois, 1 500 € par mois vers le 6ᵉ à 12ᵉ mois. Ce qui rend le revenu stable, ce sont les forfaits de maintenance mensuels.</p><div class="tierlist">
+  <div class="tier"><span class="when">Tout de suite · mois 1 à 3</span><h4>Sites web pour PME, avec une petite touche d'automatisation</h4><p>Ta licence Internet et Multimédia te permet de commencer maintenant. WordPress reste la compétence la plus demandée sur Malt, avec un tarif médian d'environ 317 € par jour pour un freelance junior (baromètre Malt, juillet 2026). Propose un site vitrine avec formulaire, bouton WhatsApp et réponse automatique aux demandes.</p></div>
+  <div class="tier"><span class="when">Mois 1 à 3 · à tester</span><h4>Entraîneur d'IA en français</h4><p>Des plateformes paient des francophones pour évaluer et améliorer des IA : Outlier annonce jusqu'à 25 $ de l'heure, DataAnnotation jusqu'à 40 $. L'accès dépend du pays : inscris-toi pour vérifier si le Bénin est accepté. Ne paie jamais pour y accéder.</p></div>
+  <div class="tier"><span class="when">Mois 2 à 6 · le cœur du plan</span><h4>Automatisation n8n + IA pour les entreprises</h4><p>Selon Malt, l'usage de n8n a été multiplié par 14 en un an et la demande des PME en IA a plus que doublé. Ce qui se vend : relances automatiques des impayés, extraction de factures vers un tableur, reporting envoyé chaque lundi, nouveaux contacts ajoutés au CRM. En France, un workflow se vend environ 800 à 3 500 € et la maintenance 300 à 2 000 € par mois.</p></div>
+  <div class="tier"><span class="when">Mois 6 et après</span><h4>Intégration de LLM, assistants RAG et agents</h4><p>Sur Malt, les missions IA portent surtout sur l'intégration de LLM (45 %), les systèmes RAG (35 %) et les agents (15 %). Ce sont exactement les projets de ta feuille de route.</p></div></div></section>`;
+  h+=`<section class="sec"><h3>Exemple pour atteindre 1 500 € par mois (vers le 6ᵉ mois)</h3><div class="tbl"><table class="mt"><thead><tr><th>Source</th><th>Volume</th><th>Montant</th></tr></thead><tbody><tr><td>Site web pour une PME</td><td>1 par mois</td><td class="num">400 €</td></tr><tr><td>Workflow d'automatisation</td><td>1 par mois</td><td class="num">600 €</td></tr><tr><td>Forfaits de maintenance</td><td>2 clients</td><td class="num">500 €</td></tr><tr><td><b>Total</b></td><td></td><td class="num"><b>1 500 €</b></td></tr></tbody></table></div><p class="tree-help">Montants d'exemple pour un débutant. Ajuste-les selon tes clients et ton pays de facturation.</p></section>`;
+  h+=`<section class="sec"><h3>Démarrer, étape par étape</h3><ol class="cks">${REV_STEPS.map((s,i)=>ckItem("p-r-"+i,s)).join("")}</ol></section>`;
+  h+=`<section class="sec"><h3>Les liens utiles</h3>${linkCards([L("Cours officiels n8n","https://docs.n8n.io/courses/","Gratuits"),L("Malt","https://www.malt.fr/","Clients français"),L("Upwork","https://www.upwork.com/","Clients internationaux"),L("Fiverr","https://www.fiverr.com/","Offres à prix fixe"),L("Outlier (français)","https://outlier.ai/languages/fr-fr","Entraîneur d'IA"),L("DataAnnotation (français)","https://dataannotation.tech/french","Entraîneur d'IA"),L("Payoneer","https://www.payoneer.com/","Recevoir des paiements internationaux")])}</section>`;
+  h+=`<div class="warn"><h3>À savoir</h3><ul><li>Chaque heure de freelance est prise sur ton temps d'apprentissage : garde au moins les matinées pour apprendre.</li><li>Déclare tes revenus avec une structure légale au Bénin : tes factures prouveront aussi ton expérience pour le visa.</li><li>Les chatbots génériques pour commerçants se vendent mal : vends un résultat mesurable (heures gagnées, impayés récupérés).</li></ul></div>`}
+ else if(sel==="budget"){const B=ex.budget;const val=r=>B[r[0]]!==undefined?B[r[0]]:r[3];const tot=BUD.reduce((s,r)=>s+(Number(val(r))||0),0);const mo=Number(B.mois||12);
+  h+=`<section class="sec"><h3>Le budget complet du projet</h3><p>Montants estimés, à adapter : change chaque ligne selon tes informations réelles. Tout est recalculé automatiquement.</p><div>${BUD.map(r=>`<div class="brow"><label for="b-${r[0]}">${esc(r[1])}${r[2]?`<small>${esc(r[2])}</small>`:""}</label><input class="inp money" type="number" min="0" step="10" id="b-${r[0]}" data-b="${r[0]}" value="${val(r)}"></div>`).join("")}</div><div class="btotal"><span>Total estimé</span><b id="b-tot">${eur(tot)}</b><span id="b-xof">${xof(tot)}</span></div><div class="brow"><label for="b-mois">Dans combien de mois veux-tu partir ?</label><input class="inp money" type="number" min="1" max="60" id="b-mois" data-b="mois" value="${mo}"></div><p class="why" id="b-month">Il faut mettre de côté environ <b>${eur(tot/mo)}</b> par mois, soit <b>${xof(tot/mo)}</b>.</p><p class="tree-help">1 € = 655,957 FCFA (taux fixe). Vérifie les frais de visa sur France-Visas et les prix des billets au moment de réserver.</p></section>`}
+ else if(sel==="installation"){h+=`<section class="sec"><h3>S'installer en France avec ta famille</h3><p>Coche au fur et à mesure. Les démarches peuvent changer : vérifie chaque point sur le site officiel indiqué.</p>${INST.map((g,gi)=>`<div class="subh">${esc(g[0])}</div><ul class="cks">${g[1].map((x,i)=>ckItem("p-i-"+gi+"-"+i,x[0],x[1])).join("")}</ul>`).join("")}</section><section class="sec"><h3>Les sites officiels</h3>${linkCards(INST_L)}</section>`}
+ else if(sel==="femme"){h+=`<section class="sec"><h3>Le plan de ton épouse</h3><p class="why">Avec la carte « talent-famille », ton épouse a le droit de travailler en France dès son arrivée. Préparez son projet en même temps que le tien.</p><ol class="cks">${FEM.map((x,i)=>ckItem("p-f-"+i,x[0],x[1])).join("")}</ol></section><section class="sec"><h3>Les liens utiles</h3>${linkCards(FEM_L)}</section>`}
+ else if(sel==="cv"){h+=`<section class="sec"><h3>Ton CV et ton profil LinkedIn</h3><p>Des modèles prêts à adapter. Remplace les parties entre crochets par tes vraies réalisations. Écris en texte normal, sans lettres stylisées.</p>${CVT.map((c,i)=>`<div class="subh">${esc(c[0])}</div><div class="tpl">${esc(c[1])}</div><div><button type="button" class="mini" data-copy="${esc(c[1])}">Copier</button></div>`).join("")}</section>`}
+ else if(sel==="entretiens"){const cats=["Tous",...new Set(QB.map(q=>q[0]))];const list=qb.cat==="Tous"?QB:QB.filter(q=>q[0]===qb.cat);if(qb.i>=list.length)qb.i=0;const q=list[qb.i];
+  h+=`<section class="sec"><h3>S'entraîner aux entretiens</h3><p>Réponds à voix haute, puis retourne la carte pour comparer. Entraîne-toi aussi en anglais avec l'IA (onglet Anglais, semaines 10 à 12).</p><div class="modes">${cats.map(c=>`<button type="button" class="mini" data-qcat="${esc(c)}" aria-pressed="${qb.cat===c}">${esc(c)}</button>`).join("")}</div><div class="fcwrap"><button type="button" class="fc${qb.flip?" flip":""}" id="qfc" aria-label="Retourner la carte" style="height:240px"><span class="fc-in"><span class="fc-f"><i>${esc(q[0])}</i><b style="font-size:1.3rem">${esc(q[1])}</b><i>Touche pour voir la réponse</i></span><span class="fc-b"><b style="font-size:1rem;font-weight:500">${esc(q[2])}</b></span></span></button><div class="fcnav"><button type="button" class="mini" id="q-prev">← Précédente</button><span class="mn">${qb.i+1} / ${list.length}</span><button type="button" class="mini" id="q-next">Suivante →</button><button type="button" class="mini" id="q-rand">Au hasard</button></div></div></section>`}
+ else if(sel==="sauvegarde"){const last=ex.lastBackup;
+  h+=`<section class="sec"><h3>Sauvegarder ta progression</h3><p>Ta progression est enregistrée dans ce navigateur uniquement. Copie ce code et garde-le dans tes notes ou envoie-le-toi sur WhatsApp. Fais-le chaque dimanche.</p><p class="why">${last?"Dernière sauvegarde : "+last.split("-").reverse().join("/"):"Aucune sauvegarde pour l'instant."}</p><div class="tbtns"><button type="button" class="btn primary" id="bk-make">Créer mon code de sauvegarde</button></div><div class="code-box" id="bk-code" hidden></div><div class="tbtns"><button type="button" class="mini" id="bk-copy" hidden>Copier le code</button></div></section>
+  <section class="sec"><h3>Restaurer sur un autre appareil</h3><p>Colle ici ton code de sauvegarde. Attention : la progression actuelle de cet appareil sera remplacée.</p><textarea class="inp" id="bk-in" rows="4" placeholder="Colle ton code ici"></textarea><div class="tbtns"><button type="button" class="btn" id="bk-restore">Restaurer ma progression</button></div></section>`}
+ box.innerHTML=h}
+function backupCode(){return btoa(unescape(encodeURIComponent(JSON.stringify({v:1,done:done,ex:ex}))))}
+const vp=document.getElementById("view-plus");
+vp.addEventListener("click",e=>{const t=e.target;
+ const p=t.closest("[data-p]");if(p){ex.plus=p.dataset.p;exSave();renderPlus();return}
+ const cp=t.closest("[data-copy]");if(cp){copyText(cp.dataset.copy);return}
+ const qc=t.closest("[data-qcat]");if(qc){qb={cat:qc.dataset.qcat,i:0,flip:false};renderPlus();return}
+ if(t.closest("#qfc")){qb.flip=!qb.flip;document.getElementById("qfc").classList.toggle("flip",qb.flip);return}
+ if(t.id==="q-next"||t.id==="q-prev"||t.id==="q-rand"){const n=(qb.cat==="Tous"?QB:QB.filter(q=>q[0]===qb.cat)).length;qb.i=t.id==="q-rand"?Math.floor(Math.random()*n):(qb.i+(t.id==="q-next"?1:n-1))%n;qb.flip=false;renderPlus();return}
+ if(t.id==="bk-make"){ex.lastBackup=todayIso();exSave();const code=backupCode();const b=document.getElementById("bk-code");b.textContent=code;b.hidden=false;document.getElementById("bk-copy").hidden=false;toast("Code créé : copie-le");return}
+ if(t.id==="bk-copy"){copyText(document.getElementById("bk-code").textContent);return}
+ if(t.id==="bk-restore"){const s=document.getElementById("bk-in").value.trim();try{const data=JSON.parse(decodeURIComponent(escape(atob(s))));if(!data||data.v!==1||typeof data.done!=="object"||typeof data.ex!=="object")throw 0;done=data.done||{};ex=data.ex||{};["c","days","vocab","dd","apps","budget"].forEach(k=>{if(!ex[k])ex[k]=(k==="days"||k==="apps")?[]:{}});save();exSave();refresh();renderJob();renderEn();renderPlus();renderToday();toast("Progression restaurée")}catch(err){toast("Code invalide : vérifie qu'il est complet")}}});
+vp.addEventListener("input",e=>{const k=e.target.dataset&&e.target.dataset.b;if(!k)return;ex.budget[k]=Math.max(0,Number(e.target.value)||0);exSave();const B=ex.budget;const tot=BUD.reduce((s,r)=>s+(Number(B[r[0]]!==undefined?B[r[0]]:r[3])||0),0);const mo=Math.max(1,Number(B.mois||12));document.getElementById("b-tot").textContent=eur(tot);document.getElementById("b-xof").textContent=xof(tot);document.getElementById("b-month").innerHTML="Il faut mettre de côté environ <b>"+eur(tot/mo)+"</b> par mois, soit <b>"+xof(tot/mo)+"</b>."});
+vp.addEventListener("change",onExChange);
+
+refresh();renderJob();renderEn();renderPlus();renderToday();
+const HV={"#aujourdhui":"today","#parcours":"tree","#liste":"list","#emploi":"job","#anglais":"en","#plus":"plus"};
+setView(HV[location.hash]||"today");
 </script>
 
 </body>

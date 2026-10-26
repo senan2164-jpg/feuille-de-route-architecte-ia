@@ -1,11 +1,12 @@
 # Feuille de route Architecte IA
 
-Ma feuille de route personnelle pour devenir Architecte IA, en 4 onglets :
+Ma feuille de route personnelle pour devenir Architecte IA, en 5 sections :
 
-- **Parcours** : le chemin étape par étape et ma prochaine action.
-- **Liste détaillée** : compétences, cours, certifications et projets à cocher.
-- **Trouver un emploi** : plateformes, mots-clés, documents et cheminement du visa pour 9 pays (France, Belgique, Luxembourg, Allemagne, Pays-Bas, Suisse, Québec, Irlande, Portugal).
-- **Anglais en 3 mois** : plan intensif de 12 semaines, séance guidée avec minuteur, calendrier de 84 jours et cartes de vocabulaire.
+- **Aujourd'hui** : ma journée (matin, midi, après-midi, soir) avec la compétence exacte à travailler, selon un programme technique de 24 semaines.
+- **Parcours** : le chemin étape par étape et la liste détaillée des compétences, cours, certifications et projets.
+- **Anglais** : plan intensif de 12 semaines, séance guidée avec minuteur, calendrier de 84 jours et cartes de vocabulaire.
+- **Emploi** : suivi des candidatures, plateformes, mots-clés, documents et cheminement du visa pour 9 pays.
+- **Plus** : revenus en télétravail, budget, installation en France, plan de mon épouse, CV et LinkedIn, entretiens, sauvegarde de la progression.
 
 Le site tient dans un seul fichier : `index.html`. Il n'a besoin d'aucune installation.
 
@@ -30,6 +31,6 @@ Le site tient dans un seul fichier : `index.html`. Il n'a besoin d'aucune instal
 Remplace `index.html` dans GitHub (**Add file > Upload files**). Vercel republie le site automatiquement en moins d'une minute.
 
 ## Bon à savoir
-- **Ta progression (les cases cochées) est enregistrée dans le navigateur** que tu utilises. Elle ne passe pas d'un appareil à l'autre : coche toujours depuis le même téléphone ou le même ordinateur.
+- **Ta progression est enregistrée dans le navigateur** que tu utilises. Pour la retrouver sur un autre appareil, utilise **Plus → Sauvegarde** : copie ton code, puis colle-le sur l'autre appareil.
 - Si tu vides les données de ton navigateur, les cases cochées sont effacées. Le contenu du site, lui, reste en ligne.
 - Infos vérifiées le 26 octobre 2026. Les prix et examens évoluent : vérifie sur le site officiel avant de payer.
