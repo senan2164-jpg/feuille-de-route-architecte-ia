@@ -677,7 +677,7 @@ const CERTS=[
 ];
 const KEY="archi-ia-roadmap-v1";let done={};
 try{done=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){done={}}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}touch()}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const tagFor=it=>{let h="";if(it.star)h+='<span class="tag t-star">★ Essentiel</span>';
  if(it.k==="cert")h+='<span class="tag t-cert">Certification</span>'+(it.p?'<span class="tag t-paid">'+esc(it.p)+'</span>':"");
@@ -739,7 +739,7 @@ document.querySelectorAll(".tabs button, #seg button").forEach(b=>b.addEventList
 const EXK="archi-ia-extra-v1";let ex={};
 try{ex=JSON.parse(localStorage.getItem(EXK)||"{}")||{}}catch(e){ex={}}
 if(!ex.c)ex.c={};if(!ex.days)ex.days=[];if(!ex.vocab)ex.vocab={};
-function exSave(){try{localStorage.setItem(EXK,JSON.stringify(ex))}catch(e){}}
+function exSave(){try{localStorage.setItem(EXK,JSON.stringify(ex))}catch(e){}touch()}
 let toastT;function toast(m){const t=document.getElementById("toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{t.hidden=true},2200)}
 function fallbackCopy(txt){const ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}ta.remove();toast(ok?"Copié":"Sélectionne le texte pour le copier")}
 function copyText(txt){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>toast("Copié")).catch(()=>fallbackCopy(txt))}else fallbackCopy(txt)}
@@ -978,7 +978,7 @@ function renderToday(){const box=document.getElementById("view-today");const t=t
  const rel=nextRelances();const last=ex.lastBackup;const days=last?Math.floor((new Date(todayIso())-new Date(last))/864e5):null;
  h+=`<div class="grid2"><div class="mini-card"><h3>Prochaine étape du parcours</h3><p>${NEXT?esc(NEXT.t):"Tout est coché."}</p><button type="button" class="mini" data-go-view="tree" style="align-self:flex-start">Voir le parcours</button></div>
  <div class="mini-card"><h3>Relances de candidatures</h3><p>${rel.length?rel.length+" candidature(s) envoyée(s) il y a plus de 7 jours sans relance.":"Aucune relance à faire aujourd'hui."}</p><button type="button" class="mini" data-go-job="suivi" style="align-self:flex-start">Ouvrir le suivi</button></div>
- <div class="mini-card"><h3>Sauvegarde</h3><p>${last?(days===0?"Sauvegardé aujourd'hui.":"Dernière sauvegarde il y a "+days+" jour(s)."):"Tu n'as jamais sauvegardé ta progression."}</p><button type="button" class="mini" data-plus-go="sauvegarde" style="align-self:flex-start">Sauvegarder</button></div>
+ <div class="mini-card"><h3>Sauvegarde</h3><p>${cloudOn()?"Synchronisation automatique active sur ton compte Claude. ":""}${last?(days===0?"Sauvegardé aujourd'hui.":"Dernière sauvegarde il y a "+days+" jour(s)."):"Tu n'as jamais sauvegardé ta progression."}</p><button type="button" class="mini" data-plus-go="sauvegarde" style="align-self:flex-start">Sauvegarder</button></div>
  <div class="mini-card"><h3>Semaine du programme</h3><p>Tu peux avancer ou reculer si ton rythme est différent.</p><div class="tbtns"><button type="button" class="mini" data-tw="-1">← Semaine précédente</button><button type="button" class="mini" data-tw="1">Semaine suivante →</button></div></div></div>`;
  h+=`<details class="acc"><summary>Le programme technique complet (24 semaines)</summary><ul class="prog">${TW.map((x,i)=>`<li class="${i+1===w?"cur":(i+1<w?"past":"")}"><span class="wn">S${i+1}</span><span><b>Matin :</b> ${esc(x.m)}<br><b>Après-midi :</b> ${esc(x.a)}${x.r?'<span class="rev">Revenu</span>':""}</span></li>`).join("")}</ul><p class="tree-help" style="margin-top:10px">Après la semaine 24 : MLOps, sécurité, architecture et candidatures, dans l'onglet Parcours.</p></details>`;
  box.innerHTML=h}
@@ -1035,7 +1035,7 @@ function renderPlus(){const box=document.getElementById("view-plus");const sel=e
  else if(sel==="entretiens"){const cats=["Tous",...new Set(QB.map(q=>q[0]))];const list=qb.cat==="Tous"?QB:QB.filter(q=>q[0]===qb.cat);if(qb.i>=list.length)qb.i=0;const q=list[qb.i];
   h+=`<section class="sec"><h3>S'entraîner aux entretiens</h3><p>Réponds à voix haute, puis retourne la carte pour comparer. Entraîne-toi aussi en anglais avec l'IA (onglet Anglais, semaines 10 à 12).</p><div class="modes">${cats.map(c=>`<button type="button" class="mini" data-qcat="${esc(c)}" aria-pressed="${qb.cat===c}">${esc(c)}</button>`).join("")}</div><div class="fcwrap"><button type="button" class="fc${qb.flip?" flip":""}" id="qfc" aria-label="Retourner la carte" style="height:240px"><span class="fc-in"><span class="fc-f"><i>${esc(q[0])}</i><b style="font-size:1.3rem">${esc(q[1])}</b><i>Touche pour voir la réponse</i></span><span class="fc-b"><b style="font-size:1rem;font-weight:500">${esc(q[2])}</b></span></span></button><div class="fcnav"><button type="button" class="mini" id="q-prev">← Précédente</button><span class="mn">${qb.i+1} / ${list.length}</span><button type="button" class="mini" id="q-next">Suivante →</button><button type="button" class="mini" id="q-rand">Au hasard</button></div></div></section>`}
  else if(sel==="sauvegarde"){const last=ex.lastBackup;
-  h+=`<section class="sec"><h3>Sauvegarder ta progression</h3><p>Ta progression est enregistrée dans ce navigateur uniquement. Copie ce code et garde-le dans tes notes ou envoie-le-toi sur WhatsApp. Fais-le chaque dimanche.</p><p class="why">${last?"Dernière sauvegarde : "+last.split("-").reverse().join("/"):"Aucune sauvegarde pour l'instant."}</p><div class="tbtns"><button type="button" class="btn primary" id="bk-make">Créer mon code de sauvegarde</button></div><div class="code-box" id="bk-code" hidden></div><div class="tbtns"><button type="button" class="mini" id="bk-copy" hidden>Copier le code</button></div></section>
+  h+=`<section class="sec"><h3>Sauvegarder ta progression</h3><p class="why">${cloudOn()?"Synchronisation automatique active : sur la page Claude, ta progression est enregistrée sur ton compte et te suit sur tous tes appareils, sans rien faire.":"Ici, ta progression est enregistrée dans ce navigateur uniquement. Sur la page Claude, elle se synchronise automatiquement avec ton compte."}</p><p>Le code de sauvegarde reste utile pour passer d'une version à l'autre (page Claude ↔ site Vercel) ou garder une copie de secours. Garde-le dans tes notes ou envoie-le-toi sur WhatsApp, chaque dimanche.</p><p class="why">${last?"Dernière sauvegarde : "+last.split("-").reverse().join("/"):"Aucune sauvegarde pour l'instant."}</p><div class="tbtns"><button type="button" class="btn primary" id="bk-make">Créer mon code de sauvegarde</button></div><div class="code-box" id="bk-code" hidden></div><div class="tbtns"><button type="button" class="mini" id="bk-copy" hidden>Copier le code</button></div></section>
   <section class="sec"><h3>Restaurer sur un autre appareil</h3><p>Colle ici ton code de sauvegarde. Attention : la progression actuelle de cet appareil sera remplacée.</p><textarea class="inp" id="bk-in" rows="4" placeholder="Colle ton code ici"></textarea><div class="tbtns"><button type="button" class="btn" id="bk-restore">Restaurer ma progression</button></div></section>`}
  box.innerHTML=h}
 function backupCode(){return btoa(unescape(encodeURIComponent(JSON.stringify({v:1,done:done,ex:ex}))))}
@@ -1052,7 +1052,19 @@ vp.addEventListener("click",e=>{const t=e.target;
 vp.addEventListener("input",e=>{const k=e.target.dataset&&e.target.dataset.b;if(!k)return;ex.budget[k]=Math.max(0,Number(e.target.value)||0);exSave();const B=ex.budget;const tot=BUD.reduce((s,r)=>s+(Number(B[r[0]]!==undefined?B[r[0]]:r[3])||0),0);const mo=Math.max(1,Number(B.mois||12));document.getElementById("b-tot").textContent=eur(tot);document.getElementById("b-xof").textContent=xof(tot);document.getElementById("b-month").innerHTML="Il faut mettre de côté environ <b>"+eur(tot/mo)+"</b> par mois, soit <b>"+xof(tot/mo)+"</b>."});
 vp.addEventListener("change",onExChange);
 
+/* ================= SYNCHRONISATION (page Claude) ================= */
+var CLOUD={ref:null,ready:false,timer:null,busy:false,again:false};
+const TSK="archi-ia-ts";
+function localTs(){try{return Number(localStorage.getItem(TSK))||0}catch(e){return 0}}
+function setTs(t){try{localStorage.setItem(TSK,String(t))}catch(e){}}
+function cloudOn(){return !!(CLOUD&&CLOUD.ready)}
+function touch(){setTs(Date.now());if(typeof CLOUD==="undefined"||!CLOUD||!CLOUD.ready)return;clearTimeout(CLOUD.timer);CLOUD.timer=setTimeout(cloudPush,1500)}
+async function cloudPush(){if(!CLOUD.ready)return;if(CLOUD.busy){CLOUD.again=true;return}CLOUD.busy=true;try{await CLOUD.ref.set({v:1,t:localTs(),done:done,ex:ex})}catch(e){}CLOUD.busy=false;if(CLOUD.again){CLOUD.again=false;cloudPush()}}
+function rerenderAll(){refresh();renderJob();renderEn();renderPlus();renderToday()}
+async function cloudInit(){if(!window.claude||typeof window.claude.use!=="function")return;try{const db=await window.claude.use("db");const user=await window.claude.use("user");if(!db||!user)return;const id=await user.id();if(!id)return;CLOUD.ref=db.doc("data/users/"+id+"/progress");const snap=await CLOUD.ref.get();const d=snap.exists?snap.data():null;CLOUD.ready=true;if(d&&d.v===1&&typeof d.done==="object"&&typeof d.ex==="object"&&Number(d.t)>localTs()){done=JSON.parse(JSON.stringify(d.done||{}));ex=JSON.parse(JSON.stringify(d.ex||{}));["c","days","vocab","dd","apps","budget"].forEach(k=>{if(!ex[k])ex[k]=(k==="days"||k==="apps")?[]:{}});try{localStorage.setItem(KEY,JSON.stringify(done));localStorage.setItem(EXK,JSON.stringify(ex))}catch(e){}setTs(Number(d.t));rerenderAll();toast("Progression synchronisée")}else{if(localTs()>0)cloudPush();rerenderAll()}}catch(e){CLOUD.ready=false}}
+
 refresh();renderJob();renderEn();renderPlus();renderToday();
+cloudInit();
 const HV={"#aujourdhui":"today","#parcours":"tree","#liste":"list","#emploi":"job","#anglais":"en","#plus":"plus"};
 setView(HV[location.hash]||"today");
 </script>
