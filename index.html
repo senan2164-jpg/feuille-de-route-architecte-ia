@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Parcours complet pour devenir Architecte IA : compétences, cours, certifications et projets à cocher.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Feuille de route Architecte IA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout : un plan d'architecte (papier bleuté, trame fine), phases empilées en sections, items cochables en lignes */
+:root{
+  --paper:#EDF2F7; --sheet:#FFFFFF; --ink:#13233A; --muted:#55657B; --line:#CBD5E1; --grid:rgba(31,111,178,.07);
+  --blue:#1F6FB2; --blue-soft:#DCEAF7;
+  --amber:#B46A0C; --amber-soft:#FCEFD9;
+  --green:#2E7D4F; --green-soft:#DDF1E4;
+  --violet:#6B4FB3; --violet-soft:#ECE6F8;
+  --red:#B3372F; --red-soft:#F8E1DF;
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0E1726; --sheet:#152238; --ink:#E6EDF6; --muted:#9AA9BE; --line:#2A3B56; --grid:rgba(120,170,230,.06);
+  --blue:#6FB0EE; --blue-soft:#1B3350; --amber:#F0AE55; --amber-soft:#3A2A12; --green:#6CC994; --green-soft:#16362A;
+  --violet:#B39BEB; --violet-soft:#2B2346; --red:#F08A80; --red-soft:#3D1F1D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1726; --sheet:#152238; --ink:#E6EDF6; --muted:#9AA9BE; --line:#2A3B56; --grid:rgba(120,170,230,.06);
+  --blue:#6FB0EE; --blue-soft:#1B3350; --amber:#F0AE55; --amber-soft:#3A2A12; --green:#6CC994; --green-soft:#16362A;
+  --violet:#B39BEB; --violet-soft:#2B2346; --red:#F08A80; --red-soft:#3D1F1D; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+.wrap{max-width:980px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.5rem;font-weight:700}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:0}
+a{color:var(--blue)}
+.mono{font-family:var(--f-mono);font-size:.82em}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+header{display:flex;flex-direction:column;gap:14px}
+.lede{max-width:66ch;color:var(--muted);font-size:1.08rem}
+.path{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem}
+.path span{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:4px 10px}
+.path b{color:var(--muted);font-weight:400}
+.path .goal{border-color:var(--blue);color:var(--blue);font-weight:700}
+.progress-card{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 18px -12px rgba(19,35,58,.35)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.prow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pnum{font-family:var(--f-display);font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums}
+.bar{height:10px;background:var(--blue-soft);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--blue);border-radius:99px;transition:width .4s}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters button,.btn{font:600 .85rem var(--f-body);border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:5px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--muted)}
+.phase{background:var(--sheet);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.phase-head{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:18px 18px 14px;border-bottom:1px solid var(--line)}
+.ph-num{font-family:var(--f-display);font-weight:800;font-size:1.3rem;width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue)}
+.ph-meta{min-width:0;display:flex;flex-direction:column;gap:2px}
+.ph-meta small{color:var(--muted);font-size:.88rem}
+.ph-count{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.ph-why{padding:12px 18px;color:var(--muted);font-size:.95rem;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--blue-soft) 35%,transparent)}
+.group{padding:6px 18px 4px}
+.group-title{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 0 4px}
+ul.items{list-style:none;margin:0;padding:0}
+li.item{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:11px 0;border-top:1px dashed var(--line)}
+li.item:first-child{border-top:0}
+li.item input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--green);cursor:pointer}
+.it-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.it-top{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.it-title{font-weight:700}
+li.item.done .it-title{text-decoration:line-through;text-decoration-color:var(--green);color:var(--muted)}
+.it-detail{color:var(--muted);font-size:.93rem}
+.tag{font:600 .72rem var(--f-body);letter-spacing:.02em;border-radius:5px;padding:2px 7px;white-space:nowrap}
+.t-free{background:var(--green-soft);color:var(--green)}
+.t-paid{background:var(--amber-soft);color:var(--amber)}
+.t-cert{background:var(--blue-soft);color:var(--blue)}
+.t-proj{background:var(--violet-soft);color:var(--violet)}
+.t-skill{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
+.t-star{background:var(--red-soft);color:var(--red)}
+.it-link{font-size:.88rem;word-break:break-word}
+.it-how{margin:4px 0 0;padding:10px 12px 10px 32px;font-size:.92rem;display:flex;flex-direction:column;gap:4px;background:var(--paper);border-radius:8px}
+.it-how-t{font:600 .72rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-top:4px}
+.voie{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:6px;display:flex;flex-direction:column;gap:4px}
+.note{border-left:4px solid var(--amber);background:var(--amber-soft);border-radius:0 10px 10px 0;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.note.red{border-color:var(--red);background:var(--red-soft)}
+.note ul{margin:0;padding-left:20px}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:.92rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.career{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.step{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.step .when{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+.step .sal{font-family:var(--f-display);font-weight:800;font-size:1.15rem;color:var(--green)}
+.step.goal{border-color:var(--blue);background:var(--blue-soft)}
+.foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:.85rem}
+.confirm{display:inline-flex;gap:8px;align-items:center}
+.btn.danger{border-color:var(--red);color:var(--red)}
+@media (max-width:720px){.career{grid-template-columns:1fr 1fr}.phase-head{grid-template-columns:auto 1fr}.ph-count{grid-column:1/-1;text-align:left}}
+@media (max-width:420px){.career{grid-template-columns:1fr}}
+.tabs{display:flex;gap:4px;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:4px;align-self:flex-start}
+.tabs button{font:700 .92rem var(--f-body);border:0;background:transparent;color:var(--muted);padding:8px 16px;border-radius:7px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--blue);color:var(--sheet)}
+#view-tree,#view-list{display:flex;flex-direction:column;gap:28px}
+.next{background:var(--sheet);border:2px solid var(--blue);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.nlabel{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.ntitle{font-family:var(--f-display);font-size:1.25rem;font-weight:700;text-wrap:balance}
+.nphase{color:var(--muted);font-size:.9rem}
+.nact{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.btn.primary{background:var(--green);border-color:var(--green);color:var(--sheet)}
+.tree{position:relative;display:flex;flex-direction:column;gap:18px}
+.tree::before{content:"";position:absolute;left:21px;top:22px;bottom:22px;width:3px;background:var(--line);border-radius:2px}
+.tnode{position:relative;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.tdot{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;background:var(--sheet);border:3px solid var(--line);color:var(--muted)}
+.tnode.done .tdot{background:var(--green);border-color:var(--green);color:var(--sheet)}
+.tnode.current .tdot{border-color:var(--blue);color:var(--blue);box-shadow:0 0 0 6px var(--blue-soft)}
+.tnode.started .tdot{border-color:var(--blue);color:var(--blue)}
+.tnode.goal .tdot{background:var(--amber);border-color:var(--amber);color:var(--sheet)}
+.tbody{min-width:0;display:flex;flex-direction:column;gap:8px}
+.tcard{font:inherit;color:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+.tcard:hover{border-color:var(--blue)}
+.tnode.current .tcard{border:2px solid var(--blue)}
+.goalcard{cursor:default;background:var(--amber-soft);border-color:var(--amber)}
+.tstate{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tnode.current .tstate{color:var(--blue)}
+.tnode.done .tstate{color:var(--green)}
+.ttitle{font-family:var(--f-display);font-weight:700;font-size:1.1rem}
+.ttime{color:var(--muted);font-size:.88rem}
+.tbar{display:block;height:6px;background:var(--blue-soft);border-radius:99px;overflow:hidden;margin-top:4px}
+.tbar i{display:block;height:100%;background:var(--blue)}
+.tnode.done .tbar i{background:var(--green)}
+.tmeta{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tnext{font-size:.9rem;border-top:1px dashed var(--line);padding-top:6px;margin-top:2px}
+.tbranches{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-left:14px;border-left:2px dashed var(--violet);margin-left:10px}
+.tbr-label{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);width:100%}
+.tbranch{font:600 .88rem var(--f-body);display:inline-flex;gap:8px;align-items:center;border:1px solid var(--violet);background:var(--violet-soft);color:var(--ink);border-radius:99px;padding:6px 12px;cursor:pointer;text-align:left}
+.tbranch b{color:var(--violet)}
+.tbranch.done{border-color:var(--green);background:var(--green-soft)}
+.tbr-p{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+.tree-help{color:var(--muted);font-size:.9rem}
+.phase,li.item{scroll-margin-top:160px}
+li.item.flash{background:var(--amber-soft)}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Plan de carrière · 2026 → 2034</div>
+    <h1>Devenir Architecte IA</h1>
+    <p class="lede">Tout ce qu'il faut apprendre, les cours (gratuits et payants), les certifications à passer dans l'ordre et les projets à construire. Coche chaque élément quand il est terminé : ta progression est enregistrée dans ce navigateur.</p>
+    <div class="path" aria-label="Parcours">
+      <span>Licence Internet &amp; Multimédia</span><b>→</b><span>Ingénieur IA / MLOps</span><b>→</b><span>Ingénieur senior / lead</span><b>→</b><span class="goal">Architecte IA</span>
+    </div>
+  </header>
+
+  <div class="progress-card" aria-live="polite">
+    <div class="prow"><div><span class="pnum" id="pct">0 %</span> <span style="color:var(--muted)" id="pcount">0 / 0 terminés</span></div>
+      <div class="filters" role="group" aria-label="Filtrer">
+        <button type="button" data-f="all" aria-pressed="true">Tout</button>
+        <button type="button" data-f="skill">Compétences</button>
+        <button type="button" data-f="free">Cours gratuits</button>
+        <button type="button" data-f="cert">Certifications</button>
+        <button type="button" data-f="proj">Projets</button>
+        <button type="button" data-f="todo">Reste à faire</button>
+      </div></div>
+    <div class="bar"><i id="pbar"></i></div>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Affichage">
+    <button type="button" role="tab" data-v="tree" aria-selected="true">Parcours</button>
+    <button type="button" role="tab" data-v="list" aria-selected="false">Liste détaillée</button>
+  </div>
+
+  <div id="view-tree">
+    <div class="next" id="next"></div>
+    <div class="tree" id="tree"></div>
+    <p class="tree-help">Clique sur une étape (ou une branche violette « en parallèle ») pour voir ses cours, ses certifications et ses projets.</p>
+  </div>
+
+  <div id="view-list">
+  <div class="legend">
+    <span><span class="tag t-star">★ Essentiel</span> à faire absolument</span>
+    <span><span class="tag t-free">Gratuit</span></span>
+    <span><span class="tag t-paid">Payant</span> prix officiel indicatif</span>
+    <span><span class="tag t-cert">Certification</span></span>
+    <span><span class="tag t-proj">Projet</span> à mettre sur GitHub</span>
+  </div>
+
+  <div class="note red">
+    <h3>Certifications retirées en 2026 : ne les passe pas</h3>
+    <ul>
+      <li><b>AWS Machine Learning – Specialty</b> : dernier examen le 31 mars 2026. Remplacée par AWS ML Engineer Associate et AWS Generative AI Developer Professional.</li>
+      <li><b>Azure AI-102</b> (AI Engineer) : retirée le 30 juin 2026, remplacée par <b>AI-103</b>. <b>AI-900</b> remplacée par <b>AI-901</b>. <b>DP-100</b> remplacée par <b>AI-300</b> (MLOps).</li>
+      <li>Méfie-toi des vieux tutoriels YouTube qui recommandent encore ces examens.</li>
+    </ul>
+  </div>
+
+  <div id="phases"></div>
+
+  <section class="card">
+    <h2>Tableau des certifications</h2>
+    <p style="color:var(--muted)">Prix officiels en dollars (examen seul). Les prix Microsoft varient selon le pays : vérifie le tarif Bénin au moment de t'inscrire. Après une première certification AWS, tu as 50 % de réduction sur la suivante.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Certification</th><th>Code</th><th>Prix</th><th>Niveau</th><th>Pour toi</th></tr></thead>
+      <tbody id="certtable"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>Progression de carrière et salaires</h2>
+    <div class="career">
+      <div class="step"><span class="when">Mois 0 à 12</span><h3>Apprentissage</h3><span class="sal">Phases 1 à 4</span><p class="it-detail">Fondations, IA, premiers projets, 1ʳᵉ certification cloud.</p></div>
+      <div class="step"><span class="when">Année 1 à 3</span><h3>Ingénieur IA / MLOps</h3><span class="sal">40 à 60 k€</span><p class="it-detail">Premier poste en France (JEI dès 39 582 €, carte bleue dès 59 373 €).</p></div>
+      <div class="step"><span class="when">Année 3 à 6</span><h3>Senior / Lead</h3><span class="sal">60 à 80 k€</span><p class="it-detail">Tu conçois des systèmes complets et tu encadres.</p></div>
+      <div class="step goal"><span class="when">Année 6 à 10</span><h3>Architecte IA</h3><span class="sal">70 à 100 k€+</span><p class="it-detail">Moyenne Glassdoor France ≈ 67 600 € ; seniors Paris au-delà.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Les règles qui font la différence</h2>
+    <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+      <li><b>Les projets avant les certificats.</b> Un recruteur regarde ton GitHub. Une certification sans projet ne convainc pas.</li>
+      <li><b>Un seul cloud à fond</b> (AWS conseillé, le plus demandé) plutôt que trois à moitié.</li>
+      <li><b>Apprends en construisant</b> : après chaque cours, un mini-projet. Pas plus de 2 semaines de théorie pure.</li>
+      <li><b>Documente tout en public</b> : un article LinkedIn par projet terminé (en français).</li>
+      <li><b>L'anglais technique</b> est obligatoire : la documentation et la majorité des cours sont en anglais.</li>
+      <li><b>Rythme réaliste</b> : 15 à 20 heures par semaine pendant 12 à 18 mois pour être prêt pour un premier poste.</li>
+    </ul>
+  </section>
+
+  </div>
+
+  <div class="foot">
+    <span>Infos vérifiées le 26 octobre 2026. Les prix et examens évoluent : vérifie sur le site officiel avant de payer.</span>
+    <span class="confirm" id="resetbox"><button type="button" class="btn" id="reset">Tout décocher</button></span>
+  </div>
+</div>
+
+<script>
+const S=(t,d,o={})=>({t,d,...o});
+const PH=[
+{n:1,title:"Fondations du développeur",time:"Mois 0 à 3",why:"Sans un code solide, rien d'autre ne tient. Ta licence t'a donné une base web : on la consolide en Python, Git, Linux et SQL.",groups:[
+ ["Compétences",[
+  S("Python solide : fonctions, classes, modules, gestion d'erreurs, environnements virtuels","La langue n°1 de l'IA.",{k:"skill",star:1}),
+  S("Git et GitHub : branches, pull requests, README propres","Ton GitHub sera ton portfolio.",{k:"skill",star:1}),
+  S("Linux et terminal (Bash) : fichiers, permissions, processus, SSH","Tous les serveurs IA tournent sous Linux.",{k:"skill",star:1}),
+  S("SQL : SELECT, JOIN, GROUP BY, index","Les données d'entreprise vivent dans des bases SQL.",{k:"skill",star:1}),
+  S("Créer une API web avec FastAPI (REST, JSON, authentification)","Toute IA en production est servie par une API.",{k:"skill",star:1}),
+  S("Maths utiles : algèbre linéaire (vecteurs, matrices), probabilités, statistiques de base","Juste ce qu'il faut pour comprendre les modèles.",{k:"skill"}),
+  S("Anglais technique : lire une documentation sans traduction","",{k:"skill"})]],
+ ["Cours",[
+  S("CS50's Introduction to Programming with Python (Harvard)","Le meilleur cours Python gratuit, certificat gratuit.",{k:"free",star:1,u:"https://cs50.harvard.edu/python/"}),
+  S("The Missing Semester (MIT) : terminal, Git, outils","",{k:"free",u:"https://missing.csail.mit.edu/"}),
+  S("Kaggle Learn : Python, Pandas, SQL","Courts et pratiques, certificats gratuits.",{k:"free",u:"https://www.kaggle.com/learn"}),
+  S("Linux Foundation LFS101 : Introduction to Linux","",{k:"free",u:"https://training.linuxfoundation.org/training/introduction-to-linux/"}),
+  S("3Blue1Brown : Essence of Linear Algebra (vidéos)","Les maths de l'IA expliquées visuellement.",{k:"free",u:"https://www.3blue1brown.com/topics/linear-algebra"})]],
+ ["Projet",[
+  S("Projet 0 : API FastAPI + base PostgreSQL, testée et documentée sur GitHub","Par exemple une API de gestion de catalogue musical.",{k:"proj"})]],
+ ["Cours en français (pour démarrer sans bloquer sur l'anglais)",[
+  S("France-IOI : apprendre Python par des exercices progressifs","Gratuit, en français, très pédagogique pour les débutants.",{k:"free",star:1,u:"https://www.france-ioi.org/"}),
+  S("OpenClassrooms : Apprenez à programmer en Python","En français. Vérifie les conditions d'accès gratuit sur le site.",{k:"free",u:"https://openclassrooms.com/"}),
+  S("Le tutoriel officiel de Python, traduit en français","La référence, à garder sous la main.",{k:"free",u:"https://docs.python.org/fr/3/tutorial/"}),
+  S("FUN MOOC : cours de Python des universités françaises","Cherche « Python » dans le catalogue : gratuits, en français, avec attestation.",{k:"free",u:"https://www.fun-mooc.fr/"}),
+  S("Machine Learnia (YouTube) : Python et machine learning expliqués en français","Utile aussi pour la phase 2.",{k:"free",u:"https://www.youtube.com/@MachineLearnia"})]],
+ ["Anglais (obligatoire pour ce métier)",[
+  S("Suivre les cours en anglais avec des sous-titres, puis sans","Ne traduis pas tout pour toujours : passe progressivement des sous-titres français aux sous-titres anglais.",{k:"skill",star:1,how:["Sur YouTube : Paramètres > Sous-titres > Traduire automatiquement > Français.","Pour une page web en anglais : clic droit > « Traduire en français » dans Chrome ou Edge.","Quand un passage reste flou, colle-le dans Claude ou ChatGPT et demande une explication simple en français.","Après 2 ou 3 mois, passe aux sous-titres en anglais, puis essaie sans."]}),
+  S("30 minutes d'anglais par jour, centrées sur le vocabulaire technique","Objectif : niveau B2 en 12 à 18 mois.",{k:"skill",star:1,how:["Tiens un carnet de vocabulaire technique : chaque mot inconnu d'un cours, avec sa traduction.","Fais une leçon par jour sur Duolingo ou BBC Learning English (gratuits).","Lis chaque jour un court extrait de documentation en anglais, sans traduire d'abord.","Une fois par semaine, écris 5 phrases en anglais sur ce que tu as appris et demande à Claude de les corriger."]}),
+  S("BBC Learning English","Gratuit, tous niveaux.",{k:"free",u:"https://www.bbc.co.uk/learningenglish/"})]]]},
+{n:2,title:"Machine Learning et Deep Learning",time:"Mois 3 à 6",why:"Un architecte doit savoir quand utiliser un modèle classique et quand un LLM. Ici tu apprends comment les modèles apprennent.",groups:[
+ ["Compétences",[
+  S("ML classique : régression, classification, arbres, forêts aléatoires, XGBoost","",{k:"skill",star:1}),
+  S("Évaluation : train/test, validation croisée, précision, rappel, F1, surapprentissage","",{k:"skill",star:1}),
+  S("Préparation des données : nettoyage, features, données manquantes","",{k:"skill"}),
+  S("Deep learning : réseaux de neurones, PyTorch","",{k:"skill",star:1}),
+  S("Bases NLP et vision : tokenisation, embeddings, CNN, Transformers","",{k:"skill"})]],
+ ["Cours",[
+  S("Machine Learning Specialization (Andrew Ng, Coursera)","Gratuit en mode auditeur ; certificat payant.",{k:"free",star:1,u:"https://www.coursera.org/specializations/machine-learning-introduction"}),
+  S("Google Machine Learning Crash Course","",{k:"free",u:"https://developers.google.com/machine-learning/crash-course"}),
+  S("Practical Deep Learning for Coders (fast.ai)","",{k:"free",u:"https://course.fast.ai/"}),
+  S("Machine Learning Zoomcamp (DataTalks.Club)","Orienté déploiement, certificat gratuit en cohorte.",{k:"free",u:"https://github.com/DataTalksClub/machine-learning-zoomcamp"})]],
+ ["Projet",[
+  S("Projet 1 : modèle de prédiction (ex. départ de clients) avec rapport d'évaluation","Notebook propre + explication des choix.",{k:"proj"})]]]},
+{n:3,title:"IA générative, LLM et agents",time:"Mois 6 à 9",why:"C'est la compétence la plus demandée en 2026. Les entreprises veulent intégrer les LLM dans leurs outils de façon fiable.",groups:[
+ ["Compétences",[
+  S("Utiliser les API de LLM (OpenAI, Anthropic, Mistral) : messages, streaming, appels d'outils","",{k:"skill",star:1}),
+  S("Prompt engineering structuré : instructions, exemples, sorties JSON","",{k:"skill"}),
+  S("Embeddings et bases vectorielles (pgvector, Qdrant, Chroma)","",{k:"skill",star:1}),
+  S("RAG complet : découpage, recherche hybride, reranking, citations","",{k:"skill",star:1}),
+  S("Agents : outils, mémoire, orchestration (LangGraph), protocole MCP","",{k:"skill",star:1}),
+  S("Évaluation des LLM : jeux de test, LLM-as-judge, mesure des hallucinations","Ce qui te distinguera de 90 % des candidats.",{k:"skill",star:1}),
+  S("Fine-tuning léger (LoRA) et modèles open source (Hugging Face, Ollama, vLLM)","",{k:"skill"}),
+  S("Guardrails : filtrage, injection de prompt, protection des données","",{k:"skill"})]],
+ ["Cours",[
+  S("Hugging Face LLM Course + Agents Course","",{k:"free",star:1,u:"https://huggingface.co/learn"}),
+  S("LLM Zoomcamp (DataTalks.Club) : RAG, évaluation, monitoring","Cohorte chaque été, matériel disponible toute l'année.",{k:"free",star:1,u:"https://github.com/DataTalksClub/llm-zoomcamp"}),
+  S("DeepLearning.AI Short Courses (RAG, agents, évaluation)","Courts, gratuits.",{k:"free",u:"https://www.deeplearning.ai/short-courses/"}),
+  S("Livre : AI Engineering (Chip Huyen)","La référence du métier.",{k:"paid",p:"≈ 50 €"})]],
+ ["Projets",[
+  S("Projet 2 : assistant RAG documentaire déployé en ligne, avec citations des sources","Sur des documents réels d'entreprise (contrats, procédures).",{k:"proj",star:1}),
+  S("Projet 3 : banc d'évaluation du RAG + tableau de bord coûts, latence, qualité","",{k:"proj",star:1}),
+  S("Projet 4 : agent IA multi-outils (emails, tickets, tableur) avec validation humaine","",{k:"proj"})]]]},
+{n:"claude",title:"Écosystème Claude et outils IA",time:"À partir du mois 6, en continu",why:"Les entreprises veulent aller vite. Un ingénieur qui conçoit des systèmes IA ET qui maîtrise les outils d'IA (Claude, ChatGPT, agents de code) livre 2 à 3 fois plus vite. Présente-toi comme expert de l'IA générative multi-modèles, Claude en tête : le marché français utilise aussi Mistral et Azure OpenAI.",groups:[
+ ["Cours gratuits officiels",[
+  S("Claude Academy : AI Fluency, puis Building with the Claude API","Gratuits, avec attestation de fin de cours.",{k:"free",star:1,u:"https://academy.claude.com/",how:["Va sur academy.claude.com et crée un compte gratuit.","Commence par « AI Fluency: Framework & Foundations » pour la méthode.","Enchaîne avec « Building with the Claude API » (API, outils, agents).","Fais les autres cours disponibles (MCP, Claude Code) dans l'ordre proposé.","Ajoute chaque attestation dans la section « Licences et certifications » de ton LinkedIn."]})]],
+ ["Construire AVEC Claude (et les autres LLM)",[
+  S("API Claude : messages, streaming, sorties structurées","",{k:"skill",star:1,how:["Crée un compte développeur sur la console Claude et génère une clé API.","Ajoute un petit crédit (l'usage de l'API est payant, quelques dollars suffisent pour apprendre).","Suis la documentation officielle (docs.claude.com) et code un premier script Python.","Ne mets jamais ta clé API dans GitHub : utilise un fichier .env ignoré par Git."]}),
+  S("Appel d'outils (tool use) et agents","L'IA qui appelle tes fonctions : base de données, email, calendrier.",{k:"skill",star:1}),
+  S("Protocole MCP : connecter l'IA aux outils d'une entreprise","Une compétence très recherchée pour intégrer l'IA aux systèmes existants.",{k:"skill",star:1}),
+  S("Maîtriser les coûts : cache de prompt, choix du modèle selon la tâche, traitement par lots","",{k:"skill"}),
+  S("Multi-modèles : savoir utiliser aussi OpenAI et Mistral, et choisir selon qualité, coût et souveraineté des données","Mistral est français : un argument fort auprès des entreprises qui veulent garder leurs données en Europe.",{k:"skill",star:1})]],
+ ["Travailler GRÂCE aux outils IA",[
+  S("Agents de code : Claude Code, et connaître Cursor, GitHub Copilot, ChatGPT","",{k:"skill",star:1,how:["Installe un agent de code et utilise-le sur un vrai projet du portfolio.","Donne-lui des tâches précises : écrire des tests, refactoriser, documenter.","Relis chaque ligne produite et fais tourner les tests avant de valider.","Note le temps gagné sur une tâche (ex. 2 jours au lieu de 2 semaines) pour le raconter en entretien."]}),
+  S("Les garde-fous : relire, tester, sécuriser, ne jamais coller de données confidentielles ou de secrets","C'est ce qui rassure un recruteur : tu vas vite sans casser.",{k:"skill",star:1})]],
+ ["Certifications officielles Claude",[
+  S("Claude Certified Associate : Foundations","Usage professionnel de Claude au quotidien.",{k:"cert",p:"via entreprise partenaire"}),
+  S("Claude Certified Developer : Foundations","Pour les ingénieurs : API, outils, développement d'agents.",{k:"cert",p:"via entreprise partenaire",star:1}),
+  S("Claude Certified Architect : Foundations","Pour les architectes qui conçoivent des systèmes d'agents en production.",{k:"cert",p:"via entreprise partenaire",star:1}),
+  S("Claude Certified Architect : Professional","Niveau avancé : intégration, gouvernance, évaluation pour les grandes entreprises.",{k:"cert",p:"via entreprise partenaire"}),
+  S("Comment obtenir ces certifications alors qu'elles ne sont pas ouvertes aux particuliers","Les examens sont réservés aux membres du Claude Partner Network : ce sont les entreprises qui adhèrent (gratuitement) et inscrivent leurs employés. Voici les 3 voies, de la plus réaliste à la moins sûre.",{k:"skill",star:1,how:["VOIE 1 (la plus réaliste) : consulte l'annuaire des partenaires sur claude.com/partners. Les grands cabinets comme Accenture, Deloitte, Cognizant ou Infosys en font partie, ainsi que des ESN et cabinets spécialisés en IA.","Mets ces entreprises en tête de ta liste de 50 cibles et postule à leurs offres IA (en France, ou en freelance à distance).","En entretien, dis que tu as fait les cours Claude Academy et que tu veux passer la certification : pour un partenaire, c'est un argument direct.","Une fois recruté, demande à ton entreprise de t'inscrire : c'est gratuit pour elle et ça augmente son nombre de profils certifiés.","VOIE 2 : crée ta propre structure de conseil en IA (entreprise enregistrée au Bénin, auprès du guichet de création d'entreprise).","Réalise 1 ou 2 vraies missions avec Claude pour des clients, avec un site web présentant ces références.","Candidate au Claude Partner Network sur claude.com/partners (adhésion gratuite). L'acceptation n'est pas garantie : le réseau vise des organisations qui vendent des services autour de Claude.","Si ta structure est acceptée, inscris-toi aux examens via le portail partenaires.","VOIE 3 : la page publique de demande d'accès à la certification renvoie vers le portail réservé aux partenaires. Tu peux surveiller si Anthropic ouvre les examens aux particuliers, mais ne compte pas dessus.","En attendant : termine tous les cours gratuits et construis tes projets Claude, ils te préparent déjà à l'examen."]})]],
+ ["Projets",[
+  S("Projet 8 : le même assistant testé avec Claude, GPT et Mistral, avec un comparatif chiffré qualité, coût, vitesse","Un réflexe d'architecte qui impressionne.",{k:"proj",star:1,how:["Prends ton assistant RAG (projet 2).","Rends le modèle interchangeable (un seul paramètre à changer).","Crée un jeu de 50 questions avec les bonnes réponses.","Mesure pour chaque modèle : bonnes réponses, coût pour 1 000 requêtes, temps de réponse.","Publie un tableau comparatif et ta recommandation dans le README et sur LinkedIn."]}),
+  S("Projet 9 : un serveur MCP qui connecte l'IA à un vrai outil (Google Sheets, base de données, agenda)","",{k:"proj",star:1}),
+  S("Article LinkedIn : « Comment j'ai construit X en 2 semaines au lieu de 2 mois grâce aux agents de code »","Avec ta méthode et tes garde-fous.",{k:"skill"})]]]},
+{n:"agile",title:"Méthodes agiles et Scrum",time:"En parallèle, à partir du mois 3",why:"En France, presque toutes les équipes tech travaillent en Scrum ou en Kanban. Le connaître te rend opérationnel dès le premier jour, et un architecte organise le travail de plusieurs équipes agiles. C'est un vrai plus sur ton CV, mais en complément de la technique, pas à sa place.",groups:[
+ ["Compétences",[
+  S("Le Scrum Guide : les 3 rôles (Product Owner, Scrum Master, Developers)","",{k:"skill",star:1}),
+  S("Les 5 événements : sprint, sprint planning, daily scrum, sprint review, rétrospective","",{k:"skill",star:1}),
+  S("Les 3 artefacts : product backlog, sprint backlog, incrément, et la définition de « terminé »","",{k:"skill",star:1}),
+  S("Écrire des user stories avec critères d'acceptation","Ex. « En tant que commercial, je veux interroger nos contrats en langage naturel afin de répondre plus vite aux clients. »",{k:"skill",star:1}),
+  S("Estimer : story points, planning poker, vélocité","",{k:"skill"}),
+  S("Kanban : tableau de flux, limites de travail en cours (WIP), délai de traitement","",{k:"skill"}),
+  S("Outils : Jira, Confluence, GitHub Projects","Jira est l'outil le plus utilisé dans les entreprises françaises.",{k:"skill",star:1}),
+  S("L'agile dans les projets IA : sprints d'expérimentation, gestion de l'incertitude, livrer un prototype utile vite","",{k:"skill"}),
+  S("Notions d'agilité à l'échelle (SAFe) : utile dans les grands groupes","",{k:"skill"})]],
+ ["Cours",[
+  S("Le Scrum Guide officiel, en français (13 pages)","À lire 3 fois : c'est toute la matière du PSM I.",{k:"free",star:1,u:"https://scrumguides.org/"}),
+  S("Scrum.org Open Assessments : tests d'entraînement gratuits","Passe le Scrum Open jusqu'à obtenir 100 % plusieurs fois avant le vrai examen.",{k:"free",star:1,u:"https://www.scrum.org/open-assessments"}),
+  S("Atlassian Agile Coach : Scrum, Kanban, Jira","",{k:"free",u:"https://www.atlassian.com/agile"}),
+  S("The Kanban Guide","",{k:"free",u:"https://kanbanguides.org/"})]],
+ ["Certifications",[
+  S("PSM I : Professional Scrum Master I (Scrum.org)","Auto-formation possible, aucun cours obligatoire, valable à vie. 80 questions en 60 minutes, 85 % requis.",{k:"cert",p:"200 $",star:1,how:["Lis le Scrum Guide 3 fois (gratuit, en français).","Passe le test gratuit « Scrum Open » sur scrum.org jusqu'à obtenir 100 % trois fois de suite.","Achète l'examen PSM I sur scrum.org (200 $, carte Visa ou Mastercard).","Passe l'examen en ligne depuis chez toi, au calme, avec une bonne connexion.","Ajoute le badge sur LinkedIn et dans ton CV."]}),
+  S("PSPO I : Professional Scrum Product Owner I (Scrum.org)","Utile pour comprendre le côté produit et parler aux métiers. Optionnelle.",{k:"cert",p:"200 $"})]],
+ ["Projet",[
+  S("Mener tes projets 2 à 7 en Scrum : backlog sur GitHub Projects, sprints de 2 semaines, revue et rétrospective notées dans le README","Tu pourras dire en entretien : « J'ai mené mes projets en Scrum » et le montrer.",{k:"proj",star:1})]]]},
+{n:4,title:"Cloud (AWS conseillé)",time:"Mois 6 à 18, en parallèle",why:"Tous les systèmes IA d'entreprise tournent dans le cloud. Choisis un fournisseur et va jusqu'au bout. AWS est le plus demandé.",groups:[
+ ["Cours",[
+  S("AWS Skill Builder : parcours gratuits Cloud Practitioner et IA","",{k:"free",star:1,u:"https://skillbuilder.aws/"}),
+  S("Compte AWS en offre gratuite pour pratiquer (attention aux coûts : active des alertes de budget)","",{k:"skill"})]],
+ ["Certifications AWS (dans l'ordre)",[
+  S("AWS Certified Cloud Practitioner","Les bases du cloud.",{k:"cert",p:"100 $",star:1,how:["Suis le parcours gratuit Cloud Practitioner sur AWS Skill Builder.","Fais des examens blancs jusqu'à dépasser 80 % régulièrement.","Réserve l'examen sur aws.amazon.com/certification (en ligne depuis chez toi ou en centre agréé).","Après la réussite, utilise ta réduction de 50 % pour la certification suivante."]}),
+  S("AWS Certified AI Practitioner (AIF-C01)","Fondamentaux IA sur AWS.",{k:"cert",p:"100 $"}),
+  S("AWS Certified Machine Learning Engineer – Associate (MLA)","ML en production : la plus utile pour un premier poste.",{k:"cert",p:"150 $",star:1}),
+  S("AWS Certified Solutions Architect – Associate","Le socle de l'architecture cloud.",{k:"cert",p:"150 $",star:1}),
+  S("AWS Certified Generative AI Developer – Professional (AIP-C01)","Nouvelle en 2026 : IA générative en production (Bedrock, RAG, agents).",{k:"cert",p:"300 $",star:1})]],
+ ["Alternative Microsoft Azure (si l'entreprise visée est sur Azure)",[
+  S("Microsoft Learn : parcours gratuits","",{k:"free",u:"https://learn.microsoft.com/fr-fr/training/"}),
+  S("AI-901 : Azure AI Fundamentals","Remplace AI-900.",{k:"cert",p:"≈ 99 $"}),
+  S("AI-103 : Azure AI App and Agent Developer","Remplace AI-102.",{k:"cert",p:"≈ 165 $"}),
+  S("AI-300 : MLOps Engineer Associate","Remplace DP-100.",{k:"cert",p:"≈ 165 $"})]]]},
+{n:5,title:"MLOps, LLMOps et données",time:"Mois 9 à 15",why:"C'est le cœur du métier pépite : faire tourner l'IA en production, 24h/24, de façon fiable et sans exploser les coûts.",groups:[
+ ["Compétences",[
+  S("Docker : images, Dockerfile, docker compose","",{k:"skill",star:1}),
+  S("CI/CD avec GitHub Actions : tests et déploiement automatiques","",{k:"skill",star:1}),
+  S("Suivi d'expériences et registre de modèles (MLflow)","",{k:"skill"}),
+  S("Kubernetes : pods, déploiements, services, autoscaling","",{k:"skill",star:1}),
+  S("Infrastructure as Code avec Terraform","",{k:"skill",star:1}),
+  S("Monitoring : logs, métriques, dérive des modèles, traces LLM (Prometheus, Grafana, Langfuse)","",{k:"skill"}),
+  S("Servir des modèles : vLLM, API scalables, cache, gestion des coûts","",{k:"skill"}),
+  S("Data engineering : pipelines (Airflow), qualité des données, bases de Spark","",{k:"skill"})]],
+ ["Cours",[
+  S("MLOps Zoomcamp (DataTalks.Club)","Le cours MLOps gratuit de référence, en autonomie.",{k:"free",star:1,u:"https://github.com/DataTalksClub/mlops-zoomcamp"}),
+  S("Made With ML (Goku Mohandas)","ML en production, de bout en bout.",{k:"free",u:"https://madewithml.com/"}),
+  S("Data Engineering Zoomcamp (DataTalks.Club)","Docker, Terraform, Kafka, Spark.",{k:"free",u:"https://github.com/DataTalksClub/data-engineering-zoomcamp"}),
+  S("Linux Foundation LFS158 : Introduction to Kubernetes","",{k:"free",u:"https://training.linuxfoundation.org/training/introduction-to-kubernetes/"})]],
+ ["Certifications",[
+  S("HashiCorp Terraform Associate (004)","La certification au meilleur rapport qualité-prix.",{k:"cert",p:"70,50 $",star:1}),
+  S("CKA : Certified Kubernetes Administrator","Examen pratique, 2 tentatives incluses. Difficile mais très reconnu.",{k:"cert",p:"445 $"}),
+  S("Databricks Generative AI Fundamentals","Accréditation gratuite.",{k:"free"})]],
+ ["Projets",[
+  S("Projet 5 : pipeline MLOps complet (entraînement, MLflow, CI/CD, Docker, cloud, alertes de dérive)","",{k:"proj",star:1}),
+  S("Projet 6 : plateforme LLMOps sur Kubernetes déployée avec Terraform, modèle open source servi avec vLLM","",{k:"proj"})]]]},
+{n:6,title:"Sécurité, conformité et gouvernance",time:"Mois 12 à 18",why:"En France, aucun projet IA ne passe sans le feu vert juridique. Un architecte qui parle RGPD et AI Act rassure immédiatement un DSI.",groups:[
+ ["Compétences",[
+  S("RGPD appliqué à l'IA : données personnelles, minimisation, durée de conservation","",{k:"skill",star:1}),
+  S("AI Act européen : niveaux de risque, obligations, documentation","",{k:"skill",star:1}),
+  S("Sécurité des LLM : OWASP Top 10 pour les applications LLM","",{k:"skill",star:1}),
+  S("Sécurité cloud : IAM, chiffrement, secrets, réseaux privés","",{k:"skill"}),
+  S("IA responsable : biais, transparence, supervision humaine","",{k:"skill"})]],
+ ["Cours",[
+  S("MOOC de la CNIL : L'atelier RGPD","Gratuit, en français, attestation délivrée.",{k:"free",star:1,u:"https://atelier-rgpd.cnil.fr/"}),
+  S("OWASP GenAI Security Project (Top 10 LLM)","",{k:"free",u:"https://genai.owasp.org/"})]],
+ ["Certifications (plus tard, optionnelles)",[
+  S("AWS Certified Security – Specialty","Mise à jour avec un volet sécurité de l'IA générative.",{k:"cert",p:"300 $"}),
+  S("ISO/IEC 42001 Lead Implementer (système de management de l'IA)","Formation chère, utile pour les grands groupes et le conseil.",{k:"cert",p:"≈ 1 500 € et +"})]]]},
+{n:7,title:"Architecture et leadership",time:"Années 2 à 6, pendant tes premiers postes",why:"La dernière marche. Ici tu passes de celui qui construit à celui qui conçoit, arbitre et convainc.",groups:[
+ ["Compétences",[
+  S("System design : scalabilité, cache, files de messages, microservices, événements","",{k:"skill",star:1}),
+  S("Patterns d'architecture IA : RAG d'entreprise, plateformes d'agents, passerelle LLM, multi-modèles","",{k:"skill",star:1}),
+  S("FinOps : estimer et réduire le coût d'un système IA","",{k:"skill",star:1}),
+  S("Documenter les décisions : schémas d'architecture, ADR (Architecture Decision Records)","",{k:"skill"}),
+  S("Arbitrer « acheter ou construire » et choisir les fournisseurs","",{k:"skill"}),
+  S("Présenter aux dirigeants : coûts, risques, bénéfices en langage simple","",{k:"skill",star:1}),
+  S("Encadrer une équipe technique et faire des revues de code","",{k:"skill"})]],
+ ["Cours et lectures",[
+  S("System Design Primer (GitHub)","",{k:"free",star:1,u:"https://github.com/donnemartin/system-design-primer"}),
+  S("roadmap.sh : AI Engineer et MLOps","Pour vérifier qu'il ne te manque rien.",{k:"free",u:"https://roadmap.sh/ai-engineer"}),
+  S("Livre : Designing Data-Intensive Applications (Martin Kleppmann)","",{k:"paid",p:"≈ 45 €"}),
+  S("Livre : Designing Machine Learning Systems (Chip Huyen)","",{k:"paid",p:"≈ 50 €"})]],
+ ["Certifications",[
+  S("AWS Certified Solutions Architect – Professional","La certification d'architecte la plus respectée sur AWS.",{k:"cert",p:"300 $",star:1}),
+  S("Google Cloud Professional Machine Learning Engineer","Si tu veux un 2ᵉ cloud.",{k:"cert",p:"200 $"}),
+  S("PSM II : Professional Scrum Master II (Scrum.org)","Niveau avancé, quand tu encadres des équipes. Le PSM I est dans la phase Agile.",{k:"cert",p:"250 $"}),
+  S("TOGAF Enterprise Architecture Foundation","Utile dans les grands groupes et ESN. Prix à vérifier.",{k:"cert",p:"payant"})]],
+ ["Projet",[
+  S("Projet 7 : dossier d'architecture IA complet pour une entreprise fictive","Schémas, choix techniques justifiés, coûts, sécurité, conformité RGPD et AI Act. C'est ton argument pour les postes d'architecte.",{k:"proj",star:1})]]]},
+{n:"diff",title:"Les différenciateurs",time:"À partir du mois 6, en continu",why:"Des centaines de candidats ont les mêmes cours et les mêmes certifications. Ce qui fait dire « il faut le prendre », ce sont des preuves que les autres n'ont pas : de vrais utilisateurs, de vrais clients, des chiffres, une spécialité.",groups:[
+ ["Preuves concrètes",[
+  S("Un produit IA en production avec de vrais utilisateurs (pas une démo)","Par exemple une appli utile au Bénin. « 300 utilisateurs actifs, 2 % d'erreurs, 0,01 $ par requête » vaut plus que dix projets d'école.",{k:"proj",star:1,how:["Choisis un problème concret autour de toi (commerçants, écoles, agences, artistes).","Construis une version minimale en 4 à 6 semaines : un assistant ou un agent avec une interface web simple.","Fais-la tester par 10 personnes et corrige ce qui bloque.","Mesure : utilisateurs actifs, taux d'erreur, coût par requête, temps gagné.","Rédige une étude de cas d'une page avec ces chiffres, sur GitHub et LinkedIn."]}),
+  S("Missions freelance pour des clients français, à distance, depuis le Bénin (Malt, Upwork)","Tu arrives en entretien avec une expérience réelle, des références et des recommandations. C'est le levier le plus puissant avant de partir.",{k:"skill",star:1,u:"https://www.malt.fr/",how:["Crée un profil Malt (clients français) et Upwork (international), titre : « Développeur IA : assistants, agents, automatisation ».","Mets en avant 2 projets du portfolio avec démo vidéo.","Commence par de petites missions (chatbot documentaire, automatisation) à prix modéré pour obtenir tes premiers avis.","Demande une recommandation écrite à chaque client, sur la plateforme et sur LinkedIn.","Facture via une structure légale (entreprise individuelle au Bénin) : tes factures et attestations prouveront ton expérience dans ton dossier."]}),
+  S("Chiffrer chaque projet : précision, latence, coût mensuel, temps gagné","Les recruteurs retiennent les chiffres, pas les listes d'outils.",{k:"skill",star:1,how:["Avant de coder, choisis 3 indicateurs (ex. bonnes réponses, temps de réponse, coût).","Crée un jeu de test de 50 cas.","Mesure avant et après chaque amélioration.","Mets le tableau des résultats dans le README."]}),
+  S("Une vidéo de démo de 2 minutes par projet phare (sur le README et LinkedIn)","Un recruteur ne lancera pas ton code ; il regardera une vidéo.",{k:"skill",how:["Enregistre ton écran avec OBS Studio (gratuit).","Plan : le problème (20 s), la démo (70 s), l'architecture et les chiffres (30 s).","Publie sur YouTube en « non répertorié » et mets le lien dans le README et sur LinkedIn."]})]],
+ ["Spécialités rares",[
+  S("Choisir un secteur et le connaître à fond : banque/assurance, santé ou industrie","Comme ton ami dans la banque. Un projet sur les contraintes réelles du secteur (réglementation, données sensibles) te distingue immédiatement.",{k:"skill",star:1,how:["Choisis un secteur : banque/assurance (le réseau de ton ami), santé ou industrie.","Lis 20 offres d'emploi IA de ce secteur et note les besoins qui reviennent.","Construis un projet sur un cas réel du secteur avec des données publiques ou fictives.","Apprends son vocabulaire et ses règles (RGPD, AI Act, et pour la banque la conformité et la lutte contre la fraude).","Demande à ton ami de relire le projet avec un œil métier."]}),
+  S("IA pour les langues africaines (fon, yoruba, wolof…) : contribuer à Masakhane ou créer un jeu de données","Une niche où tu as un avantage naturel que très peu d'ingénieurs en France possèdent.",{k:"free",u:"https://www.masakhane.io/",how:["Rejoins la communauté Masakhane (site et GitHub).","Lis 2 ou 3 de leurs publications pour comprendre les besoins.","Contribue : traduire ou annoter des phrases en fon ou yoruba, ou évaluer un modèle existant sur ta langue.","Publie ton jeu de données sur Hugging Face et raconte-le dans un article."]}),
+  S("Fiabilité et sécurité des LLM : évaluation, attaques par injection de prompt, conformité AI Act","Peu de candidats savent le faire. Les entreprises françaises en ont peur, donc elles paient pour.",{k:"skill",how:["Lis le Top 10 OWASP pour les applications LLM.","Attaque ton propre assistant : injection de prompt, fuite de données, réponses hors sujet.","Ajoute des garde-fous et mesure l'amélioration.","Rédige un court « rapport d'audit de sécurité » de ton projet."]}),
+  S("Optimisation des coûts : réduire de moitié la facture d'un système IA (cache, petits modèles, routage)","Un argument que les directeurs financiers comprennent tout de suite.",{k:"skill",how:["Mesure le coût actuel par requête de ton assistant.","Teste le cache de prompt, un modèle plus petit pour les questions simples et le routage entre modèles.","Publie le résultat avant/après en pourcentage."]})]],
+ ["Reconnaissance publique",[
+  S("Contributions open source acceptées dans un projet connu (LangChain, LlamaIndex, Hugging Face)","Une contribution fusionnée prouve que des experts ont relu et validé ton code.",{k:"skill",star:1,how:["Choisis un projet que tu utilises vraiment dans tes propres projets.","Filtre les tickets marqués « good first issue ».","Commence par de la documentation ou des tests.","Lis le fichier CONTRIBUTING.md, puis ouvre une petite pull request propre.","Réponds vite aux remarques des mainteneurs jusqu'à la fusion."]}),
+  S("Compétitions Kaggle ou hackathons IA (en ligne ou en France)","Une médaille ou un podium est une preuve objective.",{k:"free",u:"https://www.kaggle.com/competitions",how:["Crée un compte Kaggle et fais les compétitions « Getting Started ».","Étudie les notebooks des meilleurs.","Participe à une vraie compétition, idéalement en équipe.","Publie tes notebooks : ils peuvent aussi te rapporter des médailles."]}),
+  S("Un article technique par mois (LinkedIn ou blog) : ce que tu as construit, les erreurs, les chiffres","Les recruteurs IA lisent LinkedIn. Au bout de 6 mois, ils viennent à toi.",{k:"skill",how:["Structure fixe : le problème, la solution, un schéma, les chiffres, la leçon apprise.","Publie toujours le même jour de la semaine.","Commente 3 publications d'experts IA par semaine pour te faire connaître."]}),
+  S("Présenter un projet lors d'un meetup en ligne (communautés IA et data francophones)","",{k:"skill",how:["Repère des meetups IA en ligne sur Meetup.com et LinkedIn.","Propose une présentation de 15 minutes sur ton projet phare.","Partage l'enregistrement sur LinkedIn."]})]],
+ ["Atouts personnels à mettre en avant",[
+  S("Bilingue français / anglais technique, documenté sur le CV","Vise un niveau B2 en anglais au minimum.",{k:"skill",star:1,how:["Évalue ton niveau avec le test gratuit EF SET.","Lis chaque jour de la documentation technique en anglais.","Si une entreprise le demande, passe un test reconnu (TOEIC ou IELTS, payants)."]}),
+  S("Maîtriser les outils de développement assisté par IA (agents de code) et le montrer","Les entreprises cherchent des ingénieurs qui livrent 2 à 3 fois plus vite grâce à l'IA, sans perdre en qualité.",{k:"skill"}),
+  S("Savoir expliquer un système IA à un non-technicien en 2 minutes","Entraîne-toi à l'oral : c'est ce qui fait la différence en entretien final.",{k:"skill",how:["Prépare un pitch de 2 minutes pour chaque projet.","Enregistre-toi et réécoute.","Teste-le sur un proche qui n'est pas technicien : s'il comprend, c'est gagné."]}),
+  S("Recommandations LinkedIn de clients, collègues ou mentors (dont ton ami)","",{k:"skill",how:["Après chaque mission ou projet, demande une recommandation précise.","Propose un brouillon pour faciliter la tâche.","Demande à ton ami une recommandation sur ton sérieux et ta progression."]}),
+  S("Cooptation : te faire recommander en interne par ton ami et son réseau","Une candidature recommandée passe devant des centaines de candidatures anonymes.",{k:"skill",star:1,how:["Envoie-lui ton CV et ton portfolio à jour.","Demande-lui les postes IA et data ouverts dans son entreprise et chez ses anciens employeurs.","Qu'il te recommande via le programme de cooptation de son entreprise.","Demande-lui 3 contacts à qui écrire de sa part."]})]]]},
+{n:8,title:"Visibilité et candidatures",time:"À partir du mois 9",why:"Les compétences ne servent à rien si personne ne les voit. Cette phase rejoint le plan de ton ami (CV, LinkedIn, candidatures).",groups:[
+ ["Actions",[
+  S("Portfolio GitHub : 4 projets épinglés avec README clair, schéma et démo en ligne","",{k:"skill",star:1}),
+  S("CV français ciblé « Ingénieur IA / MLOps », 1 à 2 pages, résultats chiffrés","",{k:"skill",star:1}),
+  S("LinkedIn optimisé : titre, « À propos », compétences, ouverture à la France","Inspire-toi de la structure du profil de ton ami (titre, résultats chiffrés, « Pourquoi collaborer avec moi »), mais écris en texte normal : les lettres stylisées sont mal lues par la recherche LinkedIn et les logiciels des recruteurs.",{k:"skill",star:1}),
+  S("Un article LinkedIn par projet terminé","",{k:"skill"}),
+  S("Contribuer à un projet open source IA (documentation, petit correctif)","",{k:"skill"}),
+  S("Liste de 50 entreprises cibles : startups IA (JEI) et grands groupes / ESN","",{k:"skill",star:1}),
+  S("S'entraîner aux entretiens techniques : code Python, system design, questions ML","",{k:"skill"})]]]}
+];
+const CERTS=[
+ ["AWS Cloud Practitioner","CLF-C02","100 $","Débutant","★ 1ʳᵉ certification"],
+ ["AWS AI Practitioner","AIF-C01","100 $","Débutant","Optionnelle"],
+ ["AWS ML Engineer – Associate","MLA","150 $","Intermédiaire","★ Premier poste"],
+ ["AWS Solutions Architect – Associate","SAA-C03","150 $","Intermédiaire","★ Socle architecte"],
+ ["AWS Generative AI Developer – Professional","AIP-C01","300 $","Avancé","★ IA générative"],
+ ["AWS Solutions Architect – Professional","SAP-C02","300 $","Expert","★ Objectif architecte"],
+ ["AWS Security – Specialty","SCS-C03","300 $","Expert","Optionnelle"],
+ ["Azure AI Fundamentals","AI-901","≈ 99 $","Débutant","Si Azure"],
+ ["Azure AI App and Agent Developer","AI-103","≈ 165 $","Intermédiaire","Si Azure"],
+ ["Azure MLOps Engineer","AI-300","≈ 165 $","Intermédiaire","Si Azure"],
+ ["Google Professional ML Engineer","PMLE","200 $","Avancé","2ᵉ cloud"],
+ ["Google Generative AI Leader","—","99 $","Débutant","Optionnelle (orientée business)"],
+ ["HashiCorp Terraform Associate","004","70,50 $","Intermédiaire","★ Excellent rapport qualité-prix"],
+ ["Certified Kubernetes Administrator","CKA","445 $","Avancé","Recommandée"],
+ ["Kubernetes and Cloud Native Associate","KCNA","250 $","Débutant","Optionnelle"],
+ ["Professional Scrum Master I","PSM I","200 $","Débutant","★ Complément agile"],
+ ["Professional Scrum Product Owner I","PSPO I","200 $","Débutant","Optionnelle"],
+ ["Professional Scrum Master II","PSM II","250 $","Avancé","Plus tard (lead / architecte)"],
+ ["Databricks GenAI Fundamentals","—","Gratuit","Débutant","Bonus gratuit"],
+ ["Claude Certified Associate : Foundations","—","Via partenaire","Débutant","Optionnelle"],
+ ["Claude Certified Developer : Foundations","—","Via partenaire","Intermédiaire","★ Écosystème Claude"],
+ ["Claude Certified Architect : Foundations","—","Via partenaire","Avancé","★ Écosystème Claude"],
+ ["Claude Certified Architect : Professional","—","Via partenaire","Expert","Objectif architecte"],
+ ["MOOC CNIL L'atelier RGPD","—","Gratuit","Débutant","★ Conformité"]
+];
+const KEY="archi-ia-roadmap-v1";let done={};
+try{done=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){done={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tagFor=it=>{let h="";if(it.star)h+='<span class="tag t-star">★ Essentiel</span>';
+ if(it.k==="cert")h+='<span class="tag t-cert">Certification</span>'+(it.p?'<span class="tag t-paid">'+esc(it.p)+'</span>':"");
+ else if(it.k==="free")h+='<span class="tag t-free">Gratuit</span>';
+ else if(it.k==="paid")h+='<span class="tag t-paid">Payant'+(it.p?" · "+esc(it.p):"")+'</span>';
+ else if(it.k==="proj")h+='<span class="tag t-proj">Projet</span>';
+ else h+='<span class="tag t-skill">Compétence</span>';return h};
+const root=document.getElementById("phases");let all=[];
+PH.forEach((ph,pi)=>{const sec=document.createElement("section");sec.className="phase";sec.dataset.phase=ph.n;
+ let h='<div class="phase-head"><div class="ph-num">'+(pi+1)+'</div><div class="ph-meta"><h2>'+esc(ph.title)+'</h2><small>'+esc(ph.time)+'</small></div><div class="ph-count" data-count="'+ph.n+'"></div></div><p class="ph-why">'+esc(ph.why)+'</p>';
+ ph.groups.forEach((g,gi)=>{h+='<div class="group"><div class="group-title">'+esc(g[0])+'</div><ul class="items">';
+  g[1].forEach((it,ii)=>{const id="p"+ph.n+"g"+gi+"i"+ii;all.push({id,ph:ph.n,k:it.k,t:it.t,star:!!it.star});
+   h+='<li class="item" data-id="'+id+'" data-k="'+it.k+'"><input type="checkbox" id="'+id+'" aria-label="'+esc(it.t)+'"><div class="it-body"><div class="it-top"><label for="'+id+'" class="it-title">'+esc(it.t)+'</label>'+tagFor(it)+'</div>'+(it.d?'<p class="it-detail">'+esc(it.d)+'</p>':"")+(it.how?'<div class="it-how-t">Comment l\'obtenir, étape par étape</div><ol class="it-how">'+it.how.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol>':"")+(it.u?'<a class="it-link" href="'+it.u+'" target="_blank" rel="noopener">'+esc(it.u.replace(/^https:\/\//,"").replace(/\/$/,""))+' ↗</a>':"")+'</div></li>'});
+  h+='</ul></div>'});
+ sec.innerHTML=h;root.appendChild(sec)});
+document.getElementById("certtable").innerHTML=CERTS.map(c=>'<tr><td>'+esc(c[0])+'</td><td class="mono">'+esc(c[1])+'</td><td class="num">'+esc(c[2])+'</td><td>'+esc(c[3])+'</td><td>'+esc(c[4])+'</td></tr>').join("");
+function refresh(){let n=0;all.forEach(a=>{const on=!!done[a.id];const li=document.querySelector('li[data-id="'+a.id+'"]');li.classList.toggle("done",on);li.querySelector("input").checked=on;if(on)n++});
+ const pct=all.length?Math.round(n*100/all.length):0;document.getElementById("pct").textContent=pct+" %";
+ document.getElementById("pcount").textContent=n+" / "+all.length+" terminés";document.getElementById("pbar").style.width=pct+"%";
+ PH.forEach(ph=>{const it=all.filter(a=>a.ph===ph.n);const d=it.filter(a=>done[a.id]).length;document.querySelector('[data-count="'+ph.n+'"]').textContent=d+" / "+it.length});applyFilter();renderTree();renderNext()}
+root.addEventListener("change",e=>{if(e.target.type!=="checkbox")return;const id=e.target.id;if(e.target.checked)done[id]=1;else delete done[id];save();refresh()});
+let filt="all";
+function applyFilter(){document.querySelectorAll("li.item").forEach(li=>{const k=li.dataset.k,isDone=li.classList.contains("done");
+ let show=filt==="all"||(filt==="todo"&&!isDone)||(filt==="free"&&k==="free")||k===filt;li.hidden=!show});
+ document.querySelectorAll(".group").forEach(g=>{g.hidden=![...g.querySelectorAll("li.item")].some(l=>!l.hidden)});
+ document.querySelectorAll(".phase").forEach(p=>{p.hidden=![...p.querySelectorAll(".group")].some(g=>!g.hidden)})}
+document.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>{filt=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));applyFilter()}));
+const box=document.getElementById("resetbox");
+box.addEventListener("click",e=>{const t=e.target;if(t.id==="reset"){box.innerHTML='Effacer toute ta progression ? <button type="button" class="btn danger" id="yes">Oui, tout décocher</button><button type="button" class="btn" id="no">Annuler</button>'}
+ else if(t.id==="yes"){done={};save();refresh();box.innerHTML='<button type="button" class="btn" id="reset">Tout décocher</button>'}
+ else if(t.id==="no"){box.innerHTML='<button type="button" class="btn" id="reset">Tout décocher</button>'}});
+const NUM={},PHB={};PH.forEach((p,i)=>{NUM[p.n]=i+1;PHB[p.n]=p});
+const TRUNK=[1,2,3,5,6,8,7];
+const BR={2:["agile"],3:["claude",4,"diff"]};
+const ORDER=[1,2,"agile",3,"claude",4,5,"diff",6,8,7];
+const LBL={done:"Terminé",current:"Tu es ici",started:"Commencé",todo:"À venir"};
+function stat(k){const it=all.filter(a=>a.ph===k);const d=it.filter(a=>done[a.id]).length;return{d,n:it.length,p:it.length?Math.round(d*100/it.length):0}}
+function nextIn(k){const it=all.filter(a=>a.ph===k&&!done[a.id]);return it.find(a=>a.star)||it[0]}
+function renderTree(){const cur=TRUNK.find(k=>{const s=stat(k);return s.d<s.n});let h="";
+ TRUNK.forEach(k=>{const s=stat(k),p=PHB[k],st=s.d===s.n?"done":(k===cur?"current":(s.d>0?"started":"todo")),nx=nextIn(k);
+  h+='<div class="tnode '+st+'"><div class="tdot">'+(st==="done"?"✓":NUM[k])+'</div><div class="tbody"><button type="button" class="tcard" data-go="'+k+'"><span class="tstate">'+LBL[st]+'</span><span class="ttitle">'+esc(p.title)+'</span><span class="ttime">'+esc(p.time)+'</span><span class="tbar"><i style="width:'+s.p+'%"></i></span><span class="tmeta">'+s.d+' / '+s.n+' · '+s.p+' %</span>'+(nx?'<span class="tnext">Prochaine étape : '+esc(nx.t)+'</span>':'')+'</button>';
+  if(BR[k]){h+='<div class="tbranches"><div class="tbr-label">En parallèle</div>';BR[k].forEach(b=>{const bs=stat(b);h+='<button type="button" class="tbranch'+(bs.d===bs.n?' done':'')+'" data-go="'+b+'"><b>'+NUM[b]+'</b>'+esc(PHB[b].title)+'<span class="tbr-p">'+bs.p+' %</span></button>'});h+='</div>'}
+  h+='</div></div>'});
+ h+='<div class="tnode goal"><div class="tdot">★</div><div class="tbody"><div class="tcard goalcard"><span class="tstate">Objectif</span><span class="ttitle">Architecte IA</span><span class="ttime">Années 6 à 10 · 70 à 100 k€ et plus</span></div></div></div>';
+ document.getElementById("tree").innerHTML=h}
+let NEXT=null;
+function renderNext(){NEXT=null;for(const k of ORDER){const f=all.find(a=>a.ph===k&&!done[a.id]&&a.star);if(f){NEXT=f;break}}if(!NEXT)NEXT=all.find(a=>!done[a.id])||null;
+ const box=document.getElementById("next");
+ if(!NEXT){box.innerHTML='<div class="nlabel">Félicitations</div><div class="ntitle">Tout est coché. Tu es prêt pour les postes d\'architecte IA.</div>';return}
+ box.innerHTML='<div class="nlabel">Ta prochaine étape</div><div class="ntitle">'+esc(NEXT.t)+'</div><div class="nphase">Phase '+NUM[NEXT.ph]+' · '+esc(PHB[NEXT.ph].title)+'</div><div class="nact"><button type="button" class="btn primary" id="ndone">C\'est fait ✓</button><button type="button" class="btn" id="nsee">Voir le détail</button></div>'}
+function setView(v){document.getElementById("view-tree").hidden=v!=="tree";document.getElementById("view-list").hidden=v!=="list";document.querySelector(".filters").hidden=v!=="list";document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v?"true":"false"))}
+function resetFilter(){filt="all";document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.f==="all"?"true":"false"));applyFilter()}
+function goPhase(k){setView("list");resetFilter();const s=document.querySelector('.phase[data-phase="'+k+'"]');if(s)s.scrollIntoView({behavior:"smooth",block:"start"})}
+function goItem(id){setView("list");resetFilter();const li=document.querySelector('li[data-id="'+id+'"]');if(li){li.scrollIntoView({behavior:"smooth",block:"center"});li.classList.add("flash");setTimeout(()=>li.classList.remove("flash"),1800)}}
+document.getElementById("next").addEventListener("click",e=>{if(!NEXT)return;if(e.target.id==="ndone"){done[NEXT.id]=1;save();refresh()}else if(e.target.id==="nsee"){goItem(NEXT.id)}});
+document.getElementById("tree").addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;const k=b.dataset.go;goPhase(isNaN(k)?k:Number(k))});
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{setView(b.dataset.v);window.scrollTo({top:0})}));
+refresh();
+setView(location.hash==="#liste"?"list":"tree");
+</script>
+
+</body>
+</html>
