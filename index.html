@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Parcours complet pour devenir Architecte IA : compétences, cours, certifications et projets à cocher.">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="description" content="Parcours complet pour devenir Architecte IA : compétences, cours, certifications, projets, recherche d'emploi par pays et plan d'anglais intensif.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Feuille de route Architecte IA</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -149,7 +149,107 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .tree-help{color:var(--muted);font-size:.9rem}
 .phase,li.item{scroll-margin-top:160px}
 li.item.flash{background:var(--amber-soft)}
-@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+.tabs{flex-wrap:wrap}
+#view-job,#view-en{display:flex;flex-direction:column;gap:22px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--sheet);padding:10px 18px;border-radius:99px;font-weight:600;z-index:20}
+.sec{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.sec>h3{font-size:1.15rem}
+.sec>p{color:var(--muted)}
+.cnav{display:flex;flex-wrap:wrap;gap:8px}
+.cbtn{font:600 .9rem var(--f-body);display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:10px;padding:7px 12px;cursor:pointer}
+.cbtn[aria-pressed="true"]{border-color:var(--blue);background:var(--blue-soft)}
+.code{font:700 .72rem var(--f-mono);letter-spacing:.06em;background:var(--ink);color:var(--sheet);border-radius:4px;padding:2px 5px}
+.cbtn small{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.chead{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.chead h2{font-size:1.7rem}
+.pill{font:600 .75rem var(--f-body);border-radius:99px;padding:3px 10px;background:var(--green-soft);color:var(--green)}
+.pill.amber{background:var(--amber-soft);color:var(--amber)}
+.pill.red{background:var(--red-soft);color:var(--red)}
+.pill.blue{background:var(--blue-soft);color:var(--blue)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fact{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.fact b{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.lks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.lk{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--ink);background:var(--sheet);min-width:0}
+.lk:hover{border-color:var(--blue);background:var(--blue-soft)}
+.lk-t{font-weight:700;color:var(--blue)}
+.lk-h{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);word-break:break-all}
+.lk-d{font-size:.88rem;color:var(--muted)}
+ul.cks,ol.cks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;counter-reset:st}
+.ck{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}
+.ck:first-child{border-top:0}
+.ck input{width:19px;height:19px;margin:2px 0 0;accent-color:var(--green);cursor:pointer}
+.ck label{display:flex;flex-direction:column;gap:2px;cursor:pointer}
+.ck small{color:var(--muted);font-size:.88rem}
+ol.cks .ck label>span::before{counter-increment:st;content:counter(st) ". ";font-family:var(--f-mono);color:var(--blue);font-weight:700}
+.ck.done label>span{text-decoration:line-through;text-decoration-color:var(--green);color:var(--muted)}
+.kws{display:flex;flex-direction:column;gap:6px}
+.kw{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px;border:1px solid var(--line);border-radius:10px;padding:7px 10px}
+.kw-t{font-weight:700;font-family:var(--f-mono);font-size:.88rem}
+.kw-a{display:flex;flex-wrap:wrap;gap:6px}
+.kw-a button,.kw-a a,.mini{font:600 .78rem var(--f-body);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:3px 10px;cursor:pointer;text-decoration:none}
+.kw-a a{color:var(--blue)}
+.kw-a button:hover,.kw-a a:hover,.mini:hover{border-color:var(--blue)}
+.warn{border-left:4px solid var(--red);background:var(--red-soft);border-radius:0 10px 10px 0;padding:12px 14px}
+.warn ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.subh{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-top:4px}
+.why{border-left:4px solid var(--blue);padding:4px 12px;color:var(--ink)}
+.order{display:flex;flex-direction:column;gap:6px}
+.order button{text-align:left;font:inherit;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;display:flex;gap:10px;align-items:center}
+.order button:hover{border-color:var(--blue)}
+.enhero{background:linear-gradient(135deg,var(--blue-soft),var(--violet-soft));border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.enhero h2{font-size:clamp(1.6rem,4vw,2.2rem)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.stat{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.stat b{font-family:var(--f-display);font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-size:.82rem;color:var(--muted)}
+.bigbtn{font:700 1rem var(--f-body);background:var(--green);color:var(--sheet);border:0;border-radius:12px;padding:12px 18px;cursor:pointer;align-self:flex-start}
+.bigbtn[disabled]{opacity:.6;cursor:default}
+.heat{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:4px;max-width:520px}
+.heat i{aspect-ratio:1;border-radius:4px;background:var(--paper);border:1px solid var(--line)}
+.heat i.on{background:var(--green);border-color:var(--green)}
+.heat i.today{outline:2px solid var(--blue);outline-offset:1px}
+.meters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.meter{display:flex;flex-direction:column;gap:4px}
+.meter div{display:flex;justify-content:space-between;font-weight:600;font-size:.92rem}
+.meter .bar{height:8px}
+.timer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px;align-items:start}
+.tclock{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.tnow{font-family:var(--f-display);font-weight:700;font-size:1.15rem}
+.tdig{font-family:var(--f-mono);font-size:clamp(2.4rem,9vw,3.4rem);font-weight:500;font-variant-numeric:tabular-nums;line-height:1}
+.tbtns{display:flex;flex-wrap:wrap;gap:6px}
+.tlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.tlist li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.tlist li.cur{border-color:var(--blue);background:var(--blue-soft)}
+.tlist li.fin{opacity:.55}
+.tlist .mn{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.modes{display:flex;gap:6px;flex-wrap:wrap}
+.mini[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.mn{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.weeks{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.wk{font:700 .85rem var(--f-body);border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:10px;padding:8px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.wk small{font:500 .68rem var(--f-mono);color:var(--muted)}
+.wk.m1{border-top:3px solid var(--blue)}.wk.m2{border-top:3px solid var(--violet)}.wk.m3{border-top:3px solid var(--amber)}
+.wk[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.wk[aria-pressed="true"] small{color:var(--sheet)}
+.wk.full::after{content:"✓";font-size:.7rem;color:var(--green)}
+.sk{font:600 .7rem var(--f-body);border-radius:5px;padding:2px 7px;margin-right:6px}
+.sk-ecoute{background:var(--blue-soft);color:var(--blue)}.sk-parole{background:var(--amber-soft);color:var(--amber)}.sk-lecture{background:var(--violet-soft);color:var(--violet)}.sk-ecriture{background:var(--green-soft);color:var(--green)}
+.prompt{background:var(--paper);border:1px dashed var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.prompt p{font-family:var(--f-mono);font-size:.85rem;color:var(--ink)}
+.fcwrap{display:flex;flex-direction:column;gap:10px;align-items:center}
+.fc{width:100%;max-width:440px;height:200px;perspective:900px;cursor:pointer;background:none;border:0;padding:0;font:inherit;color:inherit}
+.fc-in{display:block;position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip .fc-in{transform:rotateY(180deg)}
+.fc-f,.fc-b{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px;text-align:center;border:1px solid var(--line)}
+.fc-f{background:var(--sheet)}
+.fc-b{background:var(--blue-soft);transform:rotateY(180deg)}
+.fc-f b{font-family:var(--f-display);font-size:2rem}
+.fc-b b{font-family:var(--f-display);font-size:1.4rem}
+.fc-b i{color:var(--muted)}
+.fcnav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center}
+@media (max-width:720px){.facts,.meters,.timer{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.weeks{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}.fc-in{transition:none}}
 </style>
 </head>
 <body>
@@ -181,7 +281,13 @@ li.item.flash{background:var(--amber-soft)}
   <div class="tabs" role="tablist" aria-label="Affichage">
     <button type="button" role="tab" data-v="tree" aria-selected="true">Parcours</button>
     <button type="button" role="tab" data-v="list" aria-selected="false">Liste détaillée</button>
+    <button type="button" role="tab" data-v="job" aria-selected="false">Trouver un emploi</button>
+    <button type="button" role="tab" data-v="en" aria-selected="false">Anglais en 3 mois</button>
   </div>
+
+  <div id="view-job" hidden></div>
+  <div id="view-en" hidden></div>
+  <div class="toast" id="toast" role="status" hidden></div>
 
   <div id="view-tree">
     <div class="next" id="next"></div>
@@ -536,15 +642,211 @@ function renderNext(){NEXT=null;for(const k of ORDER){const f=all.find(a=>a.ph==
  const box=document.getElementById("next");
  if(!NEXT){box.innerHTML='<div class="nlabel">Félicitations</div><div class="ntitle">Tout est coché. Tu es prêt pour les postes d\'architecte IA.</div>';return}
  box.innerHTML='<div class="nlabel">Ta prochaine étape</div><div class="ntitle">'+esc(NEXT.t)+'</div><div class="nphase">Phase '+NUM[NEXT.ph]+' · '+esc(PHB[NEXT.ph].title)+'</div><div class="nact"><button type="button" class="btn primary" id="ndone">C\'est fait ✓</button><button type="button" class="btn" id="nsee">Voir le détail</button></div>'}
-function setView(v){document.getElementById("view-tree").hidden=v!=="tree";document.getElementById("view-list").hidden=v!=="list";document.querySelector(".filters").hidden=v!=="list";document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v?"true":"false"))}
+function setView(v){["tree","list","job","en"].forEach(x=>{document.getElementById("view-"+x).hidden=x!==v});document.querySelector(".filters").hidden=v!=="list";document.querySelector(".progress-card").hidden=(v==="job"||v==="en");document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v?"true":"false"))}
 function resetFilter(){filt="all";document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.f==="all"?"true":"false"));applyFilter()}
 function goPhase(k){setView("list");resetFilter();const s=document.querySelector('.phase[data-phase="'+k+'"]');if(s)s.scrollIntoView({behavior:"smooth",block:"start"})}
 function goItem(id){setView("list");resetFilter();const li=document.querySelector('li[data-id="'+id+'"]');if(li){li.scrollIntoView({behavior:"smooth",block:"center"});li.classList.add("flash");setTimeout(()=>li.classList.remove("flash"),1800)}}
 document.getElementById("next").addEventListener("click",e=>{if(!NEXT)return;if(e.target.id==="ndone"){done[NEXT.id]=1;save();refresh()}else if(e.target.id==="nsee"){goItem(NEXT.id)}});
 document.getElementById("tree").addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;const k=b.dataset.go;goPhase(isNaN(k)?k:Number(k))});
 document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{setView(b.dataset.v);window.scrollTo({top:0})}));
-refresh();
-setView(location.hash==="#liste"?"list":"tree");
+/* ================= EMPLOI ET ANGLAIS ================= */
+const EXK="archi-ia-extra-v1";let ex={};
+try{ex=JSON.parse(localStorage.getItem(EXK)||"{}")||{}}catch(e){ex={}}
+if(!ex.c)ex.c={};if(!ex.days)ex.days=[];if(!ex.vocab)ex.vocab={};
+function exSave(){try{localStorage.setItem(EXK,JSON.stringify(ex))}catch(e){}}
+let toastT;function toast(m){const t=document.getElementById("toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{t.hidden=true},2200)}
+function fallbackCopy(txt){const ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}ta.remove();toast(ok?"Copié":"Sélectionne le texte pour le copier")}
+function copyText(txt){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>toast("Copié")).catch(()=>fallbackCopy(txt))}else fallbackCopy(txt)}
+const L=(t,u,d)=>({t,u,d});
+const hostOf=u=>u.replace(/^https?:\/\//,"").split("/")[0];
+function linkCards(arr){return '<div class="lks">'+arr.map(l=>'<a class="lk" href="'+l.u+'" target="_blank" rel="noopener"><span class="lk-t">'+esc(l.t)+' ↗</span><span class="lk-h">'+esc(hostOf(l.u))+'</span>'+(l.d?'<span class="lk-d">'+esc(l.d)+'</span>':'')+'</a>').join("")+'</div>'}
+function ckItem(id,label,sub){const on=!!ex.c[id];return '<li class="ck'+(on?' done':'')+'"><input type="checkbox" id="'+id+'" data-ex="'+id+'"'+(on?' checked':'')+'><label for="'+id+'"><span>'+esc(label)+'</span>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</label></li>'}
+function kwChips(list,c){return '<div class="kws">'+list.map(k=>'<div class="kw"><span class="kw-t">'+esc(k)+'</span><span class="kw-a"><button type="button" data-copy="'+esc(k)+'">Copier</button><a href="https://www.linkedin.com/jobs/search/?keywords='+encodeURIComponent(k)+(c?'&location='+encodeURIComponent(c.li):'')+'" target="_blank" rel="noopener">LinkedIn ↗</a>'+(c?'<a href="'+c.indeed+'/jobs?q='+encodeURIComponent(k)+'&l='+encodeURIComponent(c.inl)+'" target="_blank" rel="noopener">Indeed ↗</a>':'')+'</span></div>').join("")+'</div>'}
+
+const KW_NOW=["Développeur IA junior","Ingénieur IA junior","Développeur Python IA","Développeur IA générative","AI Engineer junior","Junior Machine Learning Engineer","LLM Engineer","Generative AI Developer","Python Developer AI"];
+const KW_LATER=["Ingénieur MLOps","MLOps Engineer","Machine Learning Engineer","AI Platform Engineer","LLMOps Engineer","Architecte IA","AI Solutions Architect"];
+const KW_ADD=["visa sponsorship","relocation","relocation package","English speaking"];
+const COMMON_LINKS=[L("LinkedIn Emplois","https://www.linkedin.com/jobs/","La plateforme n°1 dans tous les pays."),L("Indeed","https://www.indeed.com/","Choisis le site du pays (fr.indeed.com, de.indeed.com…)."),L("EURES","https://eures.europa.eu/","Portail officiel de l'emploi de l'Union européenne."),L("Portail européen de l'immigration","https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal_en","Règles officielles des visas de travail, pays par pays."),L("Relocate.me","https://relocate.me/","Offres tech avec aide au visa et au déménagement."),L("Malt","https://www.malt.fr/","Freelance à distance pour des clients français."),L("Upwork","https://www.upwork.com/","Freelance international, à distance.")];
+const LI_STEPS=["Profil LinkedIn complet en français, titre du type « Développeur IA | Python | IA générative (LLM, RAG) »","Activer « Open to Work » visible des recruteurs uniquement, avec tes pays cibles","Créer une alerte emploi pour chaque mot-clé et chaque pays (bouton « Créer une alerte »)","Postuler dans les 48 heures après la publication : les premières candidatures sont les plus lues","Préférer le site de l'entreprise à la « Candidature simplifiée » quand c'est possible","Après chaque candidature, écrire un message court au recruteur (cherche « Talent Acquisition » + nom de l'entreprise)","Tenir un tableau de suivi : entreprise, poste, date, contact, relance à J+7, statut"];
+const DOCS_COMMON=[["Passeport valide au moins 2 ans",""],["Passeports de ta femme et de ton enfant",""],["Diplôme et relevés de notes de l'IFRI","Originaux et copies propres en PDF"],["Attestation de comparabilité du diplôme","Selon le pays : ENIC-NARIC (France), anabin/ZAB (Allemagne), Nuffic (Pays-Bas), MIFI (Québec)"],["Attestations de travail signées","Elles doivent décrire précisément tes missions et tes dates"],["Extrait de casier judiciaire récent","Moins de 3 mois au moment du dépôt"],["Acte de mariage légalisé",""],["Acte de naissance de l'enfant légalisé",""],["CV au format européen, en français","Puis une version anglaise dès que ton niveau le permet"],["Lettre de motivation modèle à adapter",""],["Portfolio GitHub avec vidéos de démo",""],["Photos d'identité aux normes",""],["Relevés bancaires des derniers mois","Demandés par certains pays (Irlande notamment)"],["Traductions assermentées","Pour tout document qui n'est ni en français ni en anglais"]];
+const SCAMS=["Un vrai employeur ne te fait jamais payer pour t'embaucher ou pour « réserver » un visa.","Méfie-toi des offres envoyées uniquement par WhatsApp, Telegram ou depuis une adresse Gmail.","Un salaire très élevé sans aucun entretien technique est un signal d'arnaque.","Les démarches de visa se font sur les sites officiels (.gouv.fr, .public.lu, .admin.ch, .gc.ca, .europa.eu…) et au centre ou à l'ambassade, jamais chez un intermédiaire qui « garantit » le visa.","Vérifie toujours l'entreprise : site web, page LinkedIn, salariés réels, immatriculation."];
+
+const C=[
+{id:"FR",name:"France",prio:"Priorité 1",pc:"",lang:"Français",li:"France",indeed:"https://fr.indeed.com",inl:"France",
+ visa:"Talent – carte bleue européenne, ou Talent – salarié d'une entreprise innovante (JEI)",seuil:"59 373 € brut/an (carte bleue) ou 39 582 € (startup JEI)",fam:"Procédure « famille accompagnante » : femme et enfant viennent en même temps, ta femme peut travailler",depot:"Centre Capago de Cotonou, après création du dossier sur France-Visas. Frais payés en FCFA.",
+ why:"Tout est réuni : la langue, ton ami sur place, un visa qui ne demande aucune autorisation de travail à l'employeur, et ta famille admise tout de suite.",
+ steps:[["Lister 30 startups JEI et 20 grands groupes ou ESN","Sources : French Tech 120 / Next40, Welcome to the Jungle"],["Postuler avec ton CV français et ton GitHub","Ajoute : « Éligible au visa Talent : aucune autorisation de travail à demander pour l'employeur »"],["Passer les entretiens en visio et le test technique",""],["Vérifier l'offre","Salaire au-dessus du seuil de la catégorie visée, contrat d'au moins 6 mois pour la carte bleue"],["Demander à l'employeur l'attestation employeur et le formulaire « éléments du contrat »","Modèles sur service-public.fr"],["Créer les demandes de visa sur France-Visas","Toi en « Talent », ta femme et ton enfant en « famille accompagnante »"],["Prendre rendez-vous au centre Capago de Cotonou","2 à 3 semaines d'avance, 5 à 6 semaines de juin à octobre"],["Déposer les dossiers et donner les empreintes",""],["Arriver en France et demander la carte de séjour sur l'ANEF","Dans les 2 mois pour un séjour d'au moins 1 an ; timbre fiscal de 350 €"]],
+ kw:["Ingénieur IA","Développeur IA","Ingénieur machine learning junior","Développeur Python IA","Ingénieur IA générative","Data scientist junior","Ingénieur MLOps"],
+ official:[L("France-Visas : visa depuis le Bénin","https://france-visas.gouv.fr/benin","Lieu de dépôt, rendez-vous Capago"),L("Service-public : carte talent","https://www.service-public.gouv.fr/particuliers/vosdroits/F16922","Conditions officielles de chaque catégorie"),L("ANEF : titre de séjour","https://administration-etrangers-en-france.interieur.gouv.fr/","À utiliser une fois en France"),L("Welcome to France","https://www.welcometofrance.com/","Installation en France (Business France)"),L("France Éducation international (ENIC-NARIC)","https://www.france-education-international.fr/","Attestation de comparabilité du diplôme")],
+ jobs:[L("France Travail","https://www.francetravail.fr/","Service public de l'emploi"),L("APEC","https://www.apec.fr/","Offres pour cadres"),L("Welcome to the Jungle","https://www.welcometothejungle.com/fr","Startups et tech"),L("Indeed France","https://fr.indeed.com/",""),L("HelloWork","https://www.hellowork.com/",""),L("La French Tech","https://lafrenchtech.gouv.fr/","Listes French Tech 120 et Next40"),L("Malt","https://www.malt.fr/","Freelance à distance")],
+ docs:[["Attestation employeur remplie et signée",""],["Formulaire « éléments du contrat de travail » de la catégorie","Sur service-public.fr"],["Contrat de travail signé",""]],
+ traps:["Viser « Talent salarié qualifié » : il exige un master obtenu en France. Ta voie est la carte bleue ou l'entreprise innovante.","Un salaire juste sous le seuil fait refuser le dossier : vérifie avant de signer.","Les rendez-vous Capago sont rares de juin à octobre : réserve tôt."]},
+{id:"BE",name:"Belgique",prio:"Priorité 2",pc:"",lang:"Français (Bruxelles, Wallonie), néerlandais (Flandre)",li:"Belgique",indeed:"https://be.indeed.com",inl:"Belgique",
+ visa:"Carte bleue européenne ou permis unique travailleur hautement qualifié",seuil:"Environ 48 000 € en Wallonie et 52 000 € à Bruxelles (chiffres de presse, à vérifier)",fam:"Regroupement familial facilité avec la carte bleue (à vérifier pour le permis unique)",depot:"Ambassade de Belgique à Cotonou, une fois le permis unique accordé",
+ why:"Francophone à Bruxelles et en Wallonie, avec des seuils de salaire plus bas que la France pour la carte bleue.",
+ steps:[["Cibler Bruxelles et la Wallonie",""],["Postuler et passer les entretiens",""],["L'employeur dépose la demande de permis unique auprès de la région","Wallonie, Bruxelles ou Flandre selon le lieu de travail"],["Attendre l'accord","3 à 6 mois en moyenne ; plus rapide en Flandre"],["Demander le visa D à l'ambassade de Belgique à Cotonou",""],["Arriver, t'inscrire à la commune et retirer ta carte de séjour",""]],
+ kw:["Développeur IA","Ingénieur IA","AI Engineer","Machine Learning Engineer","Développeur Python"],
+ official:[L("SPF Emploi : travailleurs étrangers","https://emploi.belgique.be/fr/themes/international/travailleurs-etrangers","Règles nationales"),L("Wallonie : carte bleue européenne","https://emploi.wallonie.be/en/home/travailleurs-etrangers/permis-de-travail/vous-etes-employeur/que-devez-vous-faire/carte-bleue-europeenne-1.html","Permis de travail en Wallonie"),L("Bruxelles Économie et Emploi","https://economie-emploi.brussels/","Permis de travail à Bruxelles"),L("Ambassade de Belgique au Bénin","https://benin.diplomatie.belgium.be/","Visa D depuis Cotonou")],
+ jobs:[L("Actiris","https://www.actiris.brussels/","Emploi à Bruxelles"),L("Le Forem","https://www.leforem.be/","Emploi en Wallonie"),L("VDAB","https://www.vdab.be/","Emploi en Flandre"),L("Indeed Belgique","https://be.indeed.com/",""),L("StepStone Belgique","https://www.stepstone.be/","")],
+ docs:[["Copie de l'accord du permis unique",""],["Contrat de travail signé",""]],
+ traps:["Les seuils changent par région : demande le montant exact à l'employeur avant de signer.","En Flandre, la vie quotidienne se passe surtout en néerlandais."]},
+{id:"LU",name:"Luxembourg",prio:"Priorité 3",pc:"",lang:"Français et anglais au travail",li:"Luxembourg",indeed:"https://lu.indeed.com",inl:"Luxembourg",
+ visa:"Carte bleue européenne",seuil:"65 652 € brut/an (depuis le 3 mars 2026)",fam:"Famille admise immédiatement, ton épouse peut travailler sans permis séparé",depot:"Autorisation de séjour à demander à la Direction de l'immigration avant l'arrivée, puis visa D au lieu indiqué (une ambassade du Luxembourg existe à Cotonou)",
+ why:"Les salaires les plus élevés, une vie possible en français, et la famille admise tout de suite.",
+ steps:[["Cibler les banques, fonds, cabinets de conseil et ESN",""],["Postuler et passer les entretiens",""],["Obtenir un contrat d'au moins 65 652 € brut/an","Diplôme de 3 ans ou 5 ans d'expérience"],["Demander l'autorisation de séjour « salarié hautement qualifié » depuis le Bénin","Procédure sur guichet.public.lu"],["Demander le visa D au lieu indiqué par l'autorisation",""],["Arriver, déclarer ton arrivée à la commune, passer la visite médicale, demander le titre de séjour",""]],
+ kw:["Développeur IA","AI Engineer","Machine Learning Engineer","Data Engineer","Ingénieur IA"],
+ official:[L("Guichet.lu : salarié hautement qualifié (carte bleue)","https://guichet.public.lu/fr/citoyens/immigration/plus-3-mois/ressortissant-tiers/hautement-qualifie/salarie-hautement-qualifie.html","Toute la procédure officielle"),L("Guichet.lu (accueil)","https://guichet.public.lu/fr.html","Portail officiel")],
+ jobs:[L("ADEM","https://adem.public.lu/","Service public de l'emploi"),L("Jobs.lu","https://www.jobs.lu/",""),L("Moovijob","https://www.moovijob.com/","Offres et salons de recrutement"),L("Indeed Luxembourg","https://lu.indeed.com/","")],
+ docs:[["Contrat avec salaire ≥ 65 652 €",""],["Preuve de diplôme de 3 ans ou de 5 ans d'expérience",""]],
+ traps:["Le seuil est élevé : un poste junior l'atteint rarement. Vise-le après une première expérience.","Pour la résidence longue durée (après 5 ans), il faudra des bases de luxembourgeois."]},
+{id:"DE",name:"Allemagne",prio:"Avec l'anglais",pc:"amber",lang:"Anglais au travail dans la tech, allemand pour la vie quotidienne",li:"Allemagne",indeed:"https://de.indeed.com",inl:"Deutschland",
+ visa:"Carte bleue européenne, ou Chancenkarte (venir chercher un emploi)",seuil:"50 700 € brut/an, ou 45 934 € pour l'informatique (métier en pénurie)",fam:"Famille admise avec la carte bleue ; pour la Chancenkarte, le conjoint doit avoir un niveau A1 en allemand",depot:"Ambassade d'Allemagne à Cotonou",
+ why:"Les informaticiens peuvent obtenir la carte bleue sans diplôme avec 3 ans d'expérience sur les 7 dernières années. Énorme marché tech.",
+ steps:[["Vérifier ton diplôme sur anabin","Si besoin, faire évaluer ton diplôme par la ZAB"],["Cibler les entreprises qui recrutent en anglais",""],["Postuler et passer les entretiens",""],["Demander à l'employeur la procédure accélérée pour travailleurs qualifiés","Il la lance auprès du service des étrangers en Allemagne"],["Prendre rendez-vous à l'ambassade d'Allemagne à Cotonou","Suivre les instructions de cotonou.diplo.de"],["Arriver, déclarer ton adresse (Anmeldung) et retirer la carte bleue",""]],
+ kw:["KI-Entwickler","KI-Ingenieur","Machine Learning Engineer","Junior AI Engineer","Python Entwickler KI","AI Engineer English speaking"],
+ official:[L("Make it in Germany","https://www.make-it-in-germany.com/","Portail officiel : visas, Chancenkarte, offres pour étrangers"),L("Auswärtiges Amt : Bénin","https://www.auswaertiges-amt.de/de/reiseundsicherheit/deutsche-auslandsvertretungen/benin-208988","Ambassade compétente"),L("Ambassade d'Allemagne à Cotonou","https://cotonou.diplo.de/","Visas depuis le Bénin"),L("anabin","https://anabin.kmk.org/","Reconnaissance du diplôme et de l'établissement")],
+ jobs:[L("Jobbörse (Arbeitsagentur)","https://www.arbeitsagentur.de/jobsuche/","Service public de l'emploi"),L("StepStone","https://www.stepstone.de/",""),L("XING","https://www.xing.com/","Le LinkedIn allemand"),L("Indeed Allemagne","https://de.indeed.com/",""),L("Arbeitnow","https://www.arbeitnow.com/","Filtre visa sponsorisé"),L("GermanTechJobs","https://germantechjobs.de/","Tech")],
+ docs:[["Résultat anabin ou évaluation ZAB",""],["Lettres de référence détaillant 3 ans d'expérience informatique","Si tu passes par la voie sans diplôme"]],
+ traps:["Sans anglais, la recherche est très difficile.","Les rendez-vous d'ambassade peuvent être longs : demande la procédure accélérée à l'employeur."]},
+{id:"NL",name:"Pays-Bas",prio:"Avec l'anglais",pc:"amber",lang:"Anglais au travail, néerlandais utile au quotidien",li:"Pays-Bas",indeed:"https://nl.indeed.com",inl:"Nederland",
+ visa:"Highly Skilled Migrant (kennismigrant) ou carte bleue européenne",seuil:"5 942 €/mois (30 ans et plus), 4 357 €/mois (moins de 30 ans)",fam:"La famille peut demander le séjour en même temps",depot:"Ambassade des Pays-Bas à Cotonou, avec la lettre d'accord de l'IND",
+ why:"Procédure rapide quand l'employeur est un « sponsor reconnu ». Beaucoup d'entreprises tech travaillent en anglais.",
+ steps:[["Vérifier que l'entreprise est sur le registre des sponsors reconnus de l'IND","Sans cela, elle ne peut pas te faire venir"],["Postuler et passer les entretiens",""],["L'employeur dépose ta demande auprès de l'IND",""],["Recevoir la lettre d'accord de l'IND",""],["Prendre rendez-vous à l'ambassade des Pays-Bas à Cotonou","Dans les 3 mois suivant la lettre"],["Arriver et retirer ton titre de séjour",""]],
+ kw:["AI Engineer","Machine Learning Engineer","Junior AI Developer","Python Developer","kennismigrant","visa sponsorship"],
+ official:[L("IND : sponsors reconnus","https://ind.nl/en/node/2525","Registre public des entreprises autorisées"),L("Netherlands Worldwide : MVV depuis le Bénin","https://www.netherlandsworldwide.nl/visa-the-netherlands/mvv-long-stay/apply-benin","Où et comment déposer"),L("Nuffic","https://www.nuffic.nl/","Évaluation des diplômes étrangers")],
+ jobs:[L("Werk.nl","https://www.werk.nl/","Service public de l'emploi"),L("Indeed Pays-Bas","https://nl.indeed.com/",""),L("IamExpat Jobs","https://www.iamexpat.nl/career/jobs-netherlands","Offres pour étrangers")],
+ docs:[["Lettre d'accord de l'IND",""],["Évaluation Nuffic du diplôme","Recommandée"]],
+ traps:["Une entreprise hors registre IND ne peut pas sponsoriser : vérifie avant de postuler.","Le logement est cher et rare, surtout à Amsterdam."]},
+{id:"CH",name:"Suisse",prio:"Difficile",pc:"red",lang:"Français à Genève et Lausanne, allemand à Zurich",li:"Suisse",indeed:"https://ch.indeed.com",inl:"Suisse",
+ visa:"Permis B ou L pour ressortissants hors UE",seuil:"Pas de seuil fixe, salaires suisses usuels obligatoires",fam:"Possible avec un permis B, selon le canton",depot:"Représentation suisse compétente pour le Bénin (rattachée à l'ambassade d'Accra, à vérifier)",
+ why:"Salaires très élevés, mais seulement 8 500 permis par an pour tous les non-Européens, et priorité aux candidats suisses et européens.",
+ steps:[["Viser des postes très spécialisés, après plusieurs années d'expérience",""],["L'employeur dépose la demande auprès du canton",""],["Accord du canton puis du Secrétariat d'État aux migrations",""],["Demander le visa D à la représentation suisse compétente",""],["Arriver et retirer le permis",""]],
+ kw:["Ingénieur IA","Développeur IA","Machine Learning Engineer","KI-Ingenieur"],
+ official:[L("Secrétariat d'État aux migrations (SEM)","https://www.sem.admin.ch/","Autorité fédérale"),L("ch.ch","https://www.ch.ch/fr/","Portail officiel suisse")],
+ jobs:[L("jobup.ch","https://www.jobup.ch/","Suisse romande, francophone"),L("jobs.ch","https://www.jobs.ch/",""),L("SwissDevJobs","https://swissdevjobs.ch/","Tech"),L("Travail.Suisse (Job-Room)","https://www.arbeit.swiss/","Service public de l'emploi"),L("Indeed Suisse","https://ch.indeed.com/","")],
+ docs:[["Contrat aux conditions de salaire suisses",""]],
+ traps:["Un permis peut être refusé même s'il reste des places dans le quota.","Ce n'est pas une piste pour un premier poste."]},
+{id:"QC",name:"Québec (Canada)",prio:"Option francophone",pc:"blue",lang:"Français",li:"Québec, Canada",indeed:"https://ca.indeed.com",inl:"Québec",
+ visa:"Permis de travail temporaire avec offre d'emploi, ou résidence permanente (PSTQ)",seuil:"Pas de seuil européen ; salaire du marché québécois",fam:"Possible selon le programme",depot:"Demandes en ligne (Québec puis IRCC), empreintes dans un centre de réception des visas (CRDV) : vérifie le plus proche sur canada.ca",
+ why:"Une option 100 % en français. Les missions Journées Québec incluent le Bénin et ciblent les technologies de l'information.",
+ steps:[["Surveiller les Journées Québec et Journées Montréal Recrute","Sessions annoncées sur quebec.ca et montrealinternational.com"],["Passer un test de français officiel (TEF Canada ou TCF Québec)","Le PSTQ exige un bon niveau oral"],["Faire l'évaluation comparative de ton diplôme (MIFI)",""],["Décrocher une offre d'emploi",""],["L'employeur obtient l'autorisation d'embaucher (EIMT) si elle est exigée",""],["Demander le certificat d'acceptation du Québec (CAQ), puis le permis de travail à IRCC",""],["Donner tes empreintes dans un centre de réception des visas",""],["En parallèle : déclaration d'intérêt sur Arrima pour la résidence permanente (PSTQ)",""]],
+ kw:["Développeur IA","Scientifique de données","Ingénieur en apprentissage automatique","Spécialiste en intelligence artificielle","Développeur TI"],
+ official:[L("Immigrer au Québec","https://www.quebec.ca/immigration","Programmes, Arrima, Journées Québec"),L("Invitations PSTQ 2026","https://www.quebec.ca/en/immigration/permanent/skilled-workers/skilled-worker-selection-program/invitation/2026","Métiers invités"),L("Immigration Canada (IRCC)","https://www.canada.ca/fr/immigration-refugies-citoyennete.html","Permis de travail fédéral")],
+ jobs:[L("Québec emploi","https://www.quebecemploi.gouv.qc.ca/","Site officiel de l'emploi"),L("Guichet-Emplois","https://www.guichetemplois.gc.ca/","Offres officielles du Canada"),L("Montréal International","https://www.montrealinternational.com/","Missions Journées Montréal Recrute"),L("Talent Montréal","https://talentmontreal.com/",""),L("Jobillico","https://www.jobillico.com/","")],
+ docs:[["Résultats du test TEF Canada ou TCF Québec",""],["Évaluation comparative des études (MIFI)",""]],
+ traps:["Les seuils d'invitation et les métiers visés changent à chaque ronde : vérifie avant de candidater.","Méfie-toi des « consultants » non agréés qui promettent une sélection."]},
+{id:"IE",name:"Irlande",prio:"Avec l'anglais",pc:"amber",lang:"Anglais",li:"Irlande",indeed:"https://ie.indeed.com",inl:"Ireland",
+ visa:"Critical Skills Employment Permit, puis visa long séjour",seuil:"40 904 € brut/an avec diplôme pertinent (68 911 € sans), depuis le 1er mars 2026",fam:"La famille peut te rejoindre",depot:"Demande en ligne (AVATS), puis envoi des documents à l'adresse indiquée sur le formulaire",
+ why:"Les sièges européens de nombreux géants de la tech, et un seuil de salaire accessible avec un diplôme.",
+ steps:[["Cibler les entreprises tech basées à Dublin",""],["Postuler et passer les entretiens en anglais",""],["Obtenir le permis de travail Critical Skills (demandé par l'employeur ou par toi)",""],["Remplir la demande de visa sur AVATS, l'imprimer et la signer",""],["Envoyer les originaux dans les 30 jours à l'adresse indiquée",""],["Arriver et t'enregistrer auprès de l'immigration",""]],
+ kw:["AI Engineer","Machine Learning Engineer","Graduate AI Engineer","Python Developer","Critical Skills"],
+ official:[L("Irish Immigration : visa de travail","https://irishimmigration.ie/coming-to-work-in-ireland/what-are-my-work-visa-options/applying-for-a-long-stay-employment-visa/employment-visa/","Procédure officielle"),L("Ministère de l'Entreprise (permis de travail)","https://enterprise.gov.ie/","Critical Skills Employment Permit")],
+ jobs:[L("IrishJobs","https://www.irishjobs.ie/",""),L("Jobs.ie","https://www.jobs.ie/",""),L("Indeed Irlande","https://ie.indeed.com/","")],
+ docs:[["Permis de travail Critical Skills",""],["Relevés bancaires des 6 derniers mois",""],["Lettre de candidature (application letter)",""]],
+ traps:["Tout se passe en anglais, entretiens compris.","Le logement à Dublin est très cher."]},
+{id:"PT",name:"Portugal",prio:"Avec l'anglais",pc:"amber",lang:"Anglais au travail, portugais au quotidien",li:"Portugal",indeed:"https://pt.indeed.com",inl:"Portugal",
+ visa:"Visa de résidence pour activité hautement qualifiée, carte bleue ou Tech Visa (entreprises certifiées)",seuil:"Seuils bas, mais montants publiés contradictoires : à vérifier",fam:"Regroupement familial possible",depot:"Ambassade ou consulat du Portugal compétent pour le Bénin (localisateur sur gov.pt). Frais : 90 €, délai : 60 jours",
+ why:"Accessible et agréable à vivre, mais les salaires sont nettement plus bas qu'en France.",
+ steps:[["Cibler les entreprises tech de Lisbonne et Porto",""],["Postuler et passer les entretiens en anglais",""],["Vérifier si l'entreprise est certifiée Tech Visa",""],["Demander le visa de résidence au consulat compétent",""],["Arriver et finaliser le titre de séjour auprès de l'AIMA",""]],
+ kw:["AI Engineer","Machine Learning Engineer","Engenheiro de IA","Python Developer","relocation"],
+ official:[L("gov.pt : visa de résidence pour travail","https://www2.gov.pt/en/servicos/pedir-um-visto-de-residencia-para-trabalho-dependente","Où et comment demander"),L("AIMA (immigration)","https://aima.gov.pt/","Titre de séjour une fois sur place")],
+ jobs:[L("Landing.jobs","https://landing.jobs/","Tech au Portugal"),L("ITJobs.pt","https://www.itjobs.pt/",""),L("Net-Empregos","https://www.net-empregos.com/",""),L("Indeed Portugal","https://pt.indeed.com/","")],
+ docs:[["Assurance santé valable au Portugal",""],["Casier judiciaire du Bénin",""]],
+ traps:["Compare le salaire au coût de la vie à Lisbonne avant d'accepter.","Les conditions du Tech Visa dépendent de l'entreprise."]}
+];
+
+function jobPct(c){const ids=c.steps.map((s,i)=>"j-"+c.id+"-s"+i).concat(c.docs.map((s,i)=>"j-"+c.id+"-d"+i));const d=ids.filter(i=>ex.c[i]).length;return Math.round(d*100/ids.length)}
+function renderJob(){const sel=ex.country||"common";const box=document.getElementById("view-job");
+ let h='<section class="sec"><h2>Trouver un emploi et obtenir le visa</h2><p>À utiliser quand tes compétences sont prêtes. Commence par la partie commune, puis ouvre le pays visé et suis les étapes dans l\'ordre. Chaque mot-clé ouvre directement la recherche sur LinkedIn ou Indeed.</p><div class="cnav" role="group" aria-label="Choisir un pays"><button type="button" class="cbtn" data-c="common" aria-pressed="'+(sel==="common")+'">Commun à tous les pays</button>'+C.map(c=>'<button type="button" class="cbtn" data-c="'+c.id+'" aria-pressed="'+(sel===c.id)+'"><span class="code">'+c.id+'</span>'+esc(c.name)+'<small>'+jobPct(c)+' %</small></button>').join("")+'</div></section>';
+ if(sel==="common"){
+  h+='<section class="sec"><h3>Les plateformes valables partout</h3>'+linkCards(COMMON_LINKS)+'</section>';
+  h+='<section class="sec"><h3>La méthode LinkedIn</h3><ol class="cks">'+LI_STEPS.map((s,i)=>ckItem("j-li-"+i,s)).join("")+'</ol></section>';
+  h+='<section class="sec"><h3>Les mots-clés selon ton profil</h3><p>Copie un mot-clé ou ouvre directement la recherche. Ajoute ensuite un des mots de la 3ᵉ liste pour trouver les offres qui aident au visa.</p><div class="subh">À utiliser maintenant</div>'+kwChips(KW_NOW)+'<div class="subh">Plus tard (après 1 à 2 ans d\'expérience)</div>'+kwChips(KW_LATER)+'<div class="subh">À ajouter à ta recherche</div>'+kwChips(KW_ADD)+'</section>';
+  h+='<section class="sec"><h3>Les documents à préparer pour tous les pays</h3><ul class="cks">'+DOCS_COMMON.map((d,i)=>ckItem("j-doc-"+i,d[0],d[1])).join("")+'</ul></section>';
+  h+='<div class="warn"><h3>Les règles anti-arnaque</h3><ul>'+SCAMS.map(s=>'<li>'+esc(s)+'</li>').join("")+'</ul></div>';
+  h+='<section class="sec"><h3>L\'ordre conseillé</h3><div class="order">'+C.map((c,i)=>'<button type="button" data-c="'+c.id+'"><span class="code">'+c.id+'</span><b>'+(i+1)+'. '+esc(c.name)+'</b><span class="pill '+c.pc+'">'+esc(c.prio)+'</span></button>').join("")+'</div></section>';
+ }else{const c=C.find(x=>x.id===sel);
+  h+='<section class="sec"><div class="chead"><span class="code">'+c.id+'</span><h2>'+esc(c.name)+'</h2><span class="pill '+c.pc+'">'+esc(c.prio)+'</span></div><p class="why">'+esc(c.why)+'</p><div class="facts"><div class="fact"><b>Visa à viser</b>'+esc(c.visa)+'</div><div class="fact"><b>Salaire minimum 2026</b>'+esc(c.seuil)+'</div><div class="fact"><b>Langue</b>'+esc(c.lang)+'</div><div class="fact"><b>Famille</b>'+esc(c.fam)+'</div><div class="fact" style="grid-column:1/-1"><b>Où déposer le visa depuis le Bénin</b>'+esc(c.depot)+'</div></div></section>';
+  h+='<section class="sec"><h3>Le cheminement, étape par étape</h3><ol class="cks">'+c.steps.map((s,i)=>ckItem("j-"+c.id+"-s"+i,s[0],s[1])).join("")+'</ol></section>';
+  h+='<section class="sec"><h3>Les mots-clés à chercher en '+esc(c.name)+'</h3>'+kwChips(c.kw,c)+'</section>';
+  h+='<section class="sec"><h3>Les sites d\'emploi</h3>'+linkCards(c.jobs)+'</section>';
+  h+='<section class="sec"><h3>Les sites officiels (visa et immigration)</h3>'+linkCards(c.official)+'</section>';
+  h+='<section class="sec"><h3>Les documents propres à ce pays</h3><p>En plus des documents communs.</p><ul class="cks">'+c.docs.map((d,i)=>ckItem("j-"+c.id+"-d"+i,d[0],d[1])).join("")+'</ul></section>';
+  h+='<div class="warn"><h3>Les pièges à éviter</h3><ul>'+c.traps.map(s=>'<li>'+esc(s)+'</li>').join("")+'</ul></div>';
+ }
+ h+='<p class="tree-help">Infos vérifiées le 26 octobre 2026. Les seuils et procédures changent : vérifie toujours sur le site officiel avant de déposer.</p>';
+ box.innerHTML=h}
+document.getElementById("view-job").addEventListener("click",e=>{const cb=e.target.closest("[data-c]");if(cb){ex.country=cb.dataset.c;exSave();renderJob();document.getElementById("view-job").scrollIntoView({block:"start"});return}const cp=e.target.closest("[data-copy]");if(cp)copyText(cp.dataset.copy)});
+
+/* ---- Anglais ---- */
+const SKL={ecoute:"Écouter",parole:"Parler",lecture:"Lire",ecriture:"Écrire"};
+const WEEKS=[
+{m:1,t:"Les sons et te présenter",g:"Te présenter en 5 phrases et reconnaître les sons de base.",k:[["lecture","Passer le test EF SET pour connaître ton niveau de départ"],["ecoute","Regarder 3 leçons de prononciation sur BBC Learning English"],["lecture","Apprendre tes 100 premiers mots dans Anki"],["ecriture","Écrire ta présentation (nom, pays, métier, famille, objectif) et la faire corriger par l'IA"],["parole","T'enregistrer en train de te présenter (garde cet audio pour comparer plus tard)"]],p:"Tu es mon professeur d'anglais. Je suis débutant. Aide-moi à me présenter en anglais : pose-moi une question à la fois, en anglais très simple, puis corrige ma réponse en m'expliquant en français."},
+{m:1,t:"Le présent et ta routine",g:"Décrire ta journée au présent simple.",k:[["ecriture","Leçon : le présent simple, « to be » et « to have »"],["ecoute","Un épisode de VOA Learning English par jour (anglais lent)"],["parole","Décrire ta journée à voix haute chaque matin"],["lecture","Atteindre 200 mots dans Anki"],["ecriture","Écrire 10 phrases sur ta routine"]],p:"Parle avec moi de ma routine quotidienne en anglais très simple. Pose-moi des questions (What time do you wake up?…). Corrige chaque erreur en français, puis continue."},
+{m:1,t:"Poser des questions",g:"Poser et répondre à des questions simples sur ta famille et ton travail.",k:[["ecriture","Leçon : les questions (Do/Does, What, Where, When, Why, How)"],["ecoute","Shadowing 10 minutes par jour sur une vidéo courte"],["parole","Conversation de 15 minutes avec l'IA sur ta famille"],["lecture","Atteindre 300 mots dans Anki, dont 30 mots techniques"],["ecriture","Écrire 10 questions et leurs réponses"]],p:"Pose-moi 10 questions en anglais simple sur ma famille et mon travail, une à la fois. Après chaque réponse, corrige-moi en français et propose une version plus naturelle."},
+{m:1,t:"Le passé : raconter ton parcours",g:"Raconter ton parcours en 1 minute au passé.",k:[["ecriture","Leçon : le passé simple et les 50 verbes irréguliers les plus courants"],["ecoute","Une vidéo du cours CS50 avec sous-titres français"],["parole","Raconter ton parcours (IFRI, projets) en 1 minute, au passé"],["lecture","Atteindre 400 mots dans Anki"],["parole","Bilan du mois : réenregistrer ta présentation et comparer avec la semaine 1"]],p:"Aide-moi à raconter mon parcours professionnel en anglais au passé. Je vais l'écrire en français, traduis-le en anglais simple, puis fais-moi le répéter phrase par phrase."},
+{m:2,t:"Les sous-titres en anglais",g:"Suivre une vidéo technique avec sous-titres anglais.",k:[["ecoute","Regarder tes cours techniques avec sous-titres anglais uniquement"],["lecture","Lire la page d'accueil de la documentation Python en anglais"],["parole","Shadowing 15 minutes par jour"],["lecture","Ajouter 20 nouveaux mots techniques dans Anki"],["ecriture","Écrire un résumé de 5 phrases d'une vidéo regardée"]],p:"Je vais te coller un passage en anglais d'un cours technique. Explique-moi les mots difficiles en français, puis pose-moi 3 questions en anglais pour vérifier que j'ai compris."},
+{m:2,t:"Lire de la documentation",g:"Lire une page de documentation sans tout traduire.",k:[["lecture","Lire chaque jour une page du tutoriel Python officiel en anglais, sans traduire d'abord"],["ecriture","Résumer en 3 phrases anglaises ce que tu as lu"],["ecoute","Un podcast ou une vidéo lente par jour"],["parole","Expliquer à voix haute un concept Python en anglais simple"],["lecture","Atteindre 500 mots dans Anki"]],p:"Je vais t'expliquer un concept de programmation en anglais. Corrige mes erreurs en français, puis reformule mon explication comme le ferait un développeur anglophone."},
+{m:2,t:"Le futur et tes projets",g:"Présenter ton objectif professionnel en 2 minutes.",k:[["ecriture","Leçon : le futur (will, going to)"],["parole","Présenter ton objectif professionnel en anglais pendant 2 minutes"],["lecture","Lire 2 offres « AI Engineer » en anglais et noter les mots-clés"],["ecoute","10 minutes par jour de vidéo tech sans sous-titres"],["ecriture","Écrire tes objectifs à 1 an et à 5 ans en anglais"]],p:"Je veux présenter mes objectifs de carrière en anglais. Pose-moi des questions sur mes projets futurs et corrige mon usage de « will » et « going to » en français."},
+{m:2,t:"Tes premiers échanges réels",g:"Parler avec de vrais anglophones.",k:[["parole","Créer un profil Tandem ou HelloTalk et faire 2 échanges vocaux"],["ecriture","Échanger des messages écrits avec 2 partenaires"],["ecoute","Réécouter les messages vocaux reçus jusqu'à tout comprendre"],["lecture","Atteindre 600 mots dans Anki"],["parole","Bilan du mois : enregistrement de 2 minutes, à comparer avec le mois 1"]],p:"Prépare-moi à un premier échange avec un anglophone : donne-moi 10 phrases utiles pour démarrer et relancer une conversation, avec leur traduction."},
+{m:3,t:"Parler de ton travail",g:"Expliquer tes projets IA à l'oral.",k:[["parole","Conversation quotidienne avec l'IA : explique tes projets IA"],["ecriture","Écrire en anglais le README de 3 projets GitHub"],["ecoute","Une courte conférence tech par jour"],["lecture","Lire un article technique par jour"],["parole","2 échanges Tandem ou HelloTalk cette semaine"]],p:"Tu es un recruteur tech anglophone. Demande-moi de t'expliquer mes projets IA, pose des questions de suivi, puis donne-moi un retour en français sur ma clarté et mes erreurs."},
+{m:3,t:"Les questions d'entretien",g:"Répondre aux 10 questions classiques d'entretien.",k:[["ecriture","Écrire tes réponses aux 10 questions classiques (Tell me about yourself, Why this company?…)"],["parole","Répéter chaque réponse à voix haute jusqu'à la dire sans lire"],["ecoute","Regarder des simulations d'entretien en anglais"],["parole","3 échanges Tandem ou HelloTalk cette semaine"],["lecture","Lire les pages « Carrières » de 5 entreprises cibles"]],p:"Fais-moi passer un entretien d'embauche en anglais pour un poste de développeur IA junior. Une question à la fois. À la fin, note-moi sur 10 et donne-moi 3 conseils en français."},
+{m:3,t:"Pitch et messages professionnels",g:"Un pitch de 2 minutes fluide et un email de candidature.",k:[["parole","Enregistrer et réécouter ton pitch de 2 minutes chaque jour"],["ecriture","Rédiger un email de candidature et un message LinkedIn en anglais"],["lecture","Lire 5 profils LinkedIn d'AI Engineers et noter leurs tournures"],["ecoute","Shadowing sur tes vidéos préférées"],["ecriture","Faire corriger tes textes sur Write & Improve"]],p:"Corrige cet email de candidature en anglais. Garde mon style, rends-le professionnel, et explique-moi chaque correction en français."},
+{m:3,t:"La simulation finale",g:"Passer un entretien complet en anglais et mesurer ta progression.",k:[["parole","Simulation d'entretien complète avec l'IA (personnel et technique)"],["ecoute","Comprendre une vidéo tech de 15 minutes sans sous-titres"],["ecriture","Écrire une lettre de motivation courte en anglais"],["lecture","Repasser le test EF SET et comparer avec la semaine 1"],["parole","Réécouter ton enregistrement de la semaine 1 : mesure le chemin parcouru"]],p:"Fais-moi passer un entretien complet en anglais : 5 questions personnelles puis 5 questions techniques sur Python et l'IA. À la fin, donne-moi un bilan détaillé en français."}];
+const ROUT={long:[["Vocabulaire dans Anki",20],["Grammaire (BBC Learning English)",30],["Écoute : cours technique en anglais",40],["Shadowing à voix haute",20],["Conversation orale avec l'IA",20],["Écriture corrigée par l'IA",20]],short:[["Vocabulaire dans Anki",10],["Grammaire",10],["Écoute : cours technique",15],["Shadowing",10],["Conversation avec l'IA",10],["Écriture",5]]};
+const VOC=[["deploy","déployer, mettre en ligne","We deploy the model every Friday."],["dataset","jeu de données","The dataset has ten thousand rows."],["train","entraîner (un modèle)","I trained the model on our documents."],["request","requête, demande","The API received a request."],["response","réponse","The response was too slow."],["function","fonction","This function returns a list."],["loop","boucle","Use a loop to read each file."],["bug","bogue, erreur","I found a bug in the code."],["fix","corriger","Can you fix this error?"],["feature","fonctionnalité","We added a new feature."],["repository","dépôt (de code)","The code is in my GitHub repository."],["branch","branche","Create a new branch for this task."],["merge","fusionner","I merged the pull request."],["database","base de données","The data is stored in a database."],["query","requête (base de données)","This query is very slow."],["server","serveur","The app runs on a cloud server."],["container","conteneur","We run the app in a Docker container."],["pipeline","chaîne de traitement","The data pipeline runs every night."],["accuracy","précision, exactitude","The accuracy is ninety percent."],["prediction","prédiction","The model makes a prediction."],["embedding","représentation vectorielle","We store embeddings in a vector database."],["prompt","consigne (pour une IA)","Write a clear prompt."],["token","jeton","The answer used five hundred tokens."],["latency","temps de réponse","We reduced the latency by half."],["cost","coût","The monthly cost is fifty dollars."],["scale","passer à l'échelle","The system must scale to many users."],["monitoring","surveillance","Monitoring shows errors in real time."],["skill","compétence","Python is my main skill."],["requirement","exigence","Read the job requirements carefully."],["salary","salaire","What is the salary for this role?"],["job offer","offre d'emploi","I received a job offer."],["interview","entretien","My interview is on Monday."],["resume","CV","I sent my resume to the company."],["hiring manager","responsable du recrutement","The hiring manager called me."],["deadline","date limite","The deadline is next week."],["team","équipe","I work in a team of five."],["meeting","réunion","We have a meeting at ten."],["I'm looking for…","Je recherche…","I'm looking for a job as an AI engineer."],["I'm working on…","Je travaille sur…","I'm working on a chatbot project."],["Could you repeat, please?","Pouvez-vous répéter, s'il vous plaît ?","Sorry, could you repeat, please?"]];
+const ERES=[L("Anki (ordinateur)","https://apps.ankiweb.net/","Cartes mémoire, gratuit"),L("AnkiDroid (Android)","https://ankidroid.org/","Anki sur téléphone, gratuit"),L("AnkiWeb","https://ankiweb.net/","Version web et synchronisation"),L("BBC Learning English","https://www.bbc.co.uk/learningenglish/","Grammaire, prononciation, tous niveaux"),L("VOA Learning English","https://learningenglish.voanews.com/","Actualités en anglais lent"),L("Duolingo","https://www.duolingo.com/","Petites leçons quotidiennes"),L("EF SET","https://www.efset.org/","Test de niveau gratuit"),L("Write & Improve (Cambridge)","https://writeandimprove.com/","Correction gratuite de tes textes"),L("YouGlish","https://youglish.com/","Entendre un mot prononcé dans de vraies vidéos"),L("Tandem","https://www.tandem.net/","Échanges avec des anglophones"),L("HelloTalk","https://www.hellotalk.com/","Échanges avec des anglophones"),L("Claude","https://claude.ai/","Professeur particulier, mode vocal"),L("ChatGPT","https://chatgpt.com/","Professeur particulier, mode vocal"),L("CS50 Python","https://cs50.harvard.edu/python/","Apprendre Python et l'anglais technique")];
+const pad=n=>String(n).padStart(2,"0");
+const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const todayIso=()=>iso(new Date());
+function addDays(s,n){const [y,m,d]=s.split("-").map(Number);const dt=new Date(y,m-1,d);dt.setDate(dt.getDate()+n);return iso(dt)}
+function streak(){const set=new Set(ex.days);let d=todayIso();if(!set.has(d))d=addDays(d,-1);let n=0;while(set.has(d)){n++;d=addDays(d,-1)}return n}
+function curWeek(){if(!ex.enStart)return 1;const [y,m,d]=ex.enStart.split("-").map(Number);const diff=Math.floor((new Date()-new Date(y,m-1,d))/864e5);return Math.min(12,Math.max(1,Math.floor(diff/7)+1))}
+let tm={mode:ex.mode||"long",idx:0,left:null,run:false,iv:null};
+let fc={i:0,flip:false,onlyNew:false};
+function skillPct(sk){let n=0,d=0;WEEKS.forEach((w,wi)=>w.k.forEach((t,ti)=>{if(t[0]===sk){n++;if(ex.c["e-"+wi+"-"+ti])d++}}));return n?Math.round(d*100/n):0}
+function weekFull(wi){return WEEKS[wi].k.every((t,ti)=>ex.c["e-"+wi+"-"+ti])}
+function fmt(s){return pad(Math.floor(s/60))+":"+pad(s%60)}
+function deckList(){return fc.onlyNew?VOC.filter(v=>!ex.vocab[v[0]]):VOC}
+function renderEn(){const box=document.getElementById("view-en");const wsel=ex.week||curWeek();const done=ex.days.includes(todayIso());const known=VOC.filter(v=>ex.vocab[v[0]]).length;
+ let h='<section class="enhero"><div class="eyebrow">Plan intensif · 12 semaines</div><h2>Anglais : de débutant à B1 en 3 mois</h2><p class="lede">2 h 30 par jour, tous les jours. Objectif réaliste : comprendre tes cours techniques, lire la documentation et parler de ton travail. Le niveau B2 (à l\'aise en entretien) vient ensuite, vers 6 à 9 mois.</p><div class="stats"><div class="stat"><b>'+streak()+'</b><span>jours d\'affilée</span></div><div class="stat"><b>'+ex.days.length+'</b><span>séances faites</span></div><div class="stat"><b>'+curWeek()+' / 12</b><span>semaine en cours</span></div><div class="stat"><b>'+known+' / '+VOC.length+'</b><span>mots techniques connus</span></div></div><button type="button" class="bigbtn" id="en-day"'+(done?' disabled':'')+'>'+(done?'Séance du jour validée ✓':'J\'ai fait ma séance d\'aujourd\'hui')+'</button></section>';
+ h+='<section class="sec"><h3>Tes 84 jours</h3><p>'+(ex.enStart?'Chaque case est un jour depuis ton début, le '+ex.enStart.split("-").reverse().join("/")+'. Vert = séance faite.':'Ta grille démarre le jour de ta première séance validée.')+'</p>';
+ if(ex.enStart){const set=new Set(ex.days),td=todayIso();h+='<div class="heat" aria-label="Calendrier des séances">';for(let i=0;i<84;i++){const d=addDays(ex.enStart,i);h+='<i class="'+(set.has(d)?'on':'')+(d===td?' today':'')+'" title="'+d.split("-").reverse().join("/")+'"></i>'}h+='</div>'}
+ h+='<div class="meters">'+Object.keys(SKL).map(s=>{const p=skillPct(s);return '<div class="meter"><div><span><span class="sk sk-'+s+'">'+SKL[s]+'</span></span><span>'+p+' %</span></div><span class="bar"><i style="width:'+p+'%"></i></span></div>'}).join("")+'</div></section>';
+ const R=ROUT[tm.mode];if(tm.left===null)tm.left=R[tm.idx][1]*60;
+ h+='<section class="sec"><h3>Ta séance guidée</h3><p>Lance le minuteur : il enchaîne les activités dans l\'ordre et te dit quand passer à la suivante.</p><div class="modes"><button type="button" class="mini" data-mode="long" aria-pressed="'+(tm.mode==="long")+'">Intensive · 2 h 30</button><button type="button" class="mini" data-mode="short" aria-pressed="'+(tm.mode==="short")+'">Jour chargé · 1 h</button></div><div class="timer"><div class="tclock"><span class="tnow" id="t-now">'+esc(R[tm.idx][0])+'</span><span class="tdig" id="t-dig">'+fmt(tm.left)+'</span><div class="tbtns"><button type="button" class="btn primary" id="t-go">'+(tm.run?'Pause':'Démarrer')+'</button><button type="button" class="btn" id="t-next">Activité suivante</button><button type="button" class="btn" id="t-reset">Recommencer</button></div></div><ul class="tlist" id="t-list">'+R.map((a,i)=>'<li class="'+(i===tm.idx?'cur':(i<tm.idx?'fin':''))+'"><span class="code">'+(i+1)+'</span><span>'+esc(a[0])+'</span><span class="mn">'+a[1]+' min</span></li>').join("")+'</ul></div></section>';
+ const w=WEEKS[wsel-1];
+ h+='<section class="sec"><h3>Le programme semaine par semaine</h3><div class="weeks" role="group" aria-label="Choisir une semaine">'+WEEKS.map((x,i)=>'<button type="button" class="wk m'+x.m+(weekFull(i)?' full':'')+'" data-wk="'+(i+1)+'" aria-pressed="'+(wsel===i+1)+'">S'+(i+1)+'<small>Mois '+x.m+'</small></button>').join("")+'</div>';
+ h+='<div class="subh">Semaine '+wsel+' · Mois '+w.m+'</div><h3>'+esc(w.t)+'</h3><p class="why">Objectif : '+esc(w.g)+'</p><ul class="cks">'+w.k.map((t,ti)=>{const id="e-"+(wsel-1)+"-"+ti,on=!!ex.c[id];return '<li class="ck'+(on?' done':'')+'"><input type="checkbox" id="'+id+'" data-ex="'+id+'"'+(on?' checked':'')+'><label for="'+id+'"><span><span class="sk sk-'+t[0]+'">'+SKL[t[0]]+'</span>'+esc(t[1])+'</span></label></li>'}).join("")+'</ul>';
+ h+='<div class="prompt"><b>Ton message pour l\'IA cette semaine</b><p>'+esc(w.p)+'</p><div class="tbtns"><button type="button" class="mini" data-copy="'+esc(w.p)+'">Copier le message</button><a class="mini" href="https://claude.ai/" target="_blank" rel="noopener">Ouvrir Claude ↗</a><a class="mini" href="https://chatgpt.com/" target="_blank" rel="noopener">Ouvrir ChatGPT ↗</a></div></div></section>';
+ const deck=deckList();if(fc.i>=deck.length)fc.i=0;const v=deck[fc.i];
+ h+='<section class="sec"><h3>Cartes de vocabulaire technique</h3><p>Touche la carte pour voir la traduction. Marque « Je connais » pour la retirer de tes révisions.</p><div class="fcwrap">';
+ if(v){h+='<button type="button" class="fc'+(fc.flip?' flip':'')+'" id="fc" aria-label="Retourner la carte"><span class="fc-in"><span class="fc-f"><b>'+esc(v[0])+'</b><i>Touche pour retourner</i></span><span class="fc-b"><b>'+esc(v[1])+'</b><i>'+esc(v[2])+'</i></span></span></button><div class="fcnav"><button type="button" class="mini" id="fc-prev">← Précédente</button><span class="mn">'+(fc.i+1)+' / '+deck.length+'</span><button type="button" class="mini" id="fc-next">Suivante →</button><button type="button" class="mini" id="fc-know">'+(ex.vocab[v[0]]?'À revoir':'Je connais ✓')+'</button><a class="mini" href="https://youglish.com/pronounce/'+encodeURIComponent(v[0])+'/english" target="_blank" rel="noopener">Écouter ↗</a></div>'}
+ else h+='<p>Bravo, tu connais tous les mots. Ajoute les tiens dans Anki.</p>';
+ h+='<label class="mn"><input type="checkbox" id="fc-only"'+(fc.onlyNew?' checked':'')+'> Afficher seulement les mots à revoir</label></div></section>';
+ h+='<section class="sec"><h3>Tes outils (tous gratuits)</h3>'+linkCards(ERES)+'</section>';
+ h+='<section class="sec"><h3>Les règles qui font progresser vite</h3><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px"><li>Parle dès la première semaine, même mal : c\'est la compétence qui progresse le plus lentement.</li><li>Réduis la traduction en français chaque semaine.</li><li>30 minutes chaque jour valent mieux que 4 heures le dimanche.</li><li>Garde le même plan pendant 12 semaines, sans changer de méthode.</li><li>Apprends l\'anglais avec tes cours d\'IA : tu progresses dans les deux à la fois.</li></ul></section>';
+ box.innerHTML=h}
+function tick(){tm.left--;if(tm.left<=0){const R=ROUT[tm.mode];if(tm.idx<R.length-1){tm.idx++;tm.left=R[tm.idx][1]*60;toast("Activité suivante : "+R[tm.idx][0])}else{clearInterval(tm.iv);tm.run=false;tm.left=0;toast("Séance terminée. Pense à la valider !")}renderEn();return}const dg=document.getElementById("t-dig");if(dg)dg.textContent=fmt(tm.left)}
+document.getElementById("view-en").addEventListener("click",e=>{const t=e.target;
+ if(t.id==="en-day"){const d=todayIso();if(!ex.days.includes(d))ex.days.push(d);if(!ex.enStart)ex.enStart=d;exSave();toast("Séance validée. Continue demain !");renderEn();return}
+ const md=t.closest("[data-mode]");if(md){clearInterval(tm.iv);tm={mode:md.dataset.mode,idx:0,left:null,run:false,iv:null};ex.mode=tm.mode;exSave();renderEn();return}
+ if(t.id==="t-go"){if(tm.run){clearInterval(tm.iv);tm.run=false}else{tm.run=true;tm.iv=setInterval(tick,1000)}renderEn();return}
+ if(t.id==="t-next"){const R=ROUT[tm.mode];if(tm.idx<R.length-1){tm.idx++;tm.left=R[tm.idx][1]*60}renderEn();return}
+ if(t.id==="t-reset"){clearInterval(tm.iv);tm={mode:tm.mode,idx:0,left:null,run:false,iv:null};renderEn();return}
+ const wk=t.closest("[data-wk]");if(wk){ex.week=Number(wk.dataset.wk);exSave();renderEn();return}
+ const cp=t.closest("[data-copy]");if(cp){copyText(cp.dataset.copy);return}
+ if(t.closest("#fc")){fc.flip=!fc.flip;const el=document.getElementById("fc");if(el)el.classList.toggle("flip",fc.flip);return}
+ if(t.id==="fc-next"||t.id==="fc-prev"){const n=deckList().length;if(n){fc.i=(fc.i+(t.id==="fc-next"?1:n-1))%n}fc.flip=false;renderEn();return}
+ if(t.id==="fc-know"){const v=deckList()[fc.i];if(v){if(ex.vocab[v[0]])delete ex.vocab[v[0]];else ex.vocab[v[0]]=1;exSave()}fc.flip=false;if(!fc.onlyNew)fc.i=(fc.i+1)%VOC.length;renderEn();return}});
+document.getElementById("view-en").addEventListener("change",e=>{if(e.target.id==="fc-only"){fc.onlyNew=e.target.checked;fc.i=0;fc.flip=false;renderEn()}});
+function onExChange(e){const id=e.target.dataset&&e.target.dataset.ex;if(!id)return;if(e.target.checked)ex.c[id]=1;else delete ex.c[id];exSave();e.target.closest(".ck").classList.toggle("done",e.target.checked);if(id.startsWith("e-"))renderEn();else{const v=ex.country;const c=C.find(x=>x.id===v);if(c){const b=document.querySelector('.cbtn[data-c="'+v+'"] small');if(b)b.textContent=jobPct(c)+" %"}}}
+document.getElementById("view-job").addEventListener("change",onExChange);
+document.getElementById("view-en").addEventListener("change",onExChange);
+
+refresh();renderJob();renderEn();
+const HV={"#liste":"list","#emploi":"job","#anglais":"en"};
+setView(HV[location.hash]||"tree");
 </script>
 
 </body>

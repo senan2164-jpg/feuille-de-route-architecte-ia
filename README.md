@@ -1,6 +1,11 @@
 # Feuille de route Architecte IA
 
-Ma feuille de route personnelle pour devenir Architecte IA : compétences, cours (gratuits et payants), certifications et projets, à cocher au fur et à mesure.
+Ma feuille de route personnelle pour devenir Architecte IA, en 4 onglets :
+
+- **Parcours** : le chemin étape par étape et ma prochaine action.
+- **Liste détaillée** : compétences, cours, certifications et projets à cocher.
+- **Trouver un emploi** : plateformes, mots-clés, documents et cheminement du visa pour 9 pays (France, Belgique, Luxembourg, Allemagne, Pays-Bas, Suisse, Québec, Irlande, Portugal).
+- **Anglais en 3 mois** : plan intensif de 12 semaines, séance guidée avec minuteur, calendrier de 84 jours et cartes de vocabulaire.
 
 Le site tient dans un seul fichier : `index.html`. Il n'a besoin d'aucune installation.
 
