@@ -332,6 +332,77 @@ table.mt{min-width:0}
  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){.bar i{transition:none}.fc-in{transition:none}}
+
+/* ===== Refonte UX : minimaliste ===== */
+body{background:var(--paper);background-image:none}
+:root{--paper:#F5F7FA;--line:#E2E8F0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0E1726;--line:#24344D}}
+:root[data-theme="dark"]{--paper:#0E1726;--line:#24344D}
+.wrap{max-width:760px;gap:18px;padding-top:24px}
+header{gap:4px}
+header h1{font-size:1.6rem}
+header .lede,header .path{display:none}
+.tabs{position:sticky;top:0;z-index:12;background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:5px;gap:2px;flex-wrap:nowrap;align-self:stretch;justify-content:space-between;box-shadow:0 4px 16px -12px rgba(19,35,58,.4)}
+.tabs button{flex:1;justify-content:center;padding:9px 6px;border-radius:10px;font-size:.92rem}
+.subnav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0 4px;margin-top:-6px}
+.subnav::-webkit-scrollbar{display:none}
+.subnav button{flex-shrink:0;font:600 .88rem var(--f-body);border:1px solid var(--line);background:var(--sheet);color:var(--muted);border-radius:99px;padding:7px 14px;cursor:pointer;white-space:nowrap}
+.subnav button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.sec{border-radius:16px;padding:20px;gap:12px;border-color:var(--line)}
+.sec h3{font-size:1.1rem}
+.tier{border-color:var(--line);border-radius:12px}
+#view-prog{display:flex;flex-direction:column;gap:14px}
+.hero{display:flex;flex-direction:column;gap:6px;padding:4px 2px}
+.hero h2{font-size:clamp(1.7rem,5vw,2.2rem)}
+.hero p{color:var(--muted)}
+.dprog{display:flex;align-items:center;gap:12px;margin-top:6px}
+.dprog .bar{flex:1;height:8px}
+.dprog span{font:600 .85rem var(--f-body);color:var(--muted);white-space:nowrap}
+.now{background:var(--blue);color:#fff;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.now.done{background:var(--green)}
+.now p{color:rgba(255,255,255,.85)}
+.now-l{font:600 .78rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.now-w{font-weight:700;opacity:.9}
+.now-t{font-family:var(--f-display);font-weight:700;font-size:1.35rem;line-height:1.25;text-wrap:balance}
+.now-a{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:8px}
+.now-a a,.now-a .mn,.now-a .linkbtn{color:#fff;font-weight:600}
+.now .btn.primary{background:#fff;color:var(--blue);border-color:#fff;padding:8px 16px;font-size:.95rem}
+ul.day{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.day li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:12px 0;border-top:1px solid var(--line);align-items:start}
+ul.day li:first-child{border-top:0}
+ul.day li.ok .dn{text-decoration:line-through;color:var(--muted)}
+ul.day li.cur .dh{color:var(--blue)}
+.chk{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:var(--sheet);color:#fff;font-weight:800;cursor:pointer;display:grid;place-items:center;margin-top:2px}
+.chk[aria-pressed="true"]{background:var(--green);border-color:var(--green)}
+.dt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dh{font:600 .75rem var(--f-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.dn{font-weight:600}
+.dl{font-size:.9rem}
+.linkbtn{font:600 .9rem var(--f-body);background:none;border:0;padding:0;color:var(--blue);cursor:pointer;text-align:left}
+ul.rem{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+ul.rem li{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+details.set{background:transparent;border-style:dashed}
+details.set summary{font-size:.95rem;color:var(--muted)}
+.setg{display:flex;flex-direction:column;gap:12px}
+.setg>div{display:flex;flex-direction:column;gap:6px}
+.setg select,.pick select{font:600 .9rem var(--f-body);border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:10px;padding:6px 10px;margin-left:6px}
+.pick{font-weight:600}
+.prog{gap:8px}
+.prog li{grid-template-columns:36px minmax(0,1fr);background:var(--sheet);border-radius:12px;padding:12px}
+.prog .wn{font-family:var(--f-display);font-size:1.1rem}
+.prog .pc{display:flex;flex-direction:column;gap:3px}
+.prog .pc>span{color:var(--muted);font-size:.9rem}
+.prog .pv{color:var(--violet)!important;font-weight:600}
+.prog li.cur{border:2px solid var(--blue);background:var(--blue-soft)}
+.progress-card{top:62px}
+@media (max-width:720px){
+ .wrap{padding-top:16px}
+ .tabs{position:fixed;top:auto;border-radius:0;box-shadow:none}
+ .tabs button{font-size:.7rem;padding:6px 2px}
+ .subnav{position:sticky;top:0;z-index:11;background:var(--paper);margin:0 -16px;padding:8px 16px}
+ .progress-card{top:54px}
+ .now-t{font-size:1.2rem}
+}
 </style>
 </head>
 <body>
@@ -339,7 +410,7 @@ table.mt{min-width:0}
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Plan de carrière · 2026 → 2034</div>
+    <div class="eyebrow">Amos HOUNTONDJI · plan de carrière</div>
     <h1>Devenir Architecte IA</h1>
     <p class="lede hlede">Ton plan complet : le programme du jour, le parcours, l'anglais, la recherche d'emploi et tes outils. Ta progression est enregistrée dans ce navigateur : pense à la sauvegarder chaque dimanche.</p>
     <div class="path" aria-label="Parcours">
@@ -348,13 +419,13 @@ table.mt{min-width:0}
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Sections">
-    <button type="button" role="tab" data-v="today" aria-selected="true"><span class="ti">◷</span>Aujourd'hui</button>
-    <button type="button" role="tab" data-v="tree" aria-selected="false"><span class="ti">↗</span>Parcours</button>
-    <button type="button" role="tab" data-v="en" aria-selected="false"><span class="ti">Aa</span>Anglais</button>
-    <button type="button" role="tab" data-v="job" aria-selected="false"><span class="ti">✈</span>Emploi</button>
-    <button type="button" role="tab" data-v="moi" aria-selected="false"><span class="ti">★</span>Profil</button>
-    <button type="button" role="tab" data-v="plus" aria-selected="false"><span class="ti">＋</span>Plus</button>
+    <button type="button" role="tab" data-tab="today" aria-selected="true"><span class="ti">◷</span>Aujourd'hui</button>
+    <button type="button" role="tab" data-tab="learn" aria-selected="false"><span class="ti">✎</span>Apprendre</button>
+    <button type="button" role="tab" data-tab="proj" aria-selected="false"><span class="ti">◆</span>Projets</button>
+    <button type="button" role="tab" data-tab="career" aria-selected="false"><span class="ti">✈</span>Carrière</button>
+    <button type="button" role="tab" data-tab="more" aria-selected="false"><span class="ti">⋯</span>Plus</button>
   </nav>
+  <div class="subnav" id="subnav" role="group" aria-label="Sous-menu" hidden></div>
 
   <div class="seg" id="seg" role="group" aria-label="Affichage du parcours">
     <button type="button" data-v="tree" aria-pressed="true">Vue chemin</button>
@@ -375,6 +446,7 @@ table.mt{min-width:0}
   </div>
 
   <div id="view-today"></div>
+  <div id="view-prog" hidden></div>
   <div id="view-moi" hidden></div>
   <div id="view-plus" hidden></div>
   <div id="view-job" hidden></div>
@@ -734,13 +806,42 @@ function renderNext(){NEXT=null;for(const k of ORDER){const f=all.find(a=>a.ph==
  const box=document.getElementById("next");
  if(!NEXT){box.innerHTML='<div class="nlabel">Félicitations</div><div class="ntitle">Tout est coché. Tu es prêt pour les postes d\'architecte IA.</div>';return}
  box.innerHTML='<div class="nlabel">Ta prochaine étape</div><div class="ntitle">'+esc(NEXT.t)+'</div><div class="nphase">Phase '+NUM[NEXT.ph]+' · '+esc(PHB[NEXT.ph].title)+'</div><div class="nact"><button type="button" class="btn primary" id="ndone">C\'est fait ✓</button><button type="button" class="btn" id="nsee">Voir le détail</button></div>'}
-function setView(v){if(v==="moi"&&typeof renderMoi==="function")renderMoi();["today","tree","list","job","en","moi","plus"].forEach(x=>{document.getElementById("view-"+x).hidden=x!==v});const par=(v==="tree"||v==="list");document.querySelector(".filters").hidden=v!=="list";document.querySelector(".progress-card").hidden=!par;document.getElementById("seg").hidden=!par;document.querySelectorAll("#seg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===v?"true":"false"));const nv=par?"tree":v;document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===nv?"true":"false"));if(v==="today"&&typeof renderToday==="function")renderToday()}
+const NAV={today:{subs:[]},
+ learn:{subs:[["prog","Programme"],["path","Parcours"],["en","Anglais"],["method","Méthode"]]},
+ proj:{subs:[["valid","Projets à réaliser"],["certs","Certifications"],["skills","Compétences"]]},
+ career:{subs:[["me","Mon profil"],["cv","CV et dossier"],["jobs","Emploi par pays"],["apps","Candidatures"],["interv","Entretiens"]]},
+ more:{subs:[["rev","Revenus"],["budget","Budget"],["install","Installation"],["wife","Mon épouse"],["backup","Sauvegarde"]]}};
+const MOI_OF={method:"vite",valid:"projets",certs:"certifs",skills:"competences",me:"qui",cv:"cvdossier"};
+const PLUS_OF={interv:"entretiens",rev:"revenus",budget:"budget",install:"installation",wife:"femme",backup:"sauvegarde"};
+let CUR={tab:"today",sub:null};
+function showOnly(v){["today","prog","tree","list","job","en","moi","plus"].forEach(x=>{const el=document.getElementById("view-"+x);if(el)el.hidden=x!==v});const par=(v==="tree"||v==="list");document.querySelector(".filters").hidden=v!=="list";document.querySelector(".progress-card").hidden=!par;document.getElementById("seg").hidden=!par;document.querySelector(".foot").hidden=!par;document.querySelectorAll("#seg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===v?"true":"false"))}
+function go(tab,sub){if(!ex.navs){try{ex.navs=JSON.parse(localStorage.getItem("archi-ia-nav")||"{}")||{}}catch(e){ex.navs={}}}const subs=NAV[tab].subs;if(subs.length){if(!sub)sub=ex.navs[tab]||subs[0][0];ex.navs[tab]=sub}CUR={tab,sub};
+ document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===tab?"true":"false"));
+ const sn=document.getElementById("subnav");sn.hidden=!subs.length;sn.innerHTML=subs.map(x=>`<button type="button" data-sub="${x[0]}" aria-pressed="${x[0]===sub}">${esc(x[1])}</button>`).join("");
+ if(tab==="today"){renderToday();showOnly("today")}
+ else if(sub==="prog"){renderProg();showOnly("prog")}
+ else if(sub==="path"){showOnly(ex.pathMode==="list"?"list":"tree")}
+ else if(sub==="en"){renderEn();showOnly("en")}
+ else if(MOI_OF[sub]){ex.moi=MOI_OF[sub];renderMoi();showOnly("moi")}
+ else if(PLUS_OF[sub]){ex.plus=PLUS_OF[sub];renderPlus();showOnly("plus")}
+ else if(sub==="jobs"){if(!ex.country||ex.country==="suivi")ex.country="common";renderJob();showOnly("job")}
+ else if(sub==="apps"){ex.country="suivi";renderJob();showOnly("job")}
+ try{localStorage.setItem("archi-ia-nav",JSON.stringify(ex.navs))}catch(e){}}
+function setView(v){
+ if(v==="today")return go("today");
+ if(v==="tree"||v==="list"){ex.pathMode=v;return go("learn","path")}
+ if(v==="en")return go("learn","en");
+ if(v==="job")return go("career",ex.country==="suivi"?"apps":"jobs");
+ if(v==="plus"){const k=Object.keys(PLUS_OF).find(x=>PLUS_OF[x]===ex.plus)||"rev";return go(k==="interv"?"career":"more",k)}
+ if(v==="moi"){const k=Object.keys(MOI_OF).find(x=>MOI_OF[x]===ex.moi)||"me";const t={method:"learn",valid:"proj",certs:"proj",skills:"proj",me:"career",cv:"career"}[k];return go(t,k)}}
 function resetFilter(){filt="all";document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.f==="all"?"true":"false"));applyFilter()}
 function goPhase(k){setView("list");resetFilter();const s=document.querySelector('.phase[data-phase="'+k+'"]');if(s)s.scrollIntoView({behavior:"smooth",block:"start"})}
 function goItem(id){setView("list");resetFilter();const li=document.querySelector('li[data-id="'+id+'"]');if(li){li.scrollIntoView({behavior:"smooth",block:"center"});li.classList.add("flash");setTimeout(()=>li.classList.remove("flash"),1800)}}
 document.getElementById("next").addEventListener("click",e=>{if(!NEXT)return;if(e.target.id==="ndone"){done[NEXT.id]=1;save();refresh()}else if(e.target.id==="nsee"){goItem(NEXT.id)}});
 document.getElementById("tree").addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;const k=b.dataset.go;goPhase(isNaN(k)?k:Number(k))});
-document.querySelectorAll(".tabs button, #seg button").forEach(b=>b.addEventListener("click",()=>{setView(b.dataset.v);window.scrollTo({top:0})}));
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{go(b.dataset.tab);window.scrollTo({top:0})}));
+document.querySelectorAll("#seg button").forEach(b=>b.addEventListener("click",()=>{setView(b.dataset.v);window.scrollTo({top:0})}));
+document.getElementById("subnav").addEventListener("click",e=>{const b=e.target.closest("[data-sub]");if(b){go(CUR.tab,b.dataset.sub);window.scrollTo({top:0})}});
 /* ================= EMPLOI ET ANGLAIS ================= */
 const EXK="archi-ia-extra-v1";let ex={};
 try{ex=JSON.parse(localStorage.getItem(EXK)||"{}")||{}}catch(e){ex={}}
@@ -850,7 +951,7 @@ const C=[
 
 function jobPct(c){const ids=c.steps.map((s,i)=>"j-"+c.id+"-s"+i).concat(c.docs.map((s,i)=>"j-"+c.id+"-d"+i));const d=ids.filter(i=>ex.c[i]).length;return Math.round(d*100/ids.length)}
 function renderJob(){const sel=ex.country||"common";const box=document.getElementById("view-job");
- let h='<section class="sec"><h2>Trouver un emploi et obtenir le visa</h2><p>À utiliser quand tes compétences sont prêtes. Commence par la partie commune, puis ouvre le pays visé et suis les étapes dans l\'ordre. Chaque mot-clé ouvre directement la recherche sur LinkedIn ou Indeed.</p><div class="cnav" role="group" aria-label="Choisir un pays"><button type="button" class="cbtn" data-c="suivi" aria-pressed="'+(sel==="suivi")+'">Suivi des candidatures<small>'+((ex.apps||[]).length)+'</small></button><button type="button" class="cbtn" data-c="common" aria-pressed="'+(sel==="common")+'">Commun à tous les pays</button>'+C.map(c=>'<button type="button" class="cbtn" data-c="'+c.id+'" aria-pressed="'+(sel===c.id)+'"><span class="code">'+c.id+'</span>'+esc(c.name)+'<small>'+jobPct(c)+' %</small></button>').join("")+'</div></section>';
+ let h=sel==="suivi"?"":'<section class="sec"><h3>Trouver un emploi et obtenir le visa</h3><p>À utiliser quand tes compétences sont prêtes : commence par la partie commune, puis choisis ton pays.</p><label class="pick">Pays <select id="country-pick"><option value="common"'+(sel==="common"?" selected":"")+'>Commun à tous les pays</option>'+C.map(c=>'<option value="'+c.id+'"'+(sel===c.id?" selected":"")+'>'+esc(c.name)+' · '+jobPct(c)+' %</option>').join("")+'</select></label></section>';
  if(sel==="suivi"){h+=trackerHtml()}
  else if(sel==="common"){
   h+='<section class="sec"><h3>Les plateformes valables partout</h3>'+linkCards(COMMON_LINKS)+'</section>';
@@ -977,7 +1078,7 @@ const TW=[
 {m:"Architecture IA : patterns, schémas C4, décisions d'architecture (ADR)",mr:L("Modèle C4","https://c4model.com/"),a:"Dossier d'architecture IA (partie 1)",ar:L("Modèle C4","https://c4model.com/")},
 {m:"FinOps de l'IA : coûts, cache, routage entre modèles",mr:L("FinOps Foundation","https://www.finops.org/"),a:"Projet de validation : dossier d'architecture IA complet",ar:L("Modèle C4","https://c4model.com/"),v:["P16"]},
 {m:"IA pour les langues africaines : jeux de données et modèles",mr:L("Masakhane","https://www.masakhane.io/"),a:"Projet de validation : jeu de données en langue fon publié",ar:L("Hugging Face Datasets","https://huggingface.co/datasets"),v:["P17"]},
-{m:"Dossier de compétences, CV et LinkedIn",mr:L("Ton CV (Profil → CV et dossier)","#"),a:"Rédiger le dossier de compétences et préparer 30 candidatures",ar:L("Welcome to the Jungle","https://www.welcometothejungle.com/fr")},
+{m:"Dossier de compétences, CV et LinkedIn",mr:L("Ton CV (Carrière → CV et dossier)","#"),a:"Rédiger le dossier de compétences et préparer 30 candidatures",ar:L("Welcome to the Jungle","https://www.welcometothejungle.com/fr")},
 {m:"Candidatures et entretiens techniques",mr:L("Entretiens (Plus → Entretiens)","#"),a:"Envoyer les candidatures, relancer, passer les entretiens",ar:L("Suivi des candidatures (Emploi)","#")}];
 const VAL={
 V1:["Développement web","Ton portfolio en ligne","Un site personnel (Laravel ou Next.js) qui présente tous tes projets, avec une page par projet, ton CV et un formulaire de contact.","Site en ligne (Vercel ou hébergeur) + code sur GitHub"],
@@ -1014,31 +1115,33 @@ function baseWeek(){const [y,m,d]=START.split("-").map(Number);const [Y,M,D]=tod
 const hm=x=>{const h=Math.floor(x),m=Math.round((x-h)*60);return pad(h)+":"+pad(m)};
 function curTW(){return Math.min(Math.max(baseWeek()+(ex.shift||0),1),TW.length+1)}
 function nextRelances(){const t=todayIso();return ex.apps.filter(a=>a.st==="envoyee"&&!a.rel&&addDays(a.d,7)<=t)}
+const lk=l=>l.u==="#"?`<span class="mn">${esc(l.t)}</span>`:`<a href="${l.u}" target="_blank" rel="noopener">${esc(l.t)} ↗</a>`;
 function renderToday(){const box=document.getElementById("view-today");const t=todayIso();const wd=new Date().getDay();const intense=(ex.formula||"int")==="int";const h0=ex.h0||8,ev=ex.ev||19;const w=curTW();const tw=TW[w-1];
  const dt0=new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});const dateTxt=dt0.charAt(0).toUpperCase()+dt0.slice(1);
- const dbtn=(k,lbl)=>{const on=!!ex.dd[t+":"+k];return `<button type="button" class="done-btn" data-dd="${k}" aria-pressed="${on}">${on?"Fait ✓":lbl}</button>`};
- let h=`<section class="sec"><div class="dayhead"><div><div class="eyebrow">Programme technique · semaine ${Math.min(w,TW.length)} / ${TW.length} · ${w>=1&&w<=TW.length?weekRange(w):""}</div><h2>${esc(dateTxt)}</h2></div><div class="ctrls"><div class="modes"><button type="button" class="mini" data-formula="int" aria-pressed="${intense}">Intensive · 7 h</button><button type="button" class="mini" data-formula="light" aria-pressed="${!intense}">Jour chargé · 3 h 30</button></div><label class="mn">Début <select id="h0">${[5,6,7,8,9,10].map(x=>`<option value="${x}"${x===h0?" selected":""}>${x} h</option>`).join("")}</select></label><label class="mn">Soir <select id="ev">${[17,18,19,20,21].map(x=>`<option value="${x}"${x===ev?" selected":""}>${x} h</option>`).join("")}</select></label></div></div></section>`;
- if(w>TW.length){h+=`<section class="sec"><h3>Le programme est terminé</h3><p>Bravo. Vérifie que tous tes projets de validation sont en ligne (Profil → Projets de validation), puis continue les candidatures.</p><div class="tbtns"><button type="button" class="btn" data-go-view="tree">Ouvrir le Parcours</button><button type="button" class="mini" data-tw="-1">Revenir à la dernière semaine</button></div></section>`}
- else if(wd===0){h+=`<section class="sec"><h3>Dimanche : repos</h3><p>Le repos fait partie du plan. Prends 15 minutes pour ton bilan, puis profite de ta famille.</p><ul class="cks">${["Qu'est-ce que j'ai appris cette semaine ?","Qu'est-ce qui m'a bloqué, et comment le régler ?","Quelle est ma priorité n°1 pour la semaine prochaine ?"].map((q,i)=>ckItem("sun-"+t+"-"+i,q)).join("")}</ul><div class="tbtns"><button type="button" class="btn" data-plus-go="sauvegarde">Sauvegarder ma progression</button></div></section>`}
+ let h="";
+ if(w>TW.length){h+=`<section class="hero"><div class="eyebrow">Programme terminé</div><h2>${esc(dateTxt)}</h2><p>Bravo ! Vérifie que tous tes projets sont en ligne, puis concentre-toi sur les candidatures.</p><div class="tbtns"><button type="button" class="btn primary" data-go-moi="projets">Mes projets</button><button type="button" class="btn" data-tw="-1">Revenir à la dernière semaine</button></div></section>`}
+ else if(wd===0){h+=`<section class="hero"><div class="eyebrow">Semaine ${w} sur ${TW.length} · ${weekRange(w)}</div><h2>${esc(dateTxt)}</h2><p>Dimanche : repos et famille. Prends juste 15 minutes pour ton bilan.</p></section><section class="sec"><h3>Bilan de la semaine</h3><ul class="cks">${["Qu'est-ce que j'ai appris cette semaine ?","Qu'est-ce qui m'a bloqué, et comment le régler ?","Quelle est ma priorité n°1 pour la semaine prochaine ?"].map((q,i)=>ckItem("sun-"+t+"-"+i,q)).join("")}</ul></section>`}
  else{const T=intense?{am:[h0,h0+3],mid:[h0+3,h0+3+1/3],pm:[h0+4,h0+7],ev:[ev,ev+1]}:{am:[h0,h0+1.5],mid:[h0+1.5,h0+1.5+1/6],pm:[h0+5,h0+6.5],ev:[ev,ev+.5]};
   const enW=Math.min(w,12),enWeek=WEEKS[enW-1];const enTask=enWeek.k.find((k,ki)=>!ex.c["e-"+(enW-1)+"-"+ki]);
-  h+=`<div class="blocks">
-  <div class="blk am${ex.dd[t+":am"]?" ok":""}"><div class="hr"><b>Matin</b>${hm(T.am[0])} – ${hm(T.am[1])}</div><div class="bd"><span class="lab">Apprendre</span><span class="sk-name">${esc(tw.m)}</span>${tw.mr.u==="#"?`<span class="mn">${esc(tw.mr.t)}</span>`:`<a href="${tw.mr.u}" target="_blank" rel="noopener">${esc(tw.mr.t)} ↗</a>`}</div>${dbtn("am","Marquer fait")}</div>
-  <div class="blk mid${ex.dd[t+":mid"]?" ok":""}"><div class="hr"><b>Midi</b>${hm(T.mid[0])} – ${hm(T.mid[1])}</div><div class="bd"><span class="lab">Vocabulaire</span><span class="sk-name">Anki : révisions du jour</span><a href="https://ankiweb.net/" target="_blank" rel="noopener">AnkiWeb ↗</a></div>${dbtn("mid","Marquer fait")}</div>
-  <div class="blk pm${ex.dd[t+":pm"]?" ok":""}"><div class="hr"><b>Après-midi</b>${hm(T.pm[0])} – ${hm(T.pm[1])}</div><div class="bd"><span class="lab">Pratiquer${tw.r?' <span class="rev" style="font:600 .68rem var(--f-body);background:var(--green-soft);color:var(--green);border-radius:4px;padding:1px 6px">Revenu</span>':""}</span><span class="sk-name">${esc(tw.a)}</span>${tw.ar.u==="#"?`<span class="mn">${esc(tw.ar.t)}</span>`:`<a href="${tw.ar.u}" target="_blank" rel="noopener">${esc(tw.ar.t)} ↗</a>`}</div>${dbtn("pm","Marquer fait")}</div>
-  <div class="blk ev${ex.dd[t+":ev"]?" ok":""}"><div class="hr"><b>Soir</b>${hm(T.ev[0])} – ${hm(T.ev[1])}</div><div class="bd"><span class="lab">Anglais · semaine ${enW} : ${esc(enWeek.t)}</span><span class="sk-name">${esc(enTask?enTask[1]:"Conversation avec l'IA et shadowing")}</span><button type="button" class="mini" data-go-view="en" style="align-self:flex-start">Ouvrir la séance d'anglais</button></div>${dbtn("ev","Marquer fait")}</div></div>`;
-  if(tw.v&&tw.v.length)h+=`<section class="sec"><h3>Projet de validation de la semaine</h3><p>À terminer et à mettre en ligne avant dimanche. Les projets « Internet et Multimédia » se font le samedi.</p><ul class="cks">${tw.v.map(k=>ckItem("m-v-"+k,VAL[k][1]+" · "+VAL[k][0],"À mettre en ligne : "+VAL[k][3])).join("")}</ul><div class="tbtns"><button type="button" class="mini" data-go-moi="projets">Voir tous les projets de validation</button></div></section>`}
+  const B=[{k:"am",when:"Matin",what:"Apprendre",title:tw.m,link:lk(tw.mr),tm:T.am},{k:"mid",when:"Midi",what:"Révisions",title:"Anki : tes cartes du jour",link:lk(L("AnkiWeb","https://ankiweb.net/")),tm:T.mid},{k:"pm",when:"Après-midi",what:tw.r?"Pratiquer · revenu":"Pratiquer",title:tw.a,link:lk(tw.ar),tm:T.pm},{k:"ev",when:"Soir",what:"Anglais",title:enTask?enTask[1]:"Conversation avec l'IA et shadowing",link:`<button type="button" class="linkbtn" data-go-view="en">Ouvrir la séance d'anglais →</button>`,tm:T.ev}];
+  const nd=B.filter(b=>ex.dd[t+":"+b.k]).length;const nowH=new Date().getHours()+new Date().getMinutes()/60;
+  let cur=B.find(b=>!ex.dd[t+":"+b.k]&&nowH<b.tm[1]);if(!cur)cur=B.find(b=>!ex.dd[t+":"+b.k]);
+  h+=`<section class="hero"><div class="eyebrow">Semaine ${w} sur ${TW.length} · ${weekRange(w)}</div><h2>${esc(dateTxt)}</h2><div class="dprog"><div class="bar"><i style="width:${nd*25}%"></i></div><span>${nd} / 4 fait${nd>1?"s":""}</span></div></section>`;
+  if(cur)h+=`<section class="now"><div class="now-l">${nowH>=cur.tm[0]&&nowH<cur.tm[1]?"Maintenant":"Ensuite"} · ${esc(cur.when)} · ${hm(cur.tm[0])} – ${hm(cur.tm[1])}</div><div class="now-w">${esc(cur.what)}</div><div class="now-t">${esc(cur.title)}</div><div class="now-a">${cur.link}<button type="button" class="btn primary" data-dd="${cur.k}">C'est fait ✓</button></div></section>`;
+  else h+=`<section class="now done"><div class="now-t">Journée terminée. Bravo !</div><p>Repose-toi et profite de ta famille.</p></section>`;
+  h+=`<section class="sec"><h3>Ta journée</h3><ul class="day">${B.map(b=>{const on=!!ex.dd[t+":"+b.k];return `<li class="${on?"ok":""}${cur&&cur.k===b.k?" cur":""}"><button type="button" class="chk" data-dd="${b.k}" aria-pressed="${on}" aria-label="${on?"Annuler":"Marquer fait"}">${on?"✓":""}</button><div class="dt"><span class="dh">${esc(b.when)} · ${hm(b.tm[0])}</span><span class="dn">${esc(b.title)}</span><span class="dl">${b.link}</span></div></li>`}).join("")}</ul></section>`;
+  if(tw.v&&tw.v.length)h+=`<section class="sec"><h3>Projet de la semaine</h3><ul class="cks">${tw.v.map(k=>ckItem("m-v-"+k,VAL[k][1],VAL[k][0]+" · à mettre en ligne : "+VAL[k][3])).join("")}</ul></section>`}
  const rel=nextRelances();const last=ex.lastBackup;const days=last?Math.floor((new Date(todayIso())-new Date(last))/864e5):null;
- h+=`<div class="grid2"><div class="mini-card"><h3>Prochaine étape du parcours</h3><p>${NEXT?esc(NEXT.t):"Tout est coché."}</p><button type="button" class="mini" data-go-view="tree" style="align-self:flex-start">Voir le parcours</button></div>
- <div class="mini-card"><h3>Relances de candidatures</h3><p>${rel.length?rel.length+" candidature(s) envoyée(s) il y a plus de 7 jours sans relance.":"Aucune relance à faire aujourd'hui."}</p><button type="button" class="mini" data-go-job="suivi" style="align-self:flex-start">Ouvrir le suivi</button></div>
- <div class="mini-card"><h3>Sauvegarde</h3><p>${cloudOn()?"Synchronisation automatique active sur ton compte Claude. ":""}${last?(days===0?"Sauvegardé aujourd'hui.":"Dernière sauvegarde il y a "+days+" jour(s)."):"Tu n'as jamais sauvegardé ta progression."}</p><button type="button" class="mini" data-plus-go="sauvegarde" style="align-self:flex-start">Sauvegarder</button></div>
- <div class="mini-card"><h3>Semaine du programme</h3><p>Tu peux avancer ou reculer si ton rythme est différent.</p><div class="tbtns"><button type="button" class="mini" data-tw="-1">← Semaine précédente</button><button type="button" class="mini" data-tw="1">Semaine suivante →</button></div></div></div>`;
- h+=`<details class="acc"><summary>Le programme technique complet (${TW.length} semaines, à partir du 26 octobre 2026)</summary><ul class="prog">${TW.map((x,i)=>`<li class="${i+1===w?"cur":(i+1<w?"past":"")}"><span class="wn">S${i+1}</span><span><small class="mn">${weekRange(i+1)}</small><br><b>Matin :</b> ${esc(x.m)}<br><b>Après-midi :</b> ${esc(x.a)}${x.r?'<span class="rev">Revenu</span>':""}${(x.v||[]).map(k=>`<br><b>Projet de validation :</b> ${esc(VAL[k][1])}${ex.c["m-v-"+k]?" ✓":""}`).join("")}</span></li>`).join("")}</ul><p class="tree-help" style="margin-top:10px">Le programme suit le calendrier : chaque lundi, une nouvelle semaine commence. Si tu prends du retard, utilise « Semaine précédente ».</p></details>`;
+ const R=[];if(rel.length)R.push(`<li><span>${rel.length} candidature(s) à relancer</span><button type="button" class="linkbtn" data-go-job="suivi">Voir →</button></li>`);
+ if(!cloudOn()&&(days===null||days>=7))R.push(`<li><span>${last?"Dernière sauvegarde il y a "+days+" jours":"Tu n'as jamais sauvegardé ta progression"}</span><button type="button" class="linkbtn" data-plus-go="sauvegarde">Sauvegarder →</button></li>`);
+ if(R.length)h+=`<section class="sec"><h3>À ne pas oublier</h3><ul class="rem">${R.join("")}</ul></section>`;
+ h+=`<details class="acc set"><summary>Réglages de ma journée</summary><div class="setg"><div><span class="mn">Rythme</span><div class="modes"><button type="button" class="mini" data-formula="int" aria-pressed="${intense}">Journée complète · 7 h</button><button type="button" class="mini" data-formula="light" aria-pressed="${!intense}">Jour chargé · 3 h 30</button></div></div><label class="mn">Je commence à <select id="h0">${[5,6,7,8,9,10].map(x=>`<option value="${x}"${x===h0?" selected":""}>${x} h</option>`).join("")}</select></label><label class="mn">Anglais le soir à <select id="ev">${[17,18,19,20,21].map(x=>`<option value="${x}"${x===ev?" selected":""}>${x} h</option>`).join("")}</select></label><div><span class="mn">En retard ou en avance ?</span><div class="modes"><button type="button" class="mini" data-tw="-1">← Semaine précédente</button><button type="button" class="mini" data-tw="1">Semaine suivante →</button></div></div></div></details>`;
  box.innerHTML=h}
+function renderProg(){const w=curTW();document.getElementById("view-prog").innerHTML=`<section class="sec"><h3>Ton programme de ${TW.length} semaines</h3><p>Il suit le calendrier : chaque lundi, une nouvelle semaine commence. Matin = apprendre, après-midi = pratiquer.</p></section><ul class="prog">${TW.map((x,i)=>`<li class="${i+1===w?"cur":(i+1<w?"past":"")}"${i+1===w?' id="wk-cur"':""}><span class="wn">${i+1}</span><span class="pc"><small class="mn">${weekRange(i+1)}${i+1===w?" · cette semaine":""}</small><b>${esc(x.m)}</b><span>${esc(x.a)}${x.r?'<span class="rev">Revenu</span>':""}</span>${(x.v||[]).map(k=>`<span class="pv">◆ ${esc(VAL[k][1])}${ex.c["m-v-"+k]?" ✓":""}</span>`).join("")}</span></li>`).join("")}</ul>`}
 document.getElementById("view-today").addEventListener("click",e=>{const t=e.target;
  const dd=t.closest("[data-dd]");if(dd){const k=todayIso()+":"+dd.dataset.dd;if(ex.dd[k])delete ex.dd[k];else ex.dd[k]=1;exSave();renderToday();return}
  const fm=t.closest("[data-formula]");if(fm){ex.formula=fm.dataset.formula;exSave();renderToday();return}
- const tw=t.closest("[data-tw]");if(tw){ex.shift=(ex.shift||0)+Number(tw.dataset.tw);exSave();renderToday();window.scrollTo({top:0});toast("Semaine "+Math.min(ex.tw,TW.length));return}
+ const tw=t.closest("[data-tw]");if(tw){ex.shift=(ex.shift||0)+Number(tw.dataset.tw);exSave();renderToday();window.scrollTo({top:0});toast("Semaine "+Math.min(curTW(),TW.length));return}
  const gv=t.closest("[data-go-view]");if(gv){setView(gv.dataset.goView);window.scrollTo({top:0});return}
  const gj=t.closest("[data-go-job]");if(gj){ex.country=gj.dataset.goJob;exSave();renderJob();setView("job");window.scrollTo({top:0});return}
  const pg=t.closest("[data-plus-go]");if(pg){ex.plus=pg.dataset.plusGo;exSave();renderPlus();setView("plus");window.scrollTo({top:0});return}
@@ -1054,7 +1157,7 @@ function trackerHtml(){const A=ex.apps;const sent=A.filter(a=>a.st!=="aenvoyer")
  return h}
 const vj=document.getElementById("view-job");
 vj.addEventListener("submit",e=>{if(e.target.id!=="app-form")return;e.preventDefault();const g=id=>document.getElementById(id).value.trim();const link=g("app-link");ex.apps.push({id:Date.now().toString(36),co:g("app-co"),role:g("app-role"),country:g("app-country"),d:g("app-date")||todayIso(),st:g("app-st"),link:/^https?:\/\//.test(link)?link:""});exSave();renderJob();toast("Candidature ajoutée")});
-vj.addEventListener("change",e=>{const s=e.target.dataset&&e.target.dataset.appSt;if(!s)return;const a=ex.apps.find(x=>x.id===s);if(a){a.st=e.target.value;exSave();renderJob()}});
+vj.addEventListener("change",e=>{if(e.target.id==="country-pick"){ex.country=e.target.value;exSave();renderJob();return}const s=e.target.dataset&&e.target.dataset.appSt;if(!s)return;const a=ex.apps.find(x=>x.id===s);if(a){a.st=e.target.value;exSave();renderJob()}});
 vj.addEventListener("click",e=>{const r=e.target.closest("[data-app-rel]");if(r){const a=ex.apps.find(x=>x.id===r.dataset.appRel);if(a){a.rel=todayIso();exSave();renderJob();toast("Relance notée")}return}const d=e.target.closest("[data-app-del]");if(d){if(d.dataset.confirm){ex.apps=ex.apps.filter(x=>x.id!==d.dataset.appDel);exSave();renderJob();toast("Supprimée")}else{d.dataset.confirm="1";d.textContent="Confirmer la suppression"}}});
 
 /* ================= PLUS ================= */
@@ -1081,7 +1184,7 @@ const REVOK=[
 const REVLATER=[["Toptal","https://www.toptal.com/","Ouvert à l'Afrique, réservé aux 3 % de meilleurs candidats ; environ 3 ans d'expérience conseillés."],["Andela","https://andela.com/","Accepte les ingénieurs de tous les pays africains, surtout des profils seniors (Python, Node, React)."],["Turing","https://www.turing.com/","Développeurs de plus de 150 pays, sélection très stricte, anglais courant et temps plein demandés."]];
 const REVTRY=[["Mindrift","https://mindrift.ai/","Ouvert dans le monde entier sauf pays sanctionnés. Missions d'écriture en français existantes. 15 à 30 $/h (généralistes). Paiement Payoneer ou PayPal."],["Alignerr","https://www.alignerr.com/","Accepte le monde entier sauf une vingtaine de pays. Bilingue 15 à 20 $/h, code 30 à 40 $/h. Paiement Stripe ou PayPal."],["Outlier","https://outlier.ai/languages/fr-fr","Missions en français jusqu'à 25 $/h. Liste de pays non publiée."],["TELUS Digital","https://www.telusdigital.com/","Évaluation d'IA dans plus de 100 pays. Paiement Hyperwallet ou virement."],["Appen","https://www.appen.com/","Plus de 170 pays, projets irréguliers. Paiement PayPal, Payoneer ou virement."],["Contra","https://contra.com/","Plateforme freelance sans commission, paiement Stripe. Pays non précisés."]];
 function renderPlus(){const box=document.getElementById("view-plus");const sel=ex.plus||"revenus";
- let h=`<section class="sec"><h2>Plus</h2><div class="cnav" role="group" aria-label="Choisir un outil">${PLUS.map(p=>`<button type="button" class="cbtn" data-p="${p[0]}" aria-pressed="${sel===p[0]}">${esc(p[1])}</button>`).join("")}</div></section>`;
+ let h="";
  if(sel==="revenus"){
   h+=`<section class="sec"><h3>Gagner 1 500 € par mois depuis le Bénin, en français</h3><p class="why">Le marché francophone (France, Belgique, Suisse romande, Luxembourg, Québec) paie en euros et fonctionne en français : l'anglais n'y est pas une barrière. En 2026, un développeur coûte environ 550 à 750 € par jour en France, contre 250 à 400 € en Afrique francophone, avec la même langue et 0 à 2 heures de décalage. Les agences françaises sous-traitent déjà en marque blanche et y réalisent environ 33 à 38 % de marge.</p></section>`;
   h+=`<section class="sec"><h3>Tes 3 sources de revenus</h3><div class="tierlist"><div class="tier"><span class="when">Source principale</span><h4>Sous-traitance en marque blanche pour des agences françaises et belges</h4><p>Les agences ont plus de travail que de développeurs. Une seule agence partenaire peut t'apporter du travail chaque mois : sites WordPress, automatisations n8n, petites intégrations IA. Elle garde le client, tu restes invisible.</p></div><div class="tier"><span class="when">Deuxième source</span><h4>Clients directs : TPE et PME francophones</h4><p>Automatisations n8n + IA (relances de factures, devis automatiques, CRM, rapports) et sites web, avec un forfait de maintenance mensuel pour chaque client.</p></div><div class="tier"><span class="when">Complément</span><h4>Missions d'IA en français</h4><p>Mindrift, Outlier, Alignerr : à tester si le Bénin est accepté à l'inscription. Un plus, pas la base du plan.</p></div></div></section>`;
@@ -1184,7 +1287,7 @@ const FOCUS=[
 ["Priorité 1 · 60 % de ton temps","L'IA (ta formation et ton futur visa)","Le matin, au calme, quand ton cerveau est frais. C'est le chemin vers la France et les gros salaires : on ne le sacrifie jamais."],
 ["Priorité 2 · 30 % de ton temps","QUANTEX : sites, SEO, GEO et IA pour des clients","L'après-midi. C'est ton revenu ET ta salle d'entraînement : chaque client te fait pratiquer le web, le référencement et l'IA en même temps. Tu apprends le SEO et le GEO sur de vrais projets, pas seulement dans des cours."],
 ["Priorité 3 · 10 % de ton temps","Le management d'artistes et le futur label","Un créneau fixe par semaine (ex. samedi après-midi, 3 h) et un appel par artiste. Pour l'instant, tu entretiens, tu ne développes pas : le label grandira quand les revenus seront stables."]];
-const WEEK=[["Lundi à vendredi, matin (3 h)","IA : le cours du jour + exercices (onglet Aujourd'hui)"],["Lundi à vendredi, midi (20 min)","Anki : révisions (IA, SEO, anglais)"],["Lundi à vendredi, après-midi (3 h)","QUANTEX : projets clients, SEO, GEO, prospection"],["Lundi à vendredi, soir (30 à 60 min)","Anglais, puis temps en famille"],["Samedi matin (3 h)","Projet de validation Internet et Multimédia"],["Samedi après-midi (3 h)","Artistes : appels, planning des sorties, réseaux sociaux"],["Dimanche","Repos, famille, et 15 minutes de bilan de la semaine"]];
+const WEEK=[["Lundi à vendredi, matin (3 h)","IA : le cours du jour + exercices (Aujourd'hui)"],["Lundi à vendredi, midi (20 min)","Anki : révisions (IA, SEO, anglais)"],["Lundi à vendredi, après-midi (3 h)","QUANTEX : projets clients, SEO, GEO, prospection"],["Lundi à vendredi, soir (30 à 60 min)","Anglais, puis temps en famille"],["Samedi matin (3 h)","Projet de validation Internet et Multimédia"],["Samedi après-midi (3 h)","Artistes : appels, planning des sorties, réseaux sociaux"],["Dimanche","Repos, famille, et 15 minutes de bilan de la semaine"]];
 const TECH=[
 ["Le rappel actif","Après chaque leçon, ferme le cours et écris de mémoire ce que tu as retenu. Puis vérifie. C'est 2 à 3 fois plus efficace que relire."],
 ["La répétition espacée (Anki)","Chaque notion importante devient une carte Anki. L'application te la redonne juste avant que tu l'oublies : 20 minutes par jour suffisent pour ne plus rien perdre."],
@@ -1203,7 +1306,7 @@ const LCOURSES=[
 ["Management d'artistes et industrie musicale",[L("Centre national de la musique (CNM)","https://cnm.fr/","Guides, fiches pratiques et formations sur les métiers de la musique en France"),L("Programme « Manager une carrière artistique » (CNM)","https://cnm.fr/wp-content/uploads/2025/09/programme%20Manager%20une%20carri%C3%A8re%20artistique.pdf","Le programme d'une formation de référence : utilise-le comme plan d'apprentissage"),L("Bureau Export de la musique française","https://www.lebureauexport.fr/","Pour faire tourner tes artistes à l'international")]]];
 const RULES=["Je fixe 3 priorités maximum par semaine, le dimanche soir","Je commence chaque journée par le bloc IA, avant de regarder WhatsApp","Mon téléphone est dans une autre pièce pendant les blocs de travail","Chaque notion apprise devient une carte Anki","Je pratique sur un vrai projet dans les 48 heures","Je dis non aux nouveaux projets tant que les 3 priorités ne sont pas tenues","Je dors au moins 7 heures","Je garde le dimanche pour ma famille"];
 function renderMoi(){const box=document.getElementById("view-moi");const sel=ex.moi||"qui";
- let h=`<section class="sec"><h2>Profil</h2><p>Qui tu es, tes compétences, tes projets de validation, tes certifications, ton CV et ton dossier de compétences.</p><div class="cnav" role="group" aria-label="Choisir une partie">${MOI.map(p=>`<button type="button" class="cbtn" data-m="${p[0]}" aria-pressed="${sel===p[0]}">${esc(p[1])}</button>`).join("")}</div></section>`;
+ let h="";
  if(sel==="qui"){
   h+=`<section class="sec"><h3>HOUNTONDJI Amos Fructueux Prudence Mawugnon</h3><p class="why"><b>Profil hybride : Ingénieur IA et développeur web · Expert marketing et référencement · Entrepreneur tech · Manager musical.</b><br>Je suis un profil « couteau suisse » : je sais concevoir des systèmes d'IA, construire la plateforme complète sur mesure, la rendre belle, l'automatiser, la faire trouver sur Google et par les IA, la vendre et piloter le projet. Basé à Cotonou, marié et père d'un enfant, je prépare mon installation en Europe avec ma famille.</p></section>`;
   h+=`<section class="sec"><h3>Mes casquettes</h3><div class="tierlist">${WHO_ROLES.map((r,i)=>`<div class="tier"><span class="when">Casquette ${i+1}</span><h4>${esc(r[0])}</h4><p>${esc(r[1])}</p><div class="chips">${r[2].map(t=>`<span class="pill blue">${esc(t)}</span>`).join("")}</div></div>`).join("")}</div></section>`;
@@ -1226,23 +1329,24 @@ function renderMoi(){const box=document.getElementById("view-moi");const sel=ex.
   h+=grp("Internet et Multimédia (le samedi)",VKEYS.filter(k=>k[0]==="V"));
   h+=grp("Ingénieur IA puis Architecte IA",VKEYS.filter(k=>k[0]==="P"))}
  else if(sel==="certifs"){let n=0,d=0;MCERTS.forEach((g,gi)=>g[1].forEach((c,i)=>{n++;if(ex.c[certId(gi,i)])d++}));
-  h+=`<section class="sec"><h3>Toutes tes certifications</h3><p class="why">Coche chaque certification quand tu l'as obtenue : <b>${d} / ${n}</b> obtenues. Sur le CV que tu envoies, mets uniquement celles qui sont cochées.</p><p class="tree-help">L'ordre conseillé, les prix et les cours se trouvent dans l'onglet Parcours.</p></section>`;
+  h+=`<section class="sec"><h3>Toutes tes certifications</h3><p class="why">Coche chaque certification quand tu l'as obtenue : <b>${d} / ${n}</b> obtenues. Sur le CV que tu envoies, mets uniquement celles qui sont cochées.</p><p class="tree-help">L'ordre conseillé, les prix et les cours se trouvent dans Apprendre → Parcours.</p></section>`;
   h+=MCERTS.map((g,gi)=>{const dd=g[1].filter((c,i)=>ex.c[certId(gi,i)]).length;return `<section class="sec"><h3>${esc(g[0])} <span class="pill${dd?"":" blue"}">${dd} / ${g[1].length}</span></h3><ul class="cks">${g[1].map((c,i)=>ckItem(certId(gi,i),c)).join("")}</ul></section>`}).join("")}
  else if(sel==="cvdossier"){
-  h+=`<section class="sec"><h3>Ton CV</h3><p>Ton CV de projection en couleurs, 4 pages : profil et expérience, formation, projets, certifications. Ouvre-le pour le modifier ou le télécharger en PDF.</p>${linkCards([L("Mon CV (HOUNTONDJI Amos)","https://claude.ai/artifact/Js5CENnr1AYH5XhKkAuQLL","S'ouvre avec ton compte Claude")])}</section>`;
+  h+=`<section class="sec"><h3>Ton CV</h3><p>Ton CV en couleurs, 4 pages : profil et expérience, tes casquettes, expérience et formation, certifications. Le CV ne contient pas de projets : tes projets vont dans le dossier de compétences, ci-dessous.</p>${linkCards([L("Mon CV (HOUNTONDJI Amos)","https://claude.ai/artifact/Js5CENnr1AYH5XhKkAuQLL","S'ouvre avec ton compte Claude")])}</section>`;
   h+=`<section class="sec"><h3>Le dossier de compétences</h3><p class="why">Le CV résume, le dossier de compétences prouve. En France, les ESN (Capgemini, Sopra Steria, Accenture…), les cabinets de conseil et les clients freelances le demandent souvent. Il fait de 5 à 15 pages.</p><div class="tierlist">${DOSS.map(x=>`<div class="tier"><h4>${esc(x[0])}</h4>${x[1]?`<p class="usef">${esc(x[1])}</p>`:""}</div>`).join("")}</div></section>`;
+  h+=`<section class="sec"><h3>Textes prêts pour ton CV et LinkedIn</h3><p>Remplace les parties entre crochets par tes vraies réalisations.</p>${CVT.map(c=>`<div class="subh">${esc(c[0])}</div><div class="tpl">${esc(c[1])}</div><div><button type="button" class="mini" data-copy="${esc(c[1])}">Copier</button></div>`).join("")}</section>`;
   h+=`<section class="sec"><h3>Préparer ton dossier, étape par étape</h3><ol class="cks">${DOSS_STEPS.map((x,i)=>ckItem("m-d-"+i,x)).join("")}</ol></section>`}
  box.innerHTML=h}
 const vm=document.getElementById("view-moi");
 vm.addEventListener("click",e=>{const m=e.target.closest("[data-m]");if(m){ex.moi=m.dataset.m;exSave();renderMoi();return}const cp=e.target.closest("[data-copy]");if(cp)copyText(cp.dataset.copy)});
 vm.addEventListener("change",e=>{onExChange(e);const id=e.target.dataset&&String(e.target.dataset.ex);if(id.startsWith("m-c-")||id.startsWith("m-v-"))renderMoi()});
-function rerenderAll(){refresh();renderJob();renderEn();renderPlus();renderMoi();renderToday()}
+function rerenderAll(){refresh();renderJob();renderEn();renderPlus();renderMoi();renderToday();if(typeof go==="function"&&CUR)go(CUR.tab,CUR.sub)}
 async function cloudInit(){if(!window.claude||typeof window.claude.use!=="function")return;try{const db=await window.claude.use("db");const user=await window.claude.use("user");if(!db||!user)return;const id=await user.id();if(!id)return;CLOUD.ref=db.doc("data/users/"+id+"/progress");const snap=await CLOUD.ref.get();const d=snap.exists?snap.data():null;CLOUD.ready=true;if(d&&d.v===1&&typeof d.done==="object"&&typeof d.ex==="object"&&Number(d.t)>localTs()){done=JSON.parse(JSON.stringify(d.done||{}));ex=JSON.parse(JSON.stringify(d.ex||{}));["c","days","vocab","dd","apps","budget"].forEach(k=>{if(!ex[k])ex[k]=(k==="days"||k==="apps")?[]:{}});try{localStorage.setItem(KEY,JSON.stringify(done));localStorage.setItem(EXK,JSON.stringify(ex))}catch(e){}setTs(Number(d.t));rerenderAll();toast("Progression synchronisée")}else{if(localTs()>0)cloudPush();rerenderAll()}}catch(e){CLOUD.ready=false}}
 
 refresh();renderJob();renderEn();renderPlus();renderMoi();renderToday();
 cloudInit();
-const HV={"#aujourdhui":"today","#parcours":"tree","#liste":"list","#emploi":"job","#anglais":"en","#plus":"plus"};
-setView(HV[location.hash]||"today");
+const HT={"#apprendre":"learn","#projets":"proj","#carriere":"career","#plus":"more"};const HV={"#parcours":"tree","#liste":"list","#emploi":"job","#anglais":"en"};
+if(HT[location.hash])go(HT[location.hash]);else if(HV[location.hash])setView(HV[location.hash]);else go("today");
 </script>
 
 
